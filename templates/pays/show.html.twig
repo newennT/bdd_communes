@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pays{% endblock %}
+
+{% block body %}
+    <h1>Pays</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ pay.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom_francais</th>
+                <td>{{ pay.nomFrancais }}</td>
+            </tr>
+            <tr>
+                <th>Nom_breton</th>
+                <td>{{ pay.nomBreton }}</td>
+            </tr>
+            <tr>
+                <th>Nom_gallo</th>
+                <td>{{ pay.nomGallo }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ pay.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_pays_index') }}">back to list</a>
+
+    <a href="{{ path('app_admin_pays_edit', {'id': pay.id}) }}">edit</a>
+
+{% endblock %}

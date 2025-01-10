@@ -5,9 +5,9 @@
 {% block body %}
     <h1>Edit Commune</h1>
 
-    {{ include('commune/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('admin/commune/_form.html.twig', {'button_label': 'Update'}) }}
 
     <a href="{{ path('app_commune_index') }}">back to list</a>
 
-    {{ include('commune/_delete_form.html.twig') }}
+    {{ include('admin/commune/_delete_form.html.twig') }}
 {% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Eveche index{% endblock %}
+
+{% block body %}
+    <h1>Eveche index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom_francais</th>
+                <th>Nom_breton</th>
+                <th>Nom_gallo</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for eveche in eveches %}
+            <tr>
+                <td>{{ eveche.id }}</td>
+                <td>{{ eveche.nomFrancais }}</td>
+                <td>{{ eveche.nomBreton }}</td>
+                <td>{{ eveche.nomGallo }}</td>
+                <td>{{ eveche.description }}</td>
+                <td>
+                    <a href="{{ path('app_eveche_show', {'id': eveche.id}) }}">show</a>
+                    <a href="{{ path('app_admin_eveche_edit', {'id': eveche.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_admin_eveche_new') }}">Create new</a>
+{% endblock %}

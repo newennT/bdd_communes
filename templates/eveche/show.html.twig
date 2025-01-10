@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Eveche{% endblock %}
+
+{% block body %}
+    <h1>Eveche</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ eveche.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom_francais</th>
+                <td>{{ eveche.nomFrancais }}</td>
+            </tr>
+            <tr>
+                <th>Nom_breton</th>
+                <td>{{ eveche.nomBreton }}</td>
+            </tr>
+            <tr>
+                <th>Nom_gallo</th>
+                <td>{{ eveche.nomGallo }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ eveche.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_eveche_index') }}">back to list</a>
+
+    <a href="{{ path('app_admin_eveche_edit', {'id': eveche.id}) }}">edit</a>
+
+{% endblock %}
