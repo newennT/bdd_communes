@@ -5,6 +5,12 @@
 {% block body %}
     <h1>Accueil</h1>
 
+    <div id="map"></div
+
+    {% if is_granted('ROLE_SUPERADMIN') %}
+    <p>Enregistrer un nouvel utilisateur</p>
+    {% endif %}
+
     <h2>Liste des communes</h2>
 
     <ul>
@@ -32,5 +38,11 @@
             Aucun pays enregistré
         {% endfor %}
     </ul>
+
+{% endblock %}
+
+{% block javascripts %}
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
 {% endblock %}

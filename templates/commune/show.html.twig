@@ -5,6 +5,8 @@
 {% block body %}
     <h1>Commune</h1>
 
+    
+
     <table class="table">
         <tbody>
             <tr>
@@ -45,5 +47,31 @@
     <a href="{{ path('app_commune_index') }}">back to list</a>
 
     <a href="{{ path('app_admin_commune_edit', {'id': commune.id}) }}">edit</a>
+
+<div id="map" style="height: 400px; width: 400px;"></div>
+
+{% endblock %}
+
+
+{% block javascripts %}
+
+{{ parent() }}
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+console.log( {{ commune.latitude }})
+    document.addEventListener('DOMContentLoaded', function () {
+        L.Icon.Default.imagePath = 'https://unpkg.com/leaflet@1.7.1/dist/images/';
+        var map = L.map('map').setView([ {{ commune.latitude }} , {{ commune.longitude }} ], 8);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        L.marker([ {{ commune.latitude }}, {{ commune.longitude }} ]).addTo(map)
+            .bindPopup('<strong>{{ commune.nomFrancais|escape("html") }}</strong>') .openPopup();
+    });
+</script>
 
 {% endblock %}

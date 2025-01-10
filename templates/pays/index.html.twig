@@ -26,7 +26,9 @@
                 <td>{{ pay.description }}</td>
                 <td>
                     <a href="{{ path('app_pays_show', {'id': pay.id}) }}">show</a>
+                    {% if app.user %}
                     <a href="{{ path('app_admin_pays_edit', {'id': pay.id}) }}">edit</a>
+                    {% endif %}
                 </td>
             </tr>
         {% else %}
@@ -39,3 +41,4 @@
 
     <a href="{{ path('app_admin_pays_new') }}">Create new</a>
 {% endblock %}
+
