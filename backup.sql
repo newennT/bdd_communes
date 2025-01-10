@@ -74,7 +74,7 @@ CREATE TABLE `doctrine_migration_versions` (
 
 LOCK TABLES `doctrine_migration_versions` WRITE;
 /*!40000 ALTER TABLE `doctrine_migration_versions` DISABLE KEYS */;
-INSERT INTO `doctrine_migration_versions` VALUES ('DoctrineMigrations\\Version20241212103908','2024-12-12 10:39:14',159),('DoctrineMigrations\\Version20250110103353','2025-01-10 10:34:09',68);
+INSERT INTO `doctrine_migration_versions` VALUES ('DoctrineMigrations\\Version20241212103908','2024-12-12 10:39:14',159),('DoctrineMigrations\\Version20250110103353','2025-01-10 10:34:09',68),('DoctrineMigrations\\Version20250110110827','2025-01-10 11:08:36',32);
 /*!40000 ALTER TABLE `doctrine_migration_versions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -131,6 +131,33 @@ LOCK TABLES `pays` WRITE;
 INSERT INTO `pays` VALUES (101,'Aven','Aven','Aven',NULL),(102,'Bidar','Bidar','Bidar',NULL),(103,'Calanhel','Kalanel','Kalanel',NULL),(104,'Cap Sizun','Bro ar C\'hap','Cap Sizun',NULL),(105,'Chtou','Chtou','Chtou',NULL),(106,'Crozon','Kraozon','Kraozon',NULL),(107,'Dardoup','Dardoup','Dardoup',NULL),(108,'Fanch','Fanch','Fanch',NULL),(109,'Fisel','Fisel','Fisel',NULL),(110,'Glazig','Bro C\'hlazig','Glazig',NULL),(111,'Kernevodez','Kernevodez','Kernevodez',NULL),(112,'Pays Bigouden','Bro Vigoudenn','Bigouden',NULL),(113,'Penn Sardin','Penn Sardin','Penn Sardin',NULL),(114,'Plougastel','Plougastell','Plougastell',NULL),(115,'Poher','Poc\'hêr','Poher',NULL),(116,'Rouzig','Rouzig','Rouzig',NULL),(201,'Bas-Léon','Goueled-Leon','Goueled-Leon',NULL),(202,'Haut-Léon','Gorre-Leon','Gorre-Leon',NULL),(203,'Pays Pagan','Bro-Bagan','Payiz Pagan',NULL),(301,'Brière','Briver','Berièrr',NULL),(302,'Guérande','Gwenrann','Gherand',NULL),(303,'La Mée','Bro Vez','La Mée',NULL),(304,'Métayer','Bro Meteilh','Payiz Métay',NULL),(305,'Mitaud','Mitaw','Payiz Mitaod',NULL),(306,'Paludier','Bro ar Paludoù-Holen','Payiz Paludier',NULL),(307,'Pays d\'Ancenis','Bro Ankiniz','Payiz d\'Ançni',NULL),(308,'Pays de Nantes','Bro-Naoned','Payiz de Naunte',NULL),(309,'Pays de Retz','Bro-Raez','Payiz d\'Ré',NULL),(310,'Vignoble','Bro-Gwiniegi','Payiz du Fié',NULL),(401,'Dolois','Bro Zol','Payiz de Dou',NULL),(501,'Goëlo','Goueloù','Goelo',NULL),(503,'Mené','Ar Menez','Mné',NULL),(504,'Pays de Loudéac','Bro Loudieg','Payiz d\'Loudia',NULL),(505,'Penthièvre','Pentevr','Pintièvr',NULL),(601,'Clos Poulet','Poualed','Cllôz Poulêt',NULL),(602,'Clos Ratel','Pourater','Cllôz Ratè',NULL),(603,'Porhoët','Porc\'hoed','Porouètt',NULL),(604,'Poudouvre','Daoudour','Payiz d \'Dinan',NULL),(701,'Coglais','Gougleiz','Payiz d\' Coy',NULL),(702,'Désert','Dezerzh','Dézèrt',NULL),(703,'Guerchais','Bro Gwerc\'h','Payiz d\'la Yerch',NULL),(704,'Pays de Fougères','Felger','Payiz d\'Foujerr',NULL),(705,'Pays de Rennes','Bro-Roazhon','Payiz de Rene',NULL),(706,'Pays de Vitré','Gwitreg','Vitrë',NULL),(707,'Vendelais','Gwennel','Vendelais',NULL),(801,'Bas-Trégor','Treger Izel','Bas-Trégor',NULL),(802,'Grand-Trégor','Treger Uhel','Grand-Trégor',NULL),(803,'Petit-Trégor','Treger Bihan','Petit-Trégor',NULL),(901,'Bas-Vannetais','Bro Wened Izel','Bas-Vannetais',NULL),(902,'D\'a-bas','D\'a-bas','Payiz d\'Abâs',NULL),(903,'Haut-Vannetais','Bro Wened Uhel','Haut-Vannetais',NULL),(904,'Kost-er-C\'hoet','Kost-er-C\'hoet','Kost-er-C\'hoet',NULL),(905,'Pays de Baud','Bro Baod','Baod',NULL),(906,'Pays de Pontivy','Bro Pondi','Payiz d\'Pontivi',NULL),(907,'Pays de Redon','Bro Redon','Payiz d\'Erdon',NULL),(908,'Pourlet','Pourlet','Pourlet',NULL),(909,'Rhuys','Rewiz','Rewiz',NULL),(910,'Vannetais gallo','Reter Bro Wened','Vanntéez du Soulèrr',NULL);
 /*!40000 ALTER TABLE `pays` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `user` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `email` varchar(180) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `roles` json NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UNIQ_IDENTIFIER_EMAIL` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (1,'test@gmail.com','[]','$2y$13$ARb1819605hHSAfSY0GMU.QAZ7Opgvp93iyk.er3khj/v76XJeKy6'),(2,'admin@gmail.com','[\"ROLE_ADMIN\"]','$2y$13$tPKnSdqp57oy9Uh3hWYXzuLsN5.v76GhatLOMRaTNO5aYM.4Mbbde'),(3,'superadmin@gmail.com','[\"ROLE_SUPERADMIN\"]','$2y$13$rBGMEltcGUm5C78Cf4Ibz.zuGrz32h8qLI9rnkOGJS02vLBD/vO/m');
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -141,4 +168,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-01-10 10:50:35
+-- Dump completed on 2025-01-10 13:18:22
