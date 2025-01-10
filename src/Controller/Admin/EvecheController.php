@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
+#[IsGranted('IS_AUTHENTICATED')]
 #[Route('admin/eveche')]
 final class EvecheController extends AbstractController
 {
