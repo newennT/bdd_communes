@@ -10,15 +10,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 #[IsGranted('IS_AUTHENTICATED')]
 #[Route('/admin/pays')]
 final class PaysController extends AbstractController
 {
     #[Route('/new', name: 'app_admin_pays_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    #[Route('/{id}/edit', name: 'app_admin_pays_edit', requirements: ['id' => '\d+'], methods: ['GET', 'POST'])]
+    public function new(?Pays $pay, Request $request, EntityManagerInterface $entityManager): Response
     {
-        $pay = new Pays();
+        $pay ??= new Pays();
         $form = $this->createForm(PaysType::class, $pay);
         $form->handleRequest($request);
 
@@ -26,7 +28,7 @@ final class PaysController extends AbstractController
             $entityManager->persist($pay);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_pays_index', ['id' => $pay->getId()], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_pays_show', ['id' => $pay->getId()], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('admin/pays/new.html.twig', [
@@ -40,24 +42,6 @@ final class PaysController extends AbstractController
     {
         return $this->render('pays/show.html.twig', [
             'pay' => $pay,
-        ]);
-    }
-
-    #[Route('/{id}/edit', name: 'app_admin_pays_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Pays $pay, EntityManagerInterface $entityManager): Response
-    {
-        $form = $this->createForm(PaysType::class, $pay);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager->flush();
-
-            return $this->redirectToRoute('app_pays_index', [], Response::HTTP_SEE_OTHER);
-        }
-
-        return $this->render('admin/pays/edit.html.twig', [
-            'pay' => $pay,
-            'form' => $form,
         ]);
     }
 

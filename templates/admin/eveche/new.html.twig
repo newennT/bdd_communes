@@ -1,9 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Eveche{% endblock %}
+{% set action = app.current_route == 'app_admin_eveche_new' ? 'Ajout' : 'Edition' %}
+
+{% block title %}{{ action }} d'un évêché{% endblock %}
 
 {% block body %}
-    <h1>Create new Eveche</h1>
+    <h1>{{ action }} d'un évêché</h1>
 
     {{ include('admin/eveche/_form.html.twig') }}
 
@@ -16,15 +18,12 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-    // Vérifier si l'élément est dans le DOM et s'il est visible
     var textarea = document.querySelector('.tinymce');
     
-    // Ne faire rien si l'élément n'est pas trouvé
     if (!textarea) {
         return;
     }
 
-    // Initialiser TinyMCE uniquement si le champ est visible et prêt
     if (textarea.style.display !== 'none' && !tinymce.get('eveche_description')) {
         tinymce.init({
             selector: '.tinymce',

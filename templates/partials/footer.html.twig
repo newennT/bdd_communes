@@ -1,0 +1,30 @@
+<div>
+    <div>
+        <h3>Plan du site</h3>
+        <ul>
+            <li><a href="{{ path('app_commune_index') }}">Liste des communes</a></li>
+            <li><a href="{{ path('app_pays_index') }}">Liste des pays</a></li>
+            <li><a href="{{ path('app_eveche_index') }}">Liste des évêchés</a></li>
+            
+            {% if is_granted('IS_AUTHENTICATED') %}
+                <li><a href="{{ path('app_logout') }}">Se déconnecter</a></li>
+            {% else %}
+                <li><a href="{{ path('app_login') }}">Se connecter</a></li>
+            {% endif %}
+
+        </ul>
+    </div>
+
+    <div>
+        <h3>Sources</h3>
+        <ul>
+            <li><a href="https://fr.wikipedia.org/wiki/Liste_des_communes_d%27Ille-et-Vilaine">Liste des communes d'Ille-et-Vilaine</a></li>
+            <li><a href="https://fr.wikipedia.org/wiki/Liste_des_communes_du_Finist%C3%A8re">Liste des communes du Finistère</a></li>
+            <li><a href="https://fr.wikipedia.org/wiki/Liste_des_communes_des_C%C3%B4tes-d%27Armor">Liste des communes des Côtes d'Armor</a></li>
+            <li><a href="https://fr.wikipedia.org/wiki/Liste_des_communes_du_Morbihan">Liste des communes du Morbihan</a></li>
+            <li><a href="https://fr.wikipedia.org/wiki/Liste_des_communes_de_la_Loire-Atlantique">Liste des communes de Loire-Atlantique</a></li>
+            <li><a href="https://www.coordonneesgps.net/coordonnees-gps/villes-01200-400-ville">Coordonnées GPS</a></li>
+            <li><a href="https://institutdugalo.bzh/fr/nom-de-lieux-en-langue-gallese/">Noms des villes en gallo</a></li>
+            <li><a href="https://umap.openstreetmap.fr/fr/map/comunes-de-la-louere-de-bertegn_1103265#11/46.9339/-1.6363">Noms des communes du 44 en gallo/poitevin</a></li>
+    </div>
+</div>
