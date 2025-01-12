@@ -41,6 +41,14 @@
                 <th>Code</th>
                 <td>{{ commune.code }}</td>
             </tr>
+            <tr>
+                <th>Pays</th>
+                <td><a href="{{ path('app_pays_show', {'id': commune.getIdPays.id}) }}">{{ commune.getIdPays.nomFrancais }}</a></td>
+            </tr>
+            <tr>
+                <th>Evéché</th>
+                <td><a href="{{ path('app_eveche_show', {'id': commune.getIdEveche.id}) }}">{{ commune.getIdEveche.nomFrancais }}</a></td>
+            </tr>
         </tbody>
     </table>
 

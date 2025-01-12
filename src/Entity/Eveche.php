@@ -48,7 +48,7 @@ class Eveche
     public function setId(int $id): static 
     {
         $this->id = $id;
-        return $id;
+        return $this;
     }
 
     public function getNomFrancais(): ?string
