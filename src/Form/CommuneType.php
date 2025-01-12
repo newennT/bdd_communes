@@ -9,19 +9,21 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class CommuneType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('id')
-            ->add('nom_francais')
-            ->add('nom_breton')
-            ->add('nom_gallo')
-            ->add('habitants')
-            ->add('latitude')
-            ->add('longitude')
+            ->add('id', NumberType::class)
+            ->add('nom_francais', TextType::class)
+            ->add('nom_breton', TextType::class)
+            ->add('nom_gallo', TextType::class)
+            ->add('habitants', NumberType::class)
+            ->add('latitude', NumberType::class)
+            ->add('longitude', NumberType::class)
             ->add('id_eveche', EntityType::class, [
                 'class' => Eveche::class,
                 'choice_label' => 'id',

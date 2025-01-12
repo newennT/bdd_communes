@@ -23,7 +23,7 @@
                 <td>{{ eveche.nomFrancais }}</td>
                 <td>{{ eveche.nomBreton }}</td>
                 <td>{{ eveche.nomGallo }}</td>
-                <td>{{ eveche.description }}</td>
+                <td>{{ eveche.description | raw }}</td>
                 <td>
                     <a href="{{ path('app_eveche_show', {'id': eveche.id}) }}">show</a>
                     <a href="{{ path('app_admin_eveche_edit', {'id': eveche.id}) }}">edit</a>

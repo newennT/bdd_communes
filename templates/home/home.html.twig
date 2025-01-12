@@ -15,7 +15,7 @@
 
     <ul>
         {% for commune in communes %}
-            <a href="{{ path('app_commune_show', {'id': commune.id}) }}"><li>{{ commune.nomFrancais }} / {{ commune.nomBreton }} / {{ commune.nomGallo }} ({{ commune.code }})</li></a>
+            <a href="{{ path('app_commune_show', {'id': commune.id, '_locale': app.request.locale}) }}"><li>{{ commune.nomFrancais }} / {{ commune.nomBreton }} / {{ commune.nomGallo }} ({{ commune.code }})</li></a>
         {% else %}
             Aucune commune enregistrée
         {% endfor %}
@@ -24,7 +24,7 @@
     <h2>Listes des évéchés</h2>
     <ul>
         {% for eveche in eveches %}
-            <a href="{{ path('app_eveche_show', {'id': eveche.id}) }}"><li>{{ eveche.nomFrancais }} / {{ eveche.nomBreton }} / {{ eveche.nomGallo }}</li></a>
+            <a href="{{ path('app_eveche_show', {'id': eveche.id, '_locale': app.request.locale}) }}"><li>{{ eveche.nomFrancais }} / {{ eveche.nomBreton }} / {{ eveche.nomGallo }}</li></a>
         {% else %}
             Aucun évéché enregistré
         {% endfor %}
@@ -33,7 +33,7 @@
     <h2>Listes des pays</h2>
     <ul>
         {% for item in pays %}
-            <a href="{{ path('app_pays_show', {'id': item.id}) }}"><li>{{ item.nomFrancais }} / {{ item.nomBreton }} / {{ item.nomGallo }}</li></a>
+            <a href="{{ path('app_pays_show', {'id': item.id, '_locale': app.request.locale}) }}"><li>{{ item.nomFrancais }} / {{ item.nomBreton }} / {{ item.nomGallo }}</li></a>
         {% else %}
             Aucun pays enregistré
         {% endfor %}

@@ -23,7 +23,7 @@
                 <td>{{ pay.nomFrancais }}</td>
                 <td>{{ pay.nomBreton }}</td>
                 <td>{{ pay.nomGallo }}</td>
-                <td>{{ pay.description }}</td>
+                <td>{{ pay.description | raw }}</td>
                 <td>
                     <a href="{{ path('app_pays_show', {'id': pay.id}) }}">show</a>
                     {% if app.user %}

@@ -1,7 +1,7 @@
 <div class="language-selector">
     <ul>
-        <li><a href="{{ path(app.request.attributes.get('_route'), {'_locale': 'fr'}) }}">Français</a></li>
-        <li><a href="{{ path(app.request.attributes.get('_route'), {'_locale': 'br'}) }}">Breton</a></li>
-        <li><a href="{{ path(app.request.attributes.get('_route'), {'_locale': 'go'}) }}">Gallo</a></li>
+        <li><a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'fr'})) }}">Français</a></li>
+        <li><a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'br'})) }}">Breton</a></li>
+        <li><a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'go'})) }}">Gallo</a></li>
     </ul>
 </div>
