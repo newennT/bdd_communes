@@ -30,6 +30,10 @@
         </tbody>
     </table>
 
+    <div id="map" style="height: 400px; width:400px;"></div>
+
+    
+
     <a href="{{ path('app_pays_index') }}">back to list</a>
 
     <a href="{{ path('app_admin_pays_edit', {'id': pay.id}) }}">edit</a>
@@ -42,5 +46,71 @@
         Le pays ne contient aucune commune
         {% endfor %}
     </ul>
+
+{% endblock %}
+
+{% block javascripts %}
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+        let nbHabitants;
+        let color;
+        let radius;
+
+        function getColorByPopulation(nbHabitants) {
+            return '#ff0000';
+        }
+
+        function getRadius(nbHabitants){
+            if (nbHabitants <= 1000) {
+                return 2;
+            } else if (nbHabitants <= 2500){
+                return 4;
+            } else if (nbHabitants <= 5000){
+                return 8;
+            } else if (nbHabitants <= 10000){
+                return 12;
+            } else if (nbHabitants <= 50000){
+                return 16;
+            } else if (nbHabitants <= 100000){
+                return 20;
+            } else {
+                return 24;
+            }
+        }
+
+        var map = L.map('map').setView([47.9, -2.7 ], 8);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+
+        {% for commune in pay.getCommunesParPays %}
+
+        nbHabitants = {{ commune.habitants }} ;
+        color = getColorByPopulation(nbHabitants);
+        radius = getRadius(nbHabitants);
+
+        L.circle([{{ commune.latitude }}, {{ commune.longitude }}], {
+                        color: '#000000',
+                        weight: 1,
+                        fillColor: color,
+                        radius: radius*220,
+                        fillOpacity: 0.5
+                    })
+            .addTo(map)
+            .bindPopup('<strong>{{ commune.nomFrancais|escape("html") }}</strong>') 
+            .on('click', function () {
+                circle.openPopup();  
+            });
+       
+
+        {% endfor %}
+     });
+</script>
 
 {% endblock %}

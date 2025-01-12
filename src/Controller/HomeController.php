@@ -14,7 +14,7 @@ use App\Repository\PaysRepository;
 
 class HomeController extends AbstractController
 {
-    #[Route('/', name: 'app_home')]
+    #[Route('/', name: 'app_home', requirements: ['_locale' => 'fr|br|go'], defaults: ['_locale' => 'fr'])]
     public function index(CommuneRepository $communeRepository, EvecheRepository $evecheRepository, PaysRepository $paysRepository): Response
     {
         return $this->render('home/home.html.twig', [
@@ -23,4 +23,5 @@ class HomeController extends AbstractController
             'pays' => $paysRepository->findAll(),
         ]);
     }
+
 }
