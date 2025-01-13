@@ -6,16 +6,37 @@
     <h1>{% trans %}Accueil{% endtrans %}</h1>
 
     <div id="map" style="height: 600px; width: 800px;"></div>
+    <form id="filter-form" method="get">
+        <label for="pays">Filtrer par pays :</label>
+        <select name="pays" id="pays">
+            <option value="">-- Tous les pays --</option>
+            {% for item in pays %}
+                <option value="{{ item.id }}" {% if currentFilters.pays == item.id %}selected{% endif %}>{{ item.nomFrancais }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="eveche">Filtrer par évêché :</label>
+        <select name="eveche" id="eveche">
+            <option value="">-- Tous les évêchés --</option>
+            {% for eveche in eveches %}
+                <option value="{{ eveche.id }}" {% if currentFilters.eveche == eveche.id %}selected{% endif %}>{{ eveche.nomFrancais }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Filtrer</button>
+    </form>
 
     <h2>Liste des communes</h2>
 
     <ul>
-        {% for commune in communes %}
+        {% for commune in communesPagination %}
             <a href="{{ path('app_commune_show', {'id': commune.id, '_locale': app.request.locale}) }}"><li>{{ commune.nomFrancais }} / {{ commune.nomBreton }} / {{ commune.nomGallo }} ({{ commune.code }})</li></a>
         {% else %}
-            Aucune commune enregistrée
+            Aucune commune à afficher
         {% endfor %}
     </ul>
+
+     {{ pagerfanta(communesPagination, {'routeParams': app.request.query.all}) }}
 
     <h2>Listes des évéchés</h2>
     <ul>

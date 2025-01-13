@@ -94,6 +94,9 @@ class ComposerStaticInit2664368be95a9e79c3187d6d8fb79b79
             'Psr\\Clock\\' => 10,
             'Psr\\Cache\\' => 10,
             'PhpParser\\' => 10,
+            'Pagerfanta\\Twig\\' => 16,
+            'Pagerfanta\\Doctrine\\ORM\\' => 24,
+            'Pagerfanta\\' => 11,
         ),
         'D' => 
         array (
@@ -111,6 +114,10 @@ class ComposerStaticInit2664368be95a9e79c3187d6d8fb79b79
             'Doctrine\\Common\\' => 16,
             'Doctrine\\Bundle\\MigrationsBundle\\' => 33,
             'Doctrine\\Bundle\\DoctrineBundle\\' => 31,
+        ),
+        'B' => 
+        array (
+            'BabDev\\PagerfantaBundle\\' => 24,
         ),
         'A' => 
         array (
@@ -356,6 +363,18 @@ class ComposerStaticInit2664368be95a9e79c3187d6d8fb79b79
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
+        'Pagerfanta\\Twig\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pagerfanta/twig',
+        ),
+        'Pagerfanta\\Doctrine\\ORM\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pagerfanta/doctrine-orm-adapter',
+        ),
+        'Pagerfanta\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pagerfanta/core',
+        ),
         'Doctrine\\SqlFormatter\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/sql-formatter/src',
@@ -411,6 +430,10 @@ class ComposerStaticInit2664368be95a9e79c3187d6d8fb79b79
         'Doctrine\\Bundle\\DoctrineBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/doctrine-bundle/src',
+        ),
+        'BabDev\\PagerfantaBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/babdev/pagerfanta-bundle/src',
         ),
         'App\\Tests\\' => 
         array (
