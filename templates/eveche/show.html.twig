@@ -34,12 +34,13 @@
 
     <p>Communes : </p>
     <ul>
-        {% for commune in eveche.getCommunesParEveche %}
+        {% for commune in communesPagination %}
         <a href="{{ path('app_commune_show', {'id': commune.id}) }}"><li>{{ commune.nomFrancais }}</li></a>
         {% else %}
         L'évéché ne contient aucune commune
         {% endfor %}
     </ul>
+    {{ pagerfanta(communesPagination, {'routeParams': app.request.query.all}) }}
 
     <a href="{{ path('app_eveche_index') }}">back to list</a>
 

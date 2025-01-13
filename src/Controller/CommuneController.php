@@ -9,15 +9,25 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Pagerfanta\Doctrine\ORM\QueryAdapter;
+use Pagerfanta\Pagerfanta;
 
 #[Route('/commune')]
 final class CommuneController extends AbstractController
 {
     #[Route(name: 'app_commune_index', methods: ['GET'])]
-    public function index(CommuneRepository $communeRepository): Response
+    public function index(Request $request, CommuneRepository $communeRepository): Response
     {
+        $queryBuilder = $communeRepository->createQueryBuilder('c');
+
+        $communesPagination = Pagerfanta::createForCurrentPageWithMaxPerPage(
+            new QueryAdapter($queryBuilder),
+            $request->query->get('page', 1),
+            50
+        );
+
         return $this->render('commune/index.html.twig', [
-            'communes' => $communeRepository->findAll(),
+            'communes' => $communesPagination,
         ]);
     }
 

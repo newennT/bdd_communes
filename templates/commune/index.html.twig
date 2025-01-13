@@ -43,5 +43,7 @@
         </tbody>
     </table>
 
+    {{ pagerfanta(communes, {'routeParams': app.request.query.all}) }}
+
     <a href="{{ path('app_admin_commune_new') }}">Create new</a>
 {% endblock %}
