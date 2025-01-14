@@ -26,4 +26,9 @@
     </ul>
 </div>
 
-
+<div class="search-bar">
+    {{ form_start(form, {'method': 'POST', 'action': path('app_search')}) }}
+    {{ form_row(form.query) }}
+    <button type="submit" class="btn">Rechercher</button>
+    {{ form_end(form) }}
+</div>

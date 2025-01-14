@@ -14,7 +14,7 @@
         {% endblock %}
     </head>
     <body>
-        {% include "partials/header.html.twig" %}
+        {% include "partials/header.html.twig" with {'form': form} %}
 
         {% block body %}{% endblock %}
 

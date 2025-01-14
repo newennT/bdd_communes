@@ -16,6 +16,20 @@ class CommuneRepository extends ServiceEntityRepository
         parent::__construct($registry, Commune::class);
     }
 
+    public function findCommunesByName($query): array
+    {
+
+        
+        return $this->createQueryBuilder('c')
+            ->andWhere('(c.nom_francais LIKE :query) OR (c.nom_breton LIKE :query) OR (c.nom_gallo LIKE :query) OR (c.code LIKE :query)')
+            ->setParameter('query', '%' . $query . '%')
+            ->orderBy('c.code', 'ASC')
+            ->getQuery()
+            ->getResult()
+        ;
+        
+    }
+
     //    /**
     //     * @return Commune[] Returns an array of Commune objects
     //     */
