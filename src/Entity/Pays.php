@@ -33,6 +33,9 @@ class Pays
     #[ORM\OneToMany(targetEntity: Commune::class, mappedBy: 'id_pays')]
     private Collection $communesParPays;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $imageUrl = null;
+
     public function __construct()
     {
         $this->communesParPays = new ArrayCollection();
@@ -135,6 +138,18 @@ class Pays
                 $communesParPay->setIdPays(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getImageUrl(): ?string
+    {
+        return $this->imageUrl;
+    }
+
+    public function setImageUrl(?string $imageUrl): static
+    {
+        $this->imageUrl = $imageUrl;
 
         return $this;
     }

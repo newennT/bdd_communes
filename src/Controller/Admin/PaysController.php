@@ -25,6 +25,20 @@ final class PaysController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $imageUrl = $form->get('imageUrl')->getData();
+            if ($imageUrl){
+                $newImageName = uniqid().'.'.$imageUrl->guessExtension();
+
+                try{
+                    $imageUrl->move(
+                        $this->getParameter('upload_directory'),
+                        $newImageName
+                    );
+                    $pay->setImageUrl($newImageName);
+                } catch (FileException $e){
+                    $this->addFlash('error', 'Une erreur est survenue lors du téléchargement de l\'image.');
+                }
+            }
             $entityManager->persist($pay);
             $entityManager->flush();
 

@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 
+
 #[IsGranted('IS_AUTHENTICATED')]
 #[Route('admin/eveche')]
 final class EvecheController extends AbstractController
@@ -25,6 +26,21 @@ final class EvecheController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $imageUrl = $form->get('imageUrl')->getData();
+            if ($imageUrl){
+                $newImageName = uniqid().'.'.$imageUrl->guessExtension();
+
+                try{
+                    $imageUrl->move(
+                        $this->getParameter('upload_directory'),
+                        $newImageName
+                    );
+                    $eveche->setImageUrl($newImageName);
+                } catch (FileException $e){
+                    $this->addFlash('error', 'Une erreur est survenue lors du téléchargement de l\'image.');
+                }
+            }
+
             $entityManager->persist($eveche);
             $entityManager->flush();
 
