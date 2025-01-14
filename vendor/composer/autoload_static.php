@@ -40,6 +40,7 @@ class ComposerStaticInit2664368be95a9e79c3187d6d8fb79b79
             'Symfony\\Flex\\' => 13,
             'Symfony\\Contracts\\Translation\\' => 30,
             'Symfony\\Contracts\\Service\\' => 26,
+            'Symfony\\Contracts\\HttpClient\\' => 29,
             'Symfony\\Contracts\\EventDispatcher\\' => 34,
             'Symfony\\Contracts\\Cache\\' => 24,
             'Symfony\\Component\\Yaml\\' => 23,
@@ -62,6 +63,7 @@ class ComposerStaticInit2664368be95a9e79c3187d6d8fb79b79
             'Symfony\\Component\\OptionsResolver\\' => 34,
             'Symfony\\Component\\HttpKernel\\' => 29,
             'Symfony\\Component\\HttpFoundation\\' => 33,
+            'Symfony\\Component\\HttpClient\\' => 29,
             'Symfony\\Component\\Form\\' => 23,
             'Symfony\\Component\\Finder\\' => 25,
             'Symfony\\Component\\Filesystem\\' => 29,
@@ -74,6 +76,7 @@ class ComposerStaticInit2664368be95a9e79c3187d6d8fb79b79
             'Symfony\\Component\\Clock\\' => 24,
             'Symfony\\Component\\Cache\\' => 24,
             'Symfony\\Component\\Asset\\' => 24,
+            'Symfony\\Component\\AssetMapper\\' => 30,
             'Symfony\\Bundle\\WebProfilerBundle\\' => 33,
             'Symfony\\Bundle\\TwigBundle\\' => 26,
             'Symfony\\Bundle\\SecurityBundle\\' => 30,
@@ -114,6 +117,10 @@ class ComposerStaticInit2664368be95a9e79c3187d6d8fb79b79
             'Doctrine\\Common\\' => 16,
             'Doctrine\\Bundle\\MigrationsBundle\\' => 33,
             'Doctrine\\Bundle\\DoctrineBundle\\' => 31,
+        ),
+        'C' => 
+        array (
+            'Composer\\Semver\\' => 16,
         ),
         'B' => 
         array (
@@ -170,6 +177,10 @@ class ComposerStaticInit2664368be95a9e79c3187d6d8fb79b79
         'Symfony\\Contracts\\Service\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/service-contracts',
+        ),
+        'Symfony\\Contracts\\HttpClient\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/http-client-contracts',
         ),
         'Symfony\\Contracts\\EventDispatcher\\' => 
         array (
@@ -259,6 +270,10 @@ class ComposerStaticInit2664368be95a9e79c3187d6d8fb79b79
         array (
             0 => __DIR__ . '/..' . '/symfony/http-foundation',
         ),
+        'Symfony\\Component\\HttpClient\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/http-client',
+        ),
         'Symfony\\Component\\Form\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/form',
@@ -306,6 +321,10 @@ class ComposerStaticInit2664368be95a9e79c3187d6d8fb79b79
         'Symfony\\Component\\Asset\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/asset',
+        ),
+        'Symfony\\Component\\AssetMapper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/asset-mapper',
         ),
         'Symfony\\Bundle\\WebProfilerBundle\\' => 
         array (
@@ -430,6 +449,10 @@ class ComposerStaticInit2664368be95a9e79c3187d6d8fb79b79
         'Doctrine\\Bundle\\DoctrineBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/doctrine-bundle/src',
+        ),
+        'Composer\\Semver\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/composer/semver/src',
         ),
         'BabDev\\PagerfantaBundle\\' => 
         array (
