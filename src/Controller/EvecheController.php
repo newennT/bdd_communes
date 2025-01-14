@@ -33,7 +33,7 @@ final class EvecheController extends AbstractController
             ->from('App\Entity\Commune', 'commune')
             ->where('commune.id_eveche = :eveche')
             ->setParameter('eveche', $eveche)
-            ->orderBy('commune.nom_francais', 'ASC');
+            ->orderBy('commune.code', 'ASC');
 
         $communesPagination = Pagerfanta::createForCurrentPageWithMaxPerPage(
             new QueryAdapter($queryBuilder),

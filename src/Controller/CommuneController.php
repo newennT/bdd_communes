@@ -18,12 +18,13 @@ final class CommuneController extends AbstractController
     #[Route(name: 'app_commune_index', methods: ['GET'])]
     public function index(Request $request, CommuneRepository $communeRepository): Response
     {
-        $queryBuilder = $communeRepository->createQueryBuilder('c');
+        $queryBuilder = $communeRepository->createQueryBuilder('c')
+            ->orderBy('c.code', 'ASC');
 
         $communesPagination = Pagerfanta::createForCurrentPageWithMaxPerPage(
             new QueryAdapter($queryBuilder),
             $request->query->get('page', 1),
-            50
+            60
         );
 
         return $this->render('commune/index.html.twig', [

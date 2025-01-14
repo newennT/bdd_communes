@@ -18,6 +18,7 @@ class CommuneType extends AbstractType
     {
         $builder
             ->add('id', NumberType::class)
+            ->add('code', NumberType::class)
             ->add('nom_francais', TextType::class)
             ->add('nom_breton', TextType::class)
             ->add('nom_gallo', TextType::class)

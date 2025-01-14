@@ -17,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-        {% for eveche in eveches %}
+        {% for eveche in eveches | sort((a, b) => a.nomFrancais <=> b.nomFrancais) %}
             <tr>
                 <td>{{ eveche.id }}</td>
                 <td>{{ eveche.nomFrancais }}</td>

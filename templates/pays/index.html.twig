@@ -17,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-        {% for pay in pays %}
+        {% for pay in pays | sort((a, b) => a.nomFrancais <=> b.nomFrancais) %}
             <tr>
                 <td>{{ pay.id }}</td>
                 <td>{{ pay.nomFrancais }}</td>

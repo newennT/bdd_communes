@@ -10,6 +10,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Pagerfanta\Doctrine\ORM\QueryAdapter;
+use Pagerfanta\Pagerfanta;
 
 #[Route('/pays')]
 final class PaysController extends AbstractController
@@ -23,10 +25,24 @@ final class PaysController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_pays_show', methods: ['GET'])]
-    public function show(Pays $pay): Response
+    public function show(Request $request, Pays $pay, EntityManagerInterface $entityManager): Response
     {
+        $queryBuilder = $entityManager->createQueryBuilder()
+            ->select('commune')
+            ->from('App\Entity\Commune', 'commune')
+            ->where('commune.id_pays = :pays')
+            ->setParameter('pays', $pay)
+            ->orderBy('commune.code', 'ASC');
+
+        $communesPagination = Pagerfanta::createForCurrentPageWithMaxPerPage(
+                new QueryAdapter($queryBuilder),
+                $request->query->get('page', 1),
+                50
+            );
+
         return $this->render('pays/show.html.twig', [
             'pay' => $pay,
+            'communesPagination' => $communesPagination,
         ]);
     }
 

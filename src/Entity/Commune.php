@@ -86,6 +86,15 @@ class Commune
         return $this;
     }
 
+    public function getNomParLangue(string $locale): ?string 
+    {
+        return match ($locale) {
+            'br' => $this->nom_breton,
+            'go' => $this->nom_gallo ?: $this->nom_francais,
+            default => $this->nom_francais,
+        };
+    }
+
     public function getHabitants(): ?int
     {
         return $this->habitants;

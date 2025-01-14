@@ -32,7 +32,7 @@
 
     <ul>
         {% for commune in communesPagination %}
-            <a href="{{ path('app_commune_show', {'id': commune.id, '_locale': app.request.locale}) }}"><li>{{ commune.nomFrancais }} / {{ commune.nomBreton }} / {{ commune.nomGallo }} ({{ commune.code }})</li></a>
+            <a href="{{ path('app_commune_show', {'id': commune.id, '_locale': app.request.locale}) }}"><li>{{ commune.getNomParLangue(app.request.locale) }} ({{ commune.code }})</li></a>
         {% else %}
             Aucune commune à afficher
         {% endfor %}
@@ -42,8 +42,8 @@
 
     <h2>Listes des évéchés</h2>
     <ul>
-        {% for eveche in eveches %}
-            <a href="{{ path('app_eveche_show', {'id': eveche.id, '_locale': app.request.locale}) }}"><li>{{ eveche.nomFrancais }} / {{ eveche.nomBreton }} / {{ eveche.nomGallo }}</li></a>
+        {% for eveche in eveches | sort((a, b) => a.getNomParLangue(app.request.locale) <=> b.getNomParLangue(app.request.locale)) %}
+            <a href="{{ path('app_eveche_show', {'id': eveche.id, '_locale': app.request.locale}) }}"><li>{{ eveche.getNomParLangue(app.request.locale) }} </li></a>
         {% else %}
             Aucun évéché enregistré
         {% endfor %}
@@ -51,8 +51,8 @@
 
     <h2>Listes des pays</h2>
     <ul>
-        {% for item in pays %}
-            <a href="{{ path('app_pays_show', {'id': item.id, '_locale': app.request.locale}) }}"><li>{{ item.nomFrancais }} / {{ item.nomBreton }} / {{ item.nomGallo }}</li></a>
+        {% for pay in pays | sort((a, b) => a.getNomParLangue(app.request.locale) <=> b.getNomParLangue(app.request.locale)) %}
+            <a href="{{ path('app_pays_show', {'id': pay.id, '_locale': app.request.locale}) }}"><li>{{ pay.getNomParLangue(app.request.locale) }} </li></a>
         {% else %}
             Aucun pays enregistré
         {% endfor %}

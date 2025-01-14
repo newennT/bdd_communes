@@ -23,7 +23,8 @@ class HomeController extends AbstractController
         $paysId = $request->query->get('pays');
         $evecheId = $request->query->get('eveche');
 
-        $queryBuilder = $communeRepository->createQueryBuilder('c');
+        $queryBuilder = $communeRepository->createQueryBuilder('c')
+            ->orderBy('c.code', 'ASC');
 
         if ($paysId) {
             $queryBuilder->andWhere('c.id_pays = :paysId')

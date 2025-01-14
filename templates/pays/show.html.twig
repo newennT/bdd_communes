@@ -40,12 +40,14 @@
 
     <p>Communes : </p>
     <ul>
-        {% for commune in pay.getCommunesParPays %}
-        <a href="{{ path('app_commune_show', {'id': commune.id}) }}"><li>{{ commune.nomFrancais }}</li></a>
+        {% for commune in communesPagination %}
+        <a href="{{ path('app_commune_show', {'id': commune.id}) }}"><li>{{ commune.getNomParLangue(app.request.locale) }} ({{ commune.code }})</li></a>
         {% else %}
         Le pays ne contient aucune commune
         {% endfor %}
     </ul>
+        {{ pagerfanta(communesPagination, {'routeParams': app.request.query.all}) }}
+
 
 {% endblock %}
 

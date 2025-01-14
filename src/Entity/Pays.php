@@ -88,6 +88,15 @@ class Pays
         return $this;
     }
 
+    public function getNomParLangue(string $locale): ?string 
+    {
+        return match ($locale) {
+            'br' => $this->nom_breton,
+            'go' => $this->nom_gallo,
+            default => $this->nom_francais,
+        };
+    }
+
     public function getDescription(): ?string
     {
         return $this->description;
