@@ -23,7 +23,6 @@ services:
     App\EventSubscriber\SearchFormSubscriber:
         arguments:
             $twig: '@twig'
-            $searchFormProvider: '@App\Service\SearchFormProvider'
         tags:
             - { name: 'kernel.event_subscriber' }
 

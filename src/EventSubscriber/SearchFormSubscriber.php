@@ -5,29 +5,28 @@ namespace App\EventSubscriber;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\ControllerEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
+use Symfony\Component\Form\FormFactoryInterface;
 use Twig\Environment;
-use App\Service\SearchFormProvider;
+use App\Form\SearchType;
 
 class SearchFormSubscriber implements EventSubscriberInterface
 {
-    private $twig;
-    private $searchFormProvider;
+    private FormFactoryInterface $formFactory;
+    private Environment $twig;
 
-    public function __construct(Environment $twig, SearchFormProvider $searchFormProvider)
+    public function __construct(FormFactoryInterface $formFactory, Environment $twig)
     {
+        $this->formFactory = $formFactory;
         $this->twig = $twig;
-        $this->searchFormProvider = $searchFormProvider;
     }
 
-    public function onKernelController(ControllerEvent $event)
+    public function onKernelController(ControllerEvent $event): void
     {
-        $controller = $event->getController();
+        $form = $this->formFactory->create(SearchType::class);
+        $this->twig->addGlobal('form', $form->createView());
+    }
 
-        if (is_array($controller)) {
-            $this->twig->addGlobal('form', $this->searchFormProvider->getSearchForm());
-        }    }
-
-    public static function getSubscribedEvents()
+    public static function getSubscribedEvents(): array
     {
         return [
             KernelEvents::CONTROLLER => 'onKernelController',

@@ -26,4 +26,20 @@ return [
         'version' => '5.3.3',
         'type' => 'css',
     ],
+    '@hotwired/stimulus' => [
+        'version' => '3.2.2',
+    ],
+    'tom-select' => [
+        'version' => '2.4.1',
+    ],
+    '@orchidjs/sifter' => [
+        'version' => '1.1.0',
+    ],
+    '@orchidjs/unicode-variants' => [
+        'version' => '1.1.2',
+    ],
+    'tom-select/dist/css/tom-select.default.min.css' => [
+        'version' => '2.4.1',
+        'type' => 'css',
+    ],
 ];

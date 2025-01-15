@@ -1,34 +1,31 @@
-<div class="language-selector">
-    <ul>
-        <li><a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'fr'})) }}">Français</a></li>
-        <li><a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'br'})) }}">Breton</a></li>
-        <li><a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'go'})) }}">Gallo</a></li>
-    </ul>
-</div>
+<header>
+    <div class="language-selector">
+        <ul>
+            <li><a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'fr'})) }}">Français</a></li>
+            <li><a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'br'})) }}">Breton</a></li>
+            <li><a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'go'})) }}">Gallo</a></li>
+        </ul>
+    </div>
 
-<div>
-    <p><a href="{{ path('app_home') }}">Accueil</a></p>
-</div>
+    <div>
+        <p><a href="{{ path('app_home') }}">Accueil</a></p>
+    </div>
 
-<div>
-    <ul>
-        <li><a href="{{ path('app_commune_index') }}">Liste des communes</a></li>
-        <li><a href="{{ path('app_pays_index') }}">Liste des pays</a></li>
-        <li><a href="{{ path('app_eveche_index') }}">Liste des évêchés</a></li>
-        
-        {% if is_granted('IS_AUTHENTICATED') %}
-            <li><a href="{{ path('app_logout') }}">Se déconnecter</a></li>
-        {% endif %}
+    <div>
+        <ul>
+            <li><a href="{{ path('app_commune_index') }}">Liste des communes</a></li>
+            <li><a href="{{ path('app_pays_index') }}">Liste des pays</a></li>
+            <li><a href="{{ path('app_eveche_index') }}">Liste des évêchés</a></li>
+            
+            {% if is_granted('IS_AUTHENTICATED') %}
+                <li><a href="{{ path('app_logout') }}">Se déconnecter</a></li>
+            {% endif %}
 
-        {% if is_granted('ROLE_SUPERADMIN') %}
-            <p>Enregistrer un nouvel utilisateur</p>
-        {% endif %}
-    </ul>
-</div>
+            {% if is_granted('ROLE_SUPERADMIN') %}
+                <p>Enregistrer un nouvel utilisateur</p>
+            {% endif %}
+        </ul>
+    </div>
 
-<div class="search-bar">
-    {{ form_start(form, {'method': 'POST', 'action': path('app_search')}) }}
-    {{ form_row(form.query) }}
-    <button type="submit" class="btn">Rechercher</button>
-    {{ form_end(form) }}
-</div>
+    {% include 'partials/search/search-bar.html.twig' %}
+</header>

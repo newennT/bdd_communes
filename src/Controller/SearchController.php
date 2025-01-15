@@ -14,7 +14,7 @@ class SearchController extends AbstractController
     #[Route('/search', name: 'app_search', methods:['GET', 'POST'])]
     public function search(Request $request, CommuneRepository $communeRepository): Response
     {
-         $query = $request->request->all('form')['query'];
+         $query = $request->request->all('search')['query'];
 
         if ($query) {
             $communes = $communeRepository->findCommunesByName($query);
@@ -28,4 +28,5 @@ class SearchController extends AbstractController
             'query' => $query,
         ]);
     }
+
 }
