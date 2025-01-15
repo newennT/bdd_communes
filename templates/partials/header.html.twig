@@ -1,59 +1,61 @@
-<header class="container">
-    <div class="container navbar navbar-container d-flex align-items-center justify-content-between">
-        <div>
-            <a href="{{ path('app_home') }}">Accueil</a>
-        </div>
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark container">
+        <div class="container-fluid text-light">
+            <a class="navbar-brand" href="{{ path('app_home') }}">Accueil</a>
 
-        <div class="nav-button">
-            <i class="fa-solid fa-bars"></i>
-        </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="nav-bar" id="nav-bar">
-            <div class="nav-item dropdown language-selector">
-                <button class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    Langues
-                </button>                    
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'fr'})) }}">Français</a></li>
-                    <li><a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'br'})) }}">Breton</a></li>
-                    <li><a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'go'})) }}">Gallo</a></li>
-                </ul>
-            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto m-2">
 
-            <div class="nav-item dropdown">
-                <button class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    Voir les listes
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="{{ path('app_commune_index') }}">Liste des communes</a></li>
-                    <li><a class="dropdown-item" href="{{ path('app_pays_index') }}">Liste des pays</a></li>
-                    <li><a class="dropdown-item" href="{{ path('app_eveche_index') }}">Liste des évêchés</a></li>
-                </ul>
-            </div>
+                    <li class="nav-item dropdown mx-2">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Langues
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                            <li><a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'fr'})) }}">Français</a></li>
+                            <li><a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'br'})) }}">Breton</a></li>
+                            <li><a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'go'})) }}">Gallo</a></li>
+                        </ul>
+                    </li>
 
-            {% if is_granted('IS_AUTHENTICATED') %}
-            <div class="nav-item dropdown">
-                <button class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    Ajouter...
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="{{ path('app_admin_commune_new') }}">Ajouter une commune</a></li>
-                    <li><a class="dropdown-item" href="{{ path('app_admin_pays_new') }}">Ajouter un pays</a></li>
-                    <li><a class="dropdown-item" href="{{ path('app_admin_eveche_new') }}">Ajouter un évêché</a></li>
-                    <li><a class="dropdown-item" href="{{ path('app_logout') }}">Se déconnecter</a></li>
+                    <li class="nav-item dropdown mx-2">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Voir par catégorie
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{{ path('app_commune_index') }}">Liste des communes</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_pays_index') }}">Liste des pays</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_eveche_index') }}">Liste des évêchés</a></li>
+                        </ul>
+                    </li>
 
-                    {% if is_granted('ROLE_SUPERADMIN') %}
-                    <li><a class="dropdown-item" href="{{ path('app_register') }}">Enregistrer un nouvel utilisateur</a></li>
+                    {% if is_granted('IS_AUTHENTICATED') %}
+                    <li class="nav-item dropdown mx-2">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Outils admin
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{{ path('app_admin_commune_new') }}">Ajouter une commune</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_admin_pays_new') }}">Ajouter un pays</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_admin_eveche_new') }}">Ajouter un évêché</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_logout') }}">Se déconnecter</a></li>
+                            
+                            {% if is_granted('ROLE_SUPERADMIN') %}
+                            <li><a class="dropdown-item" href="{{ path('app_register') }}">Enregistrer un nouvel utilisateur</a></li>
+                            {% endif %}
+                        </ul>
+                    </li>
                     {% endif %}
-                    
+
+                    <div class="nav-item mx-2 my-3 my-md-0">
+                        {% include 'partials/search/search-bar.html.twig' %}
+                    </div>
+
                 </ul>
             </div>
-            {% endif %}
-
-            <div class="nav-item">
-            {% include 'partials/search/search-bar.html.twig' %}
-            </div>
         </div>
-    </div>
-
+    </nav>
 </header>

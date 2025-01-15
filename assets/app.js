@@ -6,7 +6,6 @@
  */
 import './styles/app.css';
 import './styles/app.scss';
-import './js/navbar.js';
 import './vendor/bootstrap/dist/css/bootstrap.min.css';
 import './vendor/bootstrap/dist/js/bootstrap.bundle.min.js';
 import '@fortawesome/fontawesome-free/css/all.css';
