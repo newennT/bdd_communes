@@ -2,6 +2,6 @@
 <div class="search-form">
     {{ form_start(form, {'method': 'POST', 'action': path('app_search')}) }}
     {{ form_row(form.query) }}
-    <button type="submit"><i class="fas fa-search"></i></button>
+    <button class="btn btn-secondary btn-sm" type="submit"><i class="fas fa-search"></i></button>
     {{ form_end(form) }}
 </div>

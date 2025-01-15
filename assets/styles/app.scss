@@ -1,51 +1,6 @@
-@media screen and (max-width: 768px){
-    .container{
-        width: 95%;
-    }
-}
+@import './base/fonts';
+@import './base/variables';
+@import './base/base';
 
-// Header
-
-.search-form form{
-    display: flex;
-    background-color: aliceblue;
-}
-
-.nav-button{
-    display: none;
-}
-
-.nav-bar{
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    .nav-item{
-        margin-left: 20px;
-    }
-}
-
-@media screen and (max-width: 768px){
-    .nav-button{
-        display: block;
-        font-size: 30px;
-    }
-
-    .nav-bar{
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        width: 100%;
-        z-index: 1000000;
-        background-color: aliceblue;
-        .nav-item{
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-        
-    }
-
-    .show{
-        display: flex;
-    }
-}
+@import './layouts/footer';
+@import './layouts/header';
