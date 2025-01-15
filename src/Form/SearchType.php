@@ -19,7 +19,7 @@ class SearchType extends AbstractType
             ->add('query', TextType::class, [
                 'label' => false,
                 'attr' => [
-                    'class' => 'autocomplete-input'
+                    'placeholder' => 'Rechercher...'
                 ],
             ])
         ;

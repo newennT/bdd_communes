@@ -26,6 +26,9 @@ return [
         'version' => '5.3.3',
         'type' => 'css',
     ],
+    'bootstrap/dist/js/bootstrap.bundle.min.js' => [
+        'version' => '5.3.3',
+    ],
     '@hotwired/stimulus' => [
         'version' => '3.2.2',
     ],
@@ -40,6 +43,10 @@ return [
     ],
     'tom-select/dist/css/tom-select.default.min.css' => [
         'version' => '2.4.1',
+        'type' => 'css',
+    ],
+    '@fortawesome/fontawesome-free/css/all.css' => [
+        'version' => '6.7.2',
         'type' => 'css',
     ],
 ];

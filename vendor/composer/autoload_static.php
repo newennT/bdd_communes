@@ -32,6 +32,7 @@ class ComposerStaticInit2664368be95a9e79c3187d6d8fb79b79
         ),
         'S' => 
         array (
+            'Symfonycasts\\SassBundle\\' => 24,
             'Symfony\\Runtime\\Symfony\\Component\\' => 34,
             'Symfony\\Polyfill\\Php83\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
@@ -144,6 +145,10 @@ class ComposerStaticInit2664368be95a9e79c3187d6d8fb79b79
         'Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
+        ),
+        'Symfonycasts\\SassBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfonycasts/sass-bundle/src',
         ),
         'Symfony\\Runtime\\Symfony\\Component\\' => 
         array (

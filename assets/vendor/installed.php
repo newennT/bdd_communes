@@ -30,6 +30,16 @@
     array (
     ),
   ),
+  'bootstrap/dist/js/bootstrap.bundle.min.js' => 
+  array (
+    'version' => '5.3.3',
+    'dependencies' => 
+    array (
+    ),
+    'extraFiles' => 
+    array (
+    ),
+  ),
   '@hotwired/stimulus' => 
   array (
     'version' => '3.2.2',
@@ -82,6 +92,24 @@
     ),
     'extraFiles' => 
     array (
+    ),
+  ),
+  '@fortawesome/fontawesome-free/css/all.css' => 
+  array (
+    'version' => '6.7.2',
+    'dependencies' => 
+    array (
+    ),
+    'extraFiles' => 
+    array (
+      0 => '/webfonts/fa-brands-400.woff2',
+      1 => '/webfonts/fa-brands-400.ttf',
+      2 => '/webfonts/fa-regular-400.woff2',
+      3 => '/webfonts/fa-regular-400.ttf',
+      4 => '/webfonts/fa-solid-900.woff2',
+      5 => '/webfonts/fa-solid-900.ttf',
+      6 => '/webfonts/fa-v4compatibility.woff2',
+      7 => '/webfonts/fa-v4compatibility.ttf',
     ),
   ),
 );
