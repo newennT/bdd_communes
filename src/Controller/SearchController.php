@@ -8,6 +8,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Pagerfanta\Pagerfanta;
+use Pagerfanta\Doctrine\ORM\QueryAdapter;
 
 class SearchController extends AbstractController
 {
@@ -16,16 +18,22 @@ class SearchController extends AbstractController
     {
          $query = $request->request->all('search')['query'];
 
-        if ($query) {
-            $communes = $communeRepository->findCommunesByName($query);
-
+         if ($query) {
+            $queryBuilder = $communeRepository->findCommunesByName($query);
         } else {
-            $communes = [];
+            $queryBuilder = $communeRepository->createQueryBuilder('c');
         }
 
+        $communesPagination = Pagerfanta::createForCurrentPageWithMaxPerPage(
+            new QueryAdapter($queryBuilder), 
+            $request->query->get('page', 1), 
+            20 
+        );
+
         return $this->render('search/index.html.twig', [
-            'communes' => $communes,
+            'communesPagination' => $communesPagination,
             'query' => $query,
+            'route_name' => 'app_search',
         ]);
     }
 

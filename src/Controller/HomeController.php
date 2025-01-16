@@ -53,6 +53,7 @@ class HomeController extends AbstractController
                 'pays' => $paysId,
                 'eveche' => $evecheId,
             ],
+            'route_name' => 'app_home',
         ]);
     }
 

@@ -44,6 +44,7 @@ final class EvecheController extends AbstractController
         return $this->render('eveche/show.html.twig', [
             'eveche' => $eveche,
             'communesPagination' => $communesPagination,
+            'route_name' => 'app_eveche_show',
         ]);
     }
 

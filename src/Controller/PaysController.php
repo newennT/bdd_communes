@@ -21,6 +21,7 @@ final class PaysController extends AbstractController
     {
         return $this->render('pays/index.html.twig', [
             'pays' => $paysRepository->findAll(),
+
         ]);
     }
 
@@ -43,6 +44,7 @@ final class PaysController extends AbstractController
         return $this->render('pays/show.html.twig', [
             'pay' => $pay,
             'communesPagination' => $communesPagination,
+            'route_name' => 'app_pays_index',
         ]);
     }
 

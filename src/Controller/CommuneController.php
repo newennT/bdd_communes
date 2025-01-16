@@ -29,6 +29,7 @@ final class CommuneController extends AbstractController
 
         return $this->render('commune/index.html.twig', [
             'communes' => $communesPagination,
+            'route_name' => 'app_commune_index',
         ]);
     }
 

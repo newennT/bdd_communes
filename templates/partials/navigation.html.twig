@@ -1,0 +1,67 @@
+<div class="pagination-container">
+    {% if communesPagination.haveToPaginate %}
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+                
+                {# Page précédente #}
+                {% if communesPagination.hasPreviousPage %}
+                    <li class="page-item">
+                        <a class="page-link" href="{{ path('app_home', { page: communesPagination.previousPage }) }}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <span class="page-link">&laquo;</span>
+                    </li>
+                {% endif %}
+
+                {# Première page - Affichage conditionnel #}
+                {% if communesPagination.currentPage > 3 %}
+                    <li class="page-item">
+                        <a class="page-link" href="{{ path(route_name, { page: 1 }) }}">1</a>
+                    </li>
+                {% endif %}
+
+                {# Points de suspension avant la page actuelle #}
+                {% if communesPagination.currentPage > 3 %}
+                    <li class="page-item disabled"><span class="page-link">...</span></li>
+                {% endif %}
+
+                {# Pages autour de la page courante (2 pages avant et après) #}
+                {% for page in communesPagination.currentPage - 2..communesPagination.currentPage + 2 %}
+                    {% if page > 0 and page <= communesPagination.nbPages %}
+                        <li class="page-item {% if page == communesPagination.currentPage %}active{% endif %}">
+                            <a class="page-link" href="{{ path(route_name, { page: page }) }}">{{ page }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+
+                {# Points de suspension après la page actuelle #}
+                {% if communesPagination.currentPage < communesPagination.nbPages - 2 %}
+                    <li class="page-item disabled"><span class="page-link">...</span></li>
+                {% endif %}
+
+                {# Dernière page - Affichage conditionnel #}
+                {% if communesPagination.currentPage < communesPagination.nbPages - 2 %}
+                    <li class="page-item">
+                        <a class="page-link" href="{{ path(route_name, { page: communesPagination.nbPages }) }}">{{ communesPagination.nbPages }}</a>
+                    </li>
+                {% endif %}
+
+                {# Page suivante #}
+                {% if communesPagination.hasNextPage %}
+                    <li class="page-item">
+                        <a class="page-link" href="{{ path(route_name, { page: communesPagination.nextPage }) }}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <span class="page-link">&raquo;</span>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    {% endif %}
+</div>

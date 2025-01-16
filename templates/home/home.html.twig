@@ -47,13 +47,14 @@
 
     <ul>
         {% for commune in communesPagination %}
-            <a href="{{ path('app_commune_show', {'id': commune.id, '_locale': app.request.locale}) }}"><li>{{ commune.getNomParLangue(app.request.locale) }} ({{ commune.code }})</li></a>
+            <li><a href="{{ path('app_commune_show', {'id': commune.id, '_locale': app.request.locale}) }}">{{ commune.getNomParLangue(app.request.locale) }} ({{ commune.code }})</a></li>
         {% else %}
             Aucune commune à afficher
         {% endfor %}
     </ul>
 
-     {{ pagerfanta(communesPagination, {'routeParams': app.request.query.all}) }}
+    {% include 'partials/navigation.html.twig' %}
+    
 
     <h2>Listes des évéchés</h2>
     <ul>
