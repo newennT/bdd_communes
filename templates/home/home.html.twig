@@ -42,18 +42,22 @@
     </div>
     
 
+    <div class="home-section03 container">
+        <h2>Liste des communes</h2>
 
-    <h2>Liste des communes</h2>
+        <div>
+            <ul class="liste-communes">
+                {% for commune in communesPagination %}
+                    <li><a href="{{ path('app_commune_show', {'id': commune.id, '_locale': app.request.locale}) }}">{{ commune.getNomParLangue(app.request.locale) }} ({{ commune.code }})</a></li>
+                {% else %}
+                    Aucune commune à afficher
+                {% endfor %}
+            </ul>
+        {% include 'partials/navigation.html.twig' %}
+        </div>
 
-    <ul>
-        {% for commune in communesPagination %}
-            <li><a href="{{ path('app_commune_show', {'id': commune.id, '_locale': app.request.locale}) }}">{{ commune.getNomParLangue(app.request.locale) }} ({{ commune.code }})</a></li>
-        {% else %}
-            Aucune commune à afficher
-        {% endfor %}
-    </ul>
-
-    {% include 'partials/navigation.html.twig' %}
+        
+    </div>
     
 
     <h2>Listes des évéchés</h2>

@@ -41,7 +41,7 @@ class HomeController extends AbstractController
         $communesPagination = Pagerfanta::createForCurrentPageWithMaxPerPage(
             new QueryAdapter($queryBuilder),
             $request->query->get('page', 1),
-            50
+            30
         );
 
         return $this->render('home/home.html.twig', [

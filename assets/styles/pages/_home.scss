@@ -19,3 +19,15 @@
     height: 600px;
     border-radius: 10px 10px 0 0;
 }
+
+.liste-communes{
+    column-count: 2;
+    column-gap: 20px;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px){
+    .liste-communes{
+        column-count: 1;
+    }
+}
