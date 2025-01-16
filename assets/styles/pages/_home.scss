@@ -1,0 +1,21 @@
+.home-section01{
+    background-color: $couleur-dark;
+    height: 50vh;
+    margin-bottom: -300px;
+    h1{
+        text-align: center;
+        color: $couleur-light;
+    }
+}
+
+.home-section02{
+    background-color: $couleur-dark;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+}
+
+#map-home{
+    min-width: 400px;
+    height: 600px;
+    border-radius: 10px 10px 0 0;
+}
