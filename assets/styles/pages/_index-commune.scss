@@ -29,3 +29,15 @@
     
     }
 }
+
+.index-communes-section03{
+    background-color: $blanc;
+    .btn{
+        background-color: $couleur-dark;
+        color: $blanc;
+        &:hover{
+            background-color: $couleur-light;
+            color: $couleur-dark;
+        }
+    }
+}
