@@ -42,25 +42,133 @@
     </div>
     
 
-    <div class="home-section03 container">
-        <h2>Liste des communes</h2>
 
-        <div>
-            <ul class="liste-communes">
-                {% for commune in communesPagination %}
-                    <li><a href="{{ path('app_commune_show', {'id': commune.id, '_locale': app.request.locale}) }}">{{ commune.getNomParLangue(app.request.locale) }} ({{ commune.code }})</a></li>
-                {% else %}
-                    Aucune commune à afficher
-                {% endfor %}
-            </ul>
-        {% include 'partials/navigation.html.twig' %}
+{# Section de la liste des communes #}
+    <div class="home-section03 container py-5">
+
+    {# Titre #}
+        <div class="py-3 d-flex justify-content-center">
+            <h2>Liste des communes</h2>
         </div>
 
         
+
+    {# Liste #}
+        <div class="pb-3 pt-2">
+            <div class="list-group">
+                <ul class="liste-communes">
+                    {% for commune in communesPagination %}
+                        <a class="d-flex justify-content-between align-items-center list-group-item list-group-item-action" href="{{ path('app_commune_show', {'id': commune.id, '_locale': app.request.locale}) }}">{{ commune.getNomParLangue(app.request.locale) }} 
+                            <small class="text-secondary">{{ commune.code }}</small>
+                        </a>
+                    {% else %}
+                        Aucune commune à afficher
+                    {% endfor %}
+                </ul>
+            {# Navigation #}
+                {% include 'partials/navigation.html.twig' %}
+            </div>
+
+    {# Bouton vers la page dédiée #}
+            <div class="d-flex justify-content-center align-items-center pt-4">
+                <p class="d-flex justify-content-between align-items-center">
+                    <span class="pe-2 fs-5">ou </span> 
+                    <a class="btn" href="{{ path('app_commune_index')}}">Aller à la page des communes</a></p>
+            </div>
+        </div>
     </div>
     
 
-    <h2>Listes des évéchés</h2>
+
+{# Section des évêchés et des pays #}
+    <div class="home-section04">
+        <div class="container py-5">
+            <div class="row pb-5">
+                <div class="py-3 d-flex justify-content-center">
+                    <h2>Les évêchés et les pays traditionnels de Bretagne</h2>
+                </div>
+            {# Evêchés #}
+            {# Colonne de la première carte #}
+                <div class="col-12 col-md-6 g-3 g-lg-5">
+
+                {# Carte 1 #}
+                    <div class="card h-100 d-flex flex-column">
+                        <div class="row g-0 h-100">
+                            <div>
+                                <img src="{{ asset('img/eveches-bretagne.webp')}}" class="img-fluid rounded-top h-100" style="object-fit: cover;">
+                            </div>
+
+                            <div>
+                                <div class="card-body">
+                                    <h3 class="card-title">Les évêchés</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                                    <a class="btn" href="{{ path('app_eveche_index')}}">Page des pays</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            {# Colonne de la deuxième carte #}
+                <div class="col-12 col-md-6 g-3 g-lg-5">
+
+                {# Carte 2 #}
+                    <div class="card h-100 d-flex flex-column">
+                        <div class="g-0 h-100">
+                            <div>
+                                <img src="{{ asset('img/pays-bretagne.webp')}}" class="img-fluid rounded-top h-100" style="object-fit: cover;">
+                            </div>
+
+                            <div>
+                                <div class="card-body">
+                                    <h3 class="card-title">Les pays</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                                    <a class="btn" href="{{ path('app_pays_index')}}">Page des évêchés</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            
+            </div>
+        </div>
+    </div>
+
+    {# Sections infos #}
+    <div class="home-section05">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-12 col-md-6 sources">
+                    <h2>Sources</h2>
+                    <ul class="p-0 list-group list-group-flush">
+                        <a class="ps-0 list-group-item" href="https://institutdugalo.bzh/fr/nom-de-lieux-en-langue-gallese/">Noms des villes en gallo (Institut du Galo)</a>
+                        <a class="ps-0 list-group-item" href="https://umap.openstreetmap.fr/fr/map/comunes-de-la-louere-de-bertegn_1103265#11/46.9339/-1.6363">Noms des communes du 44 en gallo/poitevin</a>
+                        <a class="ps-0 list-group-item" href="https://fr.wikipedia.org/wiki/Liste_des_communes_d%27Ille-et-Vilaine">Liste des communes d'Ille-et-Vilaine</a>
+                        <a class="ps-0 list-group-item" href="https://fr.wikipedia.org/wiki/Liste_des_communes_du_Finist%C3%A8re">Liste des communes du Finistère</a>
+                        <a class="ps-0 list-group-item" href="https://fr.wikipedia.org/wiki/Liste_des_communes_des_C%C3%B4tes-d%27Armor">Liste des communes des Côtes d'Armor</a>
+                        <a class="ps-0 list-group-item" href="https://fr.wikipedia.org/wiki/Liste_des_communes_du_Morbihan">Liste des communes du Morbihan</a>
+                        <a class="ps-0 list-group-item" href="https://fr.wikipedia.org/wiki/Liste_des_communes_de_la_Loire-Atlantique">Liste des communes de Loire-Atlantique</a>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-6 contact">
+                    <h2>Contact</h2>
+                    <p>Une remarque, des corrections à apporter, des suggestions de contenu, une plainte sur la non-inclusion de la Mayenne ? Vous pouvez contacter le créateur via son site perso.</p>
+                    <a href="https://newennturbiau-graphisme.com" class="btn">Voir le site</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    {# <h2>Listes des évéchés</h2>
     <ul>
         {% for eveche in eveches | sort((a, b) => a.getNomParLangue(app.request.locale) <=> b.getNomParLangue(app.request.locale)) %}
             <a href="{{ path('app_eveche_show', {'id': eveche.id, '_locale': app.request.locale}) }}"><li>{{ eveche.getNomParLangue(app.request.locale) }} </li></a>
@@ -76,20 +184,7 @@
         {% else %}
             Aucun pays enregistré
         {% endfor %}
-    </ul>
-
-    <div>
-        <h3>Sources</h3>
-        <ul>
-            <li><a href="https://fr.wikipedia.org/wiki/Liste_des_communes_d%27Ille-et-Vilaine">Liste des communes d'Ille-et-Vilaine</a></li>
-            <li><a href="https://fr.wikipedia.org/wiki/Liste_des_communes_du_Finist%C3%A8re">Liste des communes du Finistère</a></li>
-            <li><a href="https://fr.wikipedia.org/wiki/Liste_des_communes_des_C%C3%B4tes-d%27Armor">Liste des communes des Côtes d'Armor</a></li>
-            <li><a href="https://fr.wikipedia.org/wiki/Liste_des_communes_du_Morbihan">Liste des communes du Morbihan</a></li>
-            <li><a href="https://fr.wikipedia.org/wiki/Liste_des_communes_de_la_Loire-Atlantique">Liste des communes de Loire-Atlantique</a></li>
-            <li><a href="https://www.coordonneesgps.net/coordonnees-gps/villes-01200-400-ville">Coordonnées GPS</a></li>
-            <li><a href="https://institutdugalo.bzh/fr/nom-de-lieux-en-langue-gallese/">Noms des villes en gallo</a></li>
-            <li><a href="https://umap.openstreetmap.fr/fr/map/comunes-de-la-louere-de-bertegn_1103265#11/46.9339/-1.6363">Noms des communes du 44 en gallo/poitevin</a></li>
-    </div>
+    </ul> #}
 
 {% endblock %}
 
