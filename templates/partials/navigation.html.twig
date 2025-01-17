@@ -6,7 +6,7 @@
                 {# Chevrons "précédent" #}
                 {% if communesPagination.hasPreviousPage %}
                     <li class="page-item">
-                        <a class="page-link" href="{{ path('app_home', { page: communesPagination.previousPage }) }}" aria-label="Previous">
+                        <a class="page-link" href="{{ path(route_name, { page: communesPagination.previousPage }) }}" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                         </a>
                     </li>

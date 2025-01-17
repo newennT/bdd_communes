@@ -4,6 +4,10 @@ namespace App\Controller;
 
 use App\Entity\Commune;
 use App\Repository\CommuneRepository;
+use App\Entity\Eveche;
+use App\Repository\EvecheRepository;
+use App\Entity\Pays;
+use App\Repository\PaysRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,20 +19,42 @@ use Pagerfanta\Pagerfanta;
 #[Route('/commune')]
 final class CommuneController extends AbstractController
 {
-    #[Route(name: 'app_commune_index', methods: ['GET'])]
-    public function index(Request $request, CommuneRepository $communeRepository): Response
+    #[Route(name: 'app_commune_index', requirements: ['_locale' => 'fr|br|go'], defaults: ['_locale' => 'fr'], methods: ['GET'])]
+    public function index(Request $request, CommuneRepository $communeRepository, EvecheRepository $evecheRepository, PaysRepository $paysRepository): Response
     {
+        $paysId = $request->query->get('pays');
+        $evecheId = $request->query->get('eveche');
+
         $queryBuilder = $communeRepository->createQueryBuilder('c')
             ->orderBy('c.code', 'ASC');
+
+        if ($paysId) {
+            $queryBuilder->andWhere('c.id_pays = :paysId')
+                         ->setParameter('paysId', $paysId);
+        }
+    
+        if ($evecheId) {
+            $queryBuilder->andWhere('c.id_eveche = :evecheId')
+                         ->setParameter('evecheId', $evecheId);
+        }
+
+        $communes = $queryBuilder->getQuery()->getResult();
 
         $communesPagination = Pagerfanta::createForCurrentPageWithMaxPerPage(
             new QueryAdapter($queryBuilder),
             $request->query->get('page', 1),
-            60
+            90
         );
 
         return $this->render('commune/index.html.twig', [
-            'communes' => $communesPagination,
+            'communes' => $communes,
+            'communesPagination' => $communesPagination,
+            'eveches' => $evecheRepository->findAll(),
+            'pays' => $paysRepository->findAll(),
+            'currentFilters' => [
+                'pays' => $paysId,
+                'eveche' => $evecheId,
+            ],
             'route_name' => 'app_commune_index',
         ]);
     }

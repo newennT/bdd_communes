@@ -1,0 +1,31 @@
+#map-index-commune{
+    width: 100%;
+    min-width: 400px;
+    height: 500px;
+}
+
+.index-communes-section02{
+    table {
+        .thead-table {
+                tr{
+                --bs-table-bg: #090930;
+                --bs-table-color: #ecedf6;
+            }
+        }
+        tr{
+        --bs-table-striped-bg: #ecedf6;
+    }
+}
+    table a{
+        padding: 10px;
+        border-radius: 8px;
+        text-decoration: none;
+        color: $noir;
+
+        &:hover{
+            background-color: $couleur-dark;
+            color: $couleur-light;
+        }
+    
+    }
+}

@@ -37,13 +37,13 @@
     }
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 768px){
     .liste-communes{
         column-count: 2;
     }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 576px){
     .liste-communes{
         column-count: 1;
     }
