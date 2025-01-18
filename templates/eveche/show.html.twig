@@ -1,47 +1,84 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Eveche{% endblock %}
+{% block title %}{{ eveche.getNomParLangue(app.request.locale) }}{% endblock %}
 
 {% block body %}
-    <h1>Eveche</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ eveche.id }}</td>
-            </tr>
-            <tr>
-                <th>Nom_francais</th>
-                <td>{{ eveche.nomFrancais }}</td>
-            </tr>
-            <tr>
-                <th>Nom_breton</th>
-                <td>{{ eveche.nomBreton }}</td>
-            </tr>
-            <tr>
-                <th>Nom_gallo</th>
-                <td>{{ eveche.nomGallo }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ eveche.description | raw }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="container">
+        <div class="mt-5">
+            <h1>{{ eveche.getNomParLangue(app.request.locale) }}</h1>
+        </div>
 
-    <div id="map" style="height: 400px; width:400px;"></div>
-    <img src="{{ asset('uploads/' ~ eveche.imageUrl) }}" alt="">
+        <div class="row mt-5 gx-5">
+            <div class="col-12 col-lg-6 mb-5">
+                <div id="map-eveche-show" class="container img-fluid rounded"></div>
+            </div>
+            <div class="col-12 col-lg-6 mb-5">
+                <img class="img-fluid rounded" src="{{ asset('uploads/' ~ eveche.imageUrl) }}" alt="">
+            </div>
+        </div>
 
-    <p>Communes : </p>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="eveche-infos">
+                    {% if app.request.locale == 'fr' %}
+                    <div>
+                        <p><span class="fw-bold">En breton</span> : {{ eveche.nomBreton }}
+                        {% if eveche.nomGallo %}
+                            <br><span class="fw-bold">En gallo</span> : {{ eveche.nomGallo }}
+                        {% endif %}
+                        </p>
+                    </div>
+                {% endif %}
+
+                {% if app.request.locale == 'br' %}
+                    <div>
+                        <p>E galleg : {{ eveche.nomFrancais }}</p>
+                        {% if eveche.nomGallo %}
+                            <p>E gallaoueg : {{ eveche.nomGallo }}</p>
+                        {% endif %}
+                    </div>
+                {% endif %}
+
+                {% if app.request.locale == 'go' %}
+                    <div>
+                        <p>En français : {{ eveche.nomFrancais }}</p>
+                        <p>En berton : {{ eveche.nomBreton }}</p>
+                    </div>
+                {% endif %}
+
+                {{ eveche.description }} 
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <p>Communes</p>
+                <div class="pb-3 pt-2">
+                    <div class="list-group">
+                        <ul class="liste-eveche-show">
+                            {% for commune in communes %}
+                                <a class="d-flex justify-content-between align-items-center list-group-item list-group-item-action" href="{{ path('app_commune_show', {'id': commune.id, '_locale': app.request.locale}) }}">{{ commune.getNomParLangue(app.request.locale) }} 
+                                    <small class="text-secondary">{{ commune.code }}</small>
+                                </a>
+                            {% else %}
+                                Aucune commune à afficher
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
     <ul>
-        {% for commune in communesPagination %}
+        {% for commune in communes %}
         <a href="{{ path('app_commune_show', {'id': commune.id}) }}"><li>{{ commune.getNomParLangue(app.request.locale) }} ( {{ commune.code }} )</li></a>
         {% else %}
         L'évêché ne contient aucune commune
         {% endfor %}
     </ul>
-    {{ pagerfanta(communesPagination, {'routeParams': app.request.query.all}) }}
 
     <a href="{{ path('app_eveche_index') }}">back to list</a>
 
@@ -50,10 +87,12 @@
 {% endblock %}
 
 {% block javascripts %}
+{{ parent() }}
 
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
 <script>
+
 
     document.addEventListener('DOMContentLoaded', function () {
         let nbHabitants;
@@ -82,7 +121,7 @@
             }
         }
 
-        var map = L.map('map').setView([47.9, -2.7 ], 8);
+        var map = L.map('map-eveche-show').setView([47.9, -2.7 ], 8);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -103,7 +142,7 @@
                         fillOpacity: 0.5
                     })
             .addTo(map)
-            .bindPopup('<strong>{{ commune.nomFrancais|escape("html") }}</strong>') 
+            .bindPopup('<strong>{{ commune.getNomParLangue(app.request.locale)|escape("html") }}</strong>') 
             .on('click', function () {
                 circle.openPopup();  
             });

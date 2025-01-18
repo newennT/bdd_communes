@@ -1,0 +1,221 @@
+h1 {
+  text-align: center;
+}
+
+.btn-primary-custom {
+  background-color: #090930;
+  color: #ffffff;
+}
+.btn-primary-custom:hover {
+  background-color: #ecedf6;
+  color: #090930;
+}
+
+.btn-primary-custom-fondblanc {
+  background-color: #090930;
+  color: #ffffff;
+}
+.btn-primary-custom-fondblanc:hover {
+  background-color: #ffffff;
+  color: #090930;
+}
+
+.body {
+  background-color: #ecedf6;
+}
+
+.custom-container {
+  padding: 0 10px 0 10px;
+}
+
+footer {
+  background-color: #090930;
+}
+footer .nav-link {
+  color: #d4d4d4;
+}
+
+header {
+  background-color: #090930;
+}
+header .nav-link {
+  color: #ffffff;
+}
+
+.search-form form {
+  display: flex;
+}
+.search-form form button {
+  margin-left: 2px;
+}
+
+.navbar-collapse {
+  flex-grow: 0 !important;
+  flex-basis: auto;
+}
+
+.pagination .page-link {
+  --bs-pagination-color: #090930;
+  --bs-pagination-bg: #ffffff;
+  --bs-pagination-hover-color: #ffffff;
+  --bs-pagination-hover-bg: #090930;
+  --bs-pagination-hover-border-color: #090930;
+  --bs-pagination-active-color: #ffffff;
+  --bs-pagination-active-bg: #090930;
+  --bs-pagination-active-border-color: #090930;
+}
+
+.home-section01 {
+  background-color: #090930;
+  height: 50vh;
+  margin-bottom: -320px;
+}
+.home-section01 h1 {
+  text-align: center;
+  color: #ecedf6;
+}
+
+.home-section02 {
+  background-color: #090930;
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+}
+
+#map-home {
+  min-width: 300px;
+  height: 600px;
+  border-radius: 10px 10px 0 0;
+}
+
+.liste-communes {
+  column-count: 3;
+  width: 100%;
+  padding-left: 0;
+}
+
+.home-section03 .btn {
+  background-color: #090930;
+  color: #ffffff;
+}
+.home-section03 .btn:hover {
+  background-color: #ffffff;
+  color: #090930;
+}
+
+@media screen and (max-width: 768px) {
+  .liste-communes {
+    column-count: 2;
+  }
+}
+@media screen and (max-width: 576px) {
+  .liste-communes {
+    column-count: 1;
+  }
+}
+.home-section04 {
+  background-color: #090930;
+  color: #ffffff;
+}
+.home-section04 .btn {
+  background-color: #090930;
+  color: #ffffff;
+}
+.home-section04 .btn:hover {
+  background-color: #ecedf6;
+  color: #090930;
+}
+.home-section04 h2 {
+  text-align: center;
+}
+
+.home-section05 {
+  background-color: #ffffff;
+}
+.home-section05 a {
+  color: #6b6b6b;
+}
+.home-section05 a:hover {
+  color: #090930;
+}
+.home-section05 .sources {
+  padding-right: 50px;
+}
+.home-section05 .contact {
+  padding-left: 50px;
+  border-left: #ecedf6 1px solid;
+}
+.home-section05 .contact .btn {
+  background-color: #090930;
+  color: #ffffff;
+}
+.home-section05 .contact .btn:hover {
+  background-color: #ecedf6;
+  color: #090930;
+}
+
+@media screen and (max-width: 768px) {
+  .home-section05 .sources {
+    padding-right: 0px;
+  }
+  .home-section05 .contact {
+    padding-left: 10px;
+    border-left: none;
+    margin-top: 50px;
+  }
+}
+#map-index-commune {
+  width: 100%;
+  min-width: 400px;
+  height: 500px;
+}
+
+.index-communes-section02 table .thead-table tr {
+  --bs-table-bg: #090930;
+  --bs-table-color: #ecedf6;
+}
+.index-communes-section02 table tr {
+  --bs-table-striped-bg: #ecedf6;
+}
+.index-communes-section02 table a {
+  padding: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #000000;
+}
+.index-communes-section02 table a:hover {
+  background-color: #090930;
+  color: #ecedf6;
+}
+
+.index-communes-section03 {
+  background-color: #ffffff;
+}
+.index-communes-section03 .btn {
+  background-color: #090930;
+  color: #ffffff;
+}
+.index-communes-section03 .btn:hover {
+  background-color: #ecedf6;
+  color: #090930;
+}
+
+.liste-pays-index {
+  column-count: 2;
+  padding-left: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .liste-pays-index {
+    column-count: 1;
+  }
+}
+.liste-eveche-index {
+  padding-left: 0;
+}
+
+#map-commune-show {
+  height: 400px;
+  min-width: 350px;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../assets/styles/base/_fonts.scss%22,%22../../assets/styles/base/_component.scss%22,%22../../assets/styles/base/_variables.scss%22,%22../../assets/styles/base/_base.scss%22,%22../../assets/styles/layouts/_footer.scss%22,%22../../assets/styles/layouts/_header.scss%22,%22../../assets/styles/layouts/_pagination.scss%22,%22../../assets/styles/pages/_home.scss%22,%22../../assets/styles/pages/_index-commune.scss%22,%22../../assets/styles/pages/_index-pays.scss%22,%22../../assets/styles/pages/_index-eveche.scss%22,%22../../assets/styles/pages/_commune-show.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAAA;EACI;;;ACDJ;EACI,kBCDW;EDEX,OCEI;;ADDJ;EACI,kBCHQ;EDIR,OCLO;;;ADSf;EACI,kBCVW;EDWX,OCPI;;ADQJ;EACI,kBCTA;EDUA,OCdO;;;ACAf;EACI;;;AAGJ;EACI;;;ACLJ;EACI,kBFDW;;AEEX;EACA,OFDU;;;AGAd;EACI,kBHHW;;AGIX;EACI,OHDA;;;AGKR;EACI;;AACA;EACI;;;AAIR;EACI;EACA;;;AClBJ;EACI;EACA;EAEA;EACA;EACA;EAEA;EACA;EACA;;;ACVJ;EACI,kBLDW;EKEX;EACA;;AACA;EACI;EACA,OLLQ;;;AKShB;EACI,kBLXW;EKYX;EACA;;;AAGJ;EACI;EACA;EACA;;;AAGJ;EACI;EACA;EACA;;;AAIA;EACI,kBL9BO;EK+BP,OL3BA;;AK4BA;EACI,kBL7BJ;EK8BI,OLlCG;;;AKuCf;EACI;IACI;;;AAIR;EACI;IACI;;;AAIR;EACI,kBLpDW;EKqDX,OLjDI;;AKkDJ;EACI,kBLvDO;EKwDP,OLpDA;;AKqDA;EACI,kBLzDI;EK0DJ,OL3DG;;AK8DX;EACI;;;AAIR;EACI,kBLhEI;;AKiEJ;EACI;;AACA;EACA,OLxEO;;AK2EX;EACI;;AAEJ;EACI;EACA;;AACA;EACI,kBLlFG;EKmFH,OL/EJ;;AKgFI;EACI,kBLpFA;EKqFA,OLtFD;;;AK4Ff;EAEQ;IACI;;EAEJ;IACI;IACA;IACA;;;ACpGZ;EACI;EACA;EACA;;;AAMY;EACA;EACA;;AAGR;EACA;;AAGJ;EACI;EACA;EACA;EACA,ONjBD;;AMmBC;EACI,kBNzBG;EM0BH,ONzBI;;;AM+BhB;EACI,kBN7BI;;AM8BJ;EACI,kBNnCO;EMoCP,ONhCA;;AMiCA;EACI,kBNrCI;EMsCJ,ONvCG;;;AOAf;EACI;EACA;;;AAGJ;EACI;IACI;;;ACPR;EACI;;;ACDJ;EACI;EACA%22,%22file%22:%22app.output.css%22%7D */

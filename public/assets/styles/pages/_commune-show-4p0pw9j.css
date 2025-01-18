@@ -1,0 +1,23 @@
+#map-commune-show{
+    height: 400px;
+    min-width: 350px;
+}
+
+.back-list .btn{
+    background-color: $couleur-dark;
+    color: $blanc;
+    &:hover{
+        background-color: $blanc;
+        color: $couleur-dark;
+    }
+}
+
+.show-infos{
+    margin-left: 50px;
+}
+
+@media screen and (max-width: 768px){
+    .show-infos{
+        margin-left: 0;
+    }
+}

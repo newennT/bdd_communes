@@ -1,0 +1,13 @@
+#map-commune-show{
+    height: 400px;
+    min-width: 350px;
+}
+
+.back-list .btn{
+    background-color: $couleur-dark;
+    color: $blanc;
+    &:hover{
+        background-color: $blanc;
+        color: $couleur-dark;
+    }
+}

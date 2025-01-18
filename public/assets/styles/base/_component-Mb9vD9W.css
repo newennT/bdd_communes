@@ -1,0 +1,17 @@
+.btn-primary-custom{
+    background-color: $couleur-dark;
+    color: $blanc;
+    &:hover{
+        background-color: $couleur-light;
+        color: $couleur-dark;
+    }
+}
+
+.btn-primary-custom-fondblanc{
+    background-color: $couleur-dark;
+    color: $blanc;
+    &:hover{
+        background-color: $blanc;
+        color: $couleur-dark;
+    }
+}

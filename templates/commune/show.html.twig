@@ -1,62 +1,74 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Commune{% endblock %}
+{% block title %}{{ commune.getNomParLangue(app.request.locale)}} - {{ commune.code }}{% endblock %}
 
 {% block body %}
-    <h1>Commune</h1>
-
     
+    <div class="container">
+        <div class="mt-5">
+            <h1>{{ commune.getNomParLangue(app.request.locale) }} - {{ commune.code }} </h1>
+        </div>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ commune.id }}</td>
-            </tr>
-            <tr>
-                <th>Nom_francais</th>
-                <td>{{ commune.nomFrancais }}</td>
-            </tr>
-            <tr>
-                <th>Nom_breton</th>
-                <td>{{ commune.nomBreton }}</td>
-            </tr>
-            <tr>
-                <th>Nom_gallo</th>
-                <td>{{ commune.nomGallo }}</td>
-            </tr>
-            <tr>
-                <th>Habitants</th>
-                <td>{{ commune.habitants }}</td>
-            </tr>
-            <tr>
-                <th>Latitude</th>
-                <td>{{ commune.latitude }}</td>
-            </tr>
-            <tr>
-                <th>Longitude</th>
-                <td>{{ commune.longitude }}</td>
-            </tr>
-            <tr>
-                <th>Code</th>
-                <td>{{ commune.code }}</td>
-            </tr>
-            <tr>
-                <th>Pays</th>
-                <td><a href="{{ path('app_pays_show', {'id': commune.getIdPays.id}) }}">{{ commune.getIdPays.nomFrancais }}</a></td>
-            </tr>
-            <tr>
-                <th>Evéché</th>
-                <td><a href="{{ path('app_eveche_show', {'id': commune.getIdEveche.id}) }}">{{ commune.getIdEveche.nomFrancais }}</a></td>
-            </tr>
-        </tbody>
-    </table>
+        <div class="row mt-5 gx-5">
+            <div class="col-12 col-md-6 mb-5">
+                <div id="map-commune-show" class="container img-fluid rounded"></div>
+            </div>
 
-    <a href="{{ path('app_commune_index') }}">back to list</a>
+            <div class="col-12 col-md-6">
+                {% if app.request.locale == 'fr' %}
+                    <div>
+                        <p><span class="fw-bold">En breton</span> : {{ commune.nomBreton }}
+                        {% if commune.nomGallo %}
+                            <br><span class="fw-bold">En gallo</span> : {{ commune.nomGallo }}
+                        {% endif %}
+                        </p>
+                    </div>
+                {% endif %}
 
-    <a href="{{ path('app_admin_commune_edit', {'id': commune.id}) }}">edit</a>
+                {% if app.request.locale == 'br' %}
+                    <div>
+                        <p>E galleg : {{ commune.nomFrancais }}</p>
+                        {% if commune.nomGallo %}
+                            <p>E gallaoueg : {{ commune.nomGallo }}</p>
+                        {% endif %}
+                    </div>
+                {% endif %}
 
-<div id="map" style="height: 400px; width: 400px;"></div>
+                {% if app.request.locale == 'go' %}
+                    <div>
+                        <p>En français : {{ commune.nomFrancais }}</p>
+                        <p>En berton : {{ commune.nomBreton }}</p>
+                    </div>
+                {% endif %}
+
+                <div>
+                    <p>
+                        {{ commune.getNomParLangue(app.request.locale) }}
+                        compte {{ commune.habitants|number_format(0, '.', ' ') }} habitants.
+                    </p>
+
+                    <p>
+                        Elle se situe dans le <a href="{{ path('app_pays_show', {'id': commune.getIdPays.id}) }}">{{ commune.getIdPays.getNomParLangue(app.request.locale) }}</a>
+                        et appartient à l'évêché <a href="{{ path('app_eveche_show', {'id': commune.getIdEveche.id}) }}">{{ commune.getIdEveche.getNomParLangue(app.request.locale) }}</a>.
+                    </p>
+                </div>
+
+                {% if is_granted('IS_AUTHENTICATED') %}
+                    <a class="btn btn-warning" href="{{ path('app_admin_commune_edit', {'id': commune.id}) }}">Modifier</a>
+                {% endif %}
+
+                <div class="back-list py-5">
+                    <a class="btn" href="{{ path('app_commune_index') }}">Revenir à la liste des communes</a>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+
+
+
+
 
 {% endblock %}
 
@@ -71,14 +83,14 @@
 console.log( {{ commune.latitude }})
     document.addEventListener('DOMContentLoaded', function () {
         L.Icon.Default.imagePath = 'https://unpkg.com/leaflet@1.7.1/dist/images/';
-        var map = L.map('map').setView([ {{ commune.latitude }} , {{ commune.longitude }} ], 8);
+        var map = L.map('map-commune-show').setView([ {{ commune.latitude }} , {{ commune.longitude }} ], 8);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
         L.marker([ {{ commune.latitude }}, {{ commune.longitude }} ]).addTo(map)
-            .bindPopup('<strong>{{ commune.nomFrancais|escape("html") }}</strong>') .openPopup();
+            .bindPopup('<strong>{{ commune.getNomParLangue(app.request.locale)|escape("html") }}</strong>') .openPopup();
     });
 </script>
 

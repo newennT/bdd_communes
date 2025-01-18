@@ -28,23 +28,18 @@ final class EvecheController extends AbstractController
     #[Route('/{id}', name: 'app_eveche_show', methods: ['GET'])]
     public function show(Request $request, Eveche $eveche, EntityManagerInterface $entityManager): Response
     {
-        $queryBuilder = $entityManager->createQueryBuilder()
+        $communes = $entityManager->createQueryBuilder()
             ->select('commune')
             ->from('App\Entity\Commune', 'commune')
             ->where('commune.id_eveche = :eveche')
             ->setParameter('eveche', $eveche)
-            ->orderBy('commune.code', 'ASC');
-
-        $communesPagination = Pagerfanta::createForCurrentPageWithMaxPerPage(
-            new QueryAdapter($queryBuilder),
-            $request->query->get('page', 1),
-            50
-        );
+            ->orderBy('commune.code', 'ASC')
+            ->getQuery()
+            ->getResult();
 
         return $this->render('eveche/show.html.twig', [
             'eveche' => $eveche,
-            'communesPagination' => $communesPagination,
-            'route_name' => 'app_eveche_show',
+            'communes' => $communes,
         ]);
     }
 
