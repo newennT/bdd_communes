@@ -45,9 +45,11 @@
 
 
     <div class="index-communes-section02 container my-5">
+    
         {% if is_granted('IS_AUTHENTICATED') %}
             <a class="btn btn-warning" href="{{ path('app_admin_commune_new') }}">Create new</a>
         {% endif %}
+
         {# Liste #}
             <table class="table table-striped table-hover align-middle table-responsive">
             <thead class="thead-table">
@@ -100,12 +102,12 @@
         <div class="container py-5 text-center">
         <h2 class="pb-5">Naviguer dans le site</h2>
             <div class="row">
-                <div class="col-12 col-sm-6">
+                <div class="col-12 col-md-6 mb-3">
                     <a class="btn btn-lg" href="{{ path('app_eveche_index') }}">Aller à la page des évêchés</a>
                 </div>
 
-                <div class="col col-sm-6">
-                    <a class="btn btn-lg" href="{{ path('app_eveche_index') }}">Aller à la page des pays</a>
+                <div class="col col-md-6 mb-3">
+                    <a class="btn btn-lg" href="{{ path('app_pays_index') }}">Aller à la page des pays</a>
                 </div>
             </div>
         </div>

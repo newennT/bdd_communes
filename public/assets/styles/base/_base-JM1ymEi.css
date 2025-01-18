@@ -1,0 +1,7 @@
+.body{
+    background-color: $couleur-light;
+}
+
+.custom-container{
+    padding: 0 10px 0 10px;
+}

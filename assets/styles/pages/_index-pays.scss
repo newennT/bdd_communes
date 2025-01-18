@@ -1,0 +1,10 @@
+.liste-pays-index{
+    column-count: 2;
+    padding-left: 0;
+}
+
+@media screen and (max-width: 768px){
+    .liste-pays-index{
+        column-count: 1;
+    }
+}

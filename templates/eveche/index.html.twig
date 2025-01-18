@@ -1,41 +1,56 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Eveche index{% endblock %}
+{% block title %}Liste des évêchés{% endblock %}
 
 {% block body %}
-    <h1>Eveche index</h1>
+    <div class="mt-4">
+        <h1>Liste des évêchés</h1>
+    </div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom_francais</th>
-                <th>Nom_breton</th>
-                <th>Nom_gallo</th>
-                <th>Description</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for eveche in eveches | sort((a, b) => a.nomFrancais <=> b.nomFrancais) %}
-            <tr>
-                <td>{{ eveche.id }}</td>
-                <td>{{ eveche.nomFrancais }}</td>
-                <td>{{ eveche.nomBreton }}</td>
-                <td>{{ eveche.nomGallo }}</td>
-                <td>{{ eveche.description | raw }}</td>
-                <td>
-                    <a href="{{ path('app_eveche_show', {'id': eveche.id}) }}">show</a>
-                    <a href="{{ path('app_admin_eveche_edit', {'id': eveche.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="container mt-4 d-flex justify-content-center">
+        <img class="img-fluid rounded" src="{{ asset('img/eveches-bretagne.webp') }}" alt="">
+    </div>
 
-    <a href="{{ path('app_admin_eveche_new') }}">Create new</a>
+    <div class="container my-5">
+        {% if is_granted('IS_AUTHENTICATED') %}
+            <a class="btn btn-warning" href="{{ path('app_admin_eveche_new') }}">Create new</a>
+        {% endif %}
+
+        <div class="pb-3 pt-2">
+            <div class="list-group">
+                <ul class="liste-eveche-index ps-0">
+                    {% for eveche in eveches | sort((a, b) => a.nomFrancais <=> b.nomFrancais) %}
+                        <a class="d-flex justify-content-between align-items-center list-group-item list-group-item-action" href="{{ path('app_eveche_show', {'id': eveche.id, '_locale': app.request.locale}) }}">
+                        {{ eveche.getNomParLangue(app.request.locale) }} 
+                        </a>
+                        
+                        {% if is_granted('IS_AUTHENTICATED') %}
+                        <a class="btn btn-warning" href="{{ path('app_admin_eveche_edit', {'id': eveche.id}) }}">Modifier</a>
+                        {% endif %}
+
+                    {% else %}
+                        Aucun eveche à afficher
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="index-communes-section03">
+        <div class="container py-5 text-center">
+        <h2 class="pb-5">Naviguer dans le site</h2>
+            <div class="row">
+                <div class="col-12 col-md-6 mb-3">
+                    <a class="btn btn-lg" href="{{ path('app_commune_index') }}">Aller à la page des communes</a>
+                </div>
+
+                <div class="col col-md-6">
+                    <a class="btn btn-lg" href="{{ path('app_eveche_index') }}">Aller à la page des pays</a>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+
 {% endblock %}

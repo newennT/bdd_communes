@@ -1,0 +1,20 @@
+// Header
+
+header{
+    background-color: $couleur-dark;
+    .nav-link{
+        color: $blanc;
+    }
+}
+
+.search-form form{
+    display: flex;
+    button{
+        margin-left: 2px;
+    }
+}
+
+.navbar-collapse {
+    flex-grow: 0!important; 
+    flex-basis: auto;
+ }
