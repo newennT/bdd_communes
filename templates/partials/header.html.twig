@@ -1,7 +1,9 @@
 <header>
     <nav class="navbar navbar-expand-md navbar-dark container">
         <div class="container-fluid text-light">
-            <a class="navbar-brand" href="{{ path('app_home') }}">{% trans %}Accueil{% endtrans %}</a>
+            <a class="navbar-brand" href="{{ path('app_home') }}">
+            {% trans %}Accueil{% endtrans %}
+            </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -15,9 +17,15 @@
                             {% trans %}Langues{% endtrans %}
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                            <li><a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'fr'})) }}">{% trans %}Français{% endtrans %}</a></li>
-                            <li><a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'br'})) }}">{% trans %}Breton{% endtrans %}</a></li>
-                            <li><a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'go'})) }}">{% trans %}Gallo{% endtrans %}</a></li>
+                            <li><a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'fr'})) }}">
+                                {% trans %}Français{% endtrans %}
+                            </a></li>
+                            <li><a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'br'})) }}">
+                                {% trans %}Breton{% endtrans %}
+                            </a></li>
+                            <li><a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'go'})) }}">
+                                {% trans %}Gallo{% endtrans %}
+                            </a></li>
                         </ul>
                     </li>
 
@@ -26,9 +34,15 @@
                             {% trans %}Voir par catégorie{% endtrans %}
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{{ path('app_commune_index') }}">{% trans %}Liste des communes{% endtrans %}</a></li>
-                            <li><a class="dropdown-item" href="{{ path('app_pays_index') }}">{% trans %}Liste des pays{% endtrans %}</a></li>
-                            <li><a class="dropdown-item" href="{{ path('app_eveche_index') }}">{% trans %}Liste des évêchés{% endtrans %}</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_commune_index') }}">
+                                {% trans %}Liste des communes{% endtrans %}
+                            </a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_pays_index') }}">
+                                {% trans %}Liste des pays{% endtrans %}
+                            </a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_eveche_index') }}">
+                                {% trans %}Liste des évêchés{% endtrans %}
+                            </a></li>
                         </ul>
                     </li>
 

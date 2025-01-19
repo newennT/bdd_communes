@@ -2,25 +2,32 @@
 <div class="container">
     <div class="text-light py-4 row row-cols-1 row-cols-md-3">
         <div class="col my-3">
-            <h4 class="p-0">Plan du site</h4>
+            <h4 class="p-0">
+            {% trans %}Plan du site{% endtrans %}</h4>
             <ul class="nav flex-column">
                 <li class="nav-item mb-2">
-                    <a class="nav-link p-0" href="{{ path('app_commune_index') }}">Liste des communes</a>
+                    <a class="nav-link p-0" href="{{ path('app_commune_index') }}">
+                        {% trans %}Liste des communes{% endtrans %}
+                    </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a class="nav-link p-0" href="{{ path('app_pays_index') }}">Liste des pays</a>
+                    <a class="nav-link p-0" href="{{ path('app_pays_index') }}">
+                        {% trans %}Liste des pays{% endtrans %}
+                    </a>
                 </li class="nav-item mb-2">
                 <li class="nav-item mb-2">
-                    <a class="nav-link p-0" href="{{ path('app_eveche_index') }}">Liste des évêchés</a>
+                    <a class="nav-link p-0" href="{{ path('app_eveche_index') }}">
+                        {% trans %}Liste des évêchés{% endtrans %}
+                    </a>
                 </li>
                 
                 {% if is_granted('IS_AUTHENTICATED') %}
                 <li class="nav-item mb-2">
-                    <a class="nav-link p-0" href="{{ path('app_logout') }}">Se déconnecter</a>
+                    <a class="nav-link p-0" href="{{ path('app_logout') }}">{% trans %}Se déconnecter{% endtrans %}</a>
                 </li>
                 {% else %}
                 <li class="nav-item mb-2">
-                    <a class="nav-link p-0" href="{{ path('app_login') }}">Se connecter</a>
+                    <a class="nav-link p-0" href="{{ path('app_login') }}">{% trans %}Se connecter{% endtrans %}</a>
                 </li>
                 {% endif %}
 
@@ -28,52 +35,52 @@
         </div>
 
         <div class="col my-3">
-            <h4 class="p-0">Langues</h4>
+            <h4 class="p-0">{% trans %}Langues{% endtrans %}</h4>
             <ul class="nav flex-column">
                 <li class="nav-item mb-2">
-                    <a class="nav-link p-0" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'fr'})) }}">Français</a>
+                    <a class="nav-link p-0" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'fr'})) }}">{% trans %}Français{% endtrans %}</a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a class="nav-link p-0" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'br'})) }}">Breton</a>
+                    <a class="nav-link p-0" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'br'})) }}">{% trans %}Breton{% endtrans %}</a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a class="nav-link p-0" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'go'})) }}">Gallo</a>
+                    <a class="nav-link p-0" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'go'})) }}">{% trans %}Gallo{% endtrans %}</a>
                 </li>
             </ul>
         </div>
 
         {% if is_granted('IS_AUTHENTICATED') %}
         <div class="col my-3">
-            <h4 class="p-0">Outils admin</h4>
+            <h4 class="p-0">{% trans %}Outils admin{% endtrans %}</h4>
             <ul class="nav flex-column">
                 <li class="nav-item mb-2">
-                    <a class="nav-link p-0 text-light" href="{{ path('app_admin_commune_new') }}">Ajouter une commune</a>
+                    <a class="nav-link p-0 text-light" href="{{ path('app_admin_commune_new') }}">{% trans %}Ajouter une commune{% endtrans %}</a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a class="nav-link p-0 text-light" href="{{ path('app_admin_pays_new') }}">Ajouter un pays</a>
+                    <a class="nav-link p-0 text-light" href="{{ path('app_admin_pays_new') }}">{% trans %}Ajouter un pays{% endtrans %}</a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a class="nav-link p-0 text-light" href="{{ path('app_admin_eveche_new') }}">Ajouter un évêché</a>
+                    <a class="nav-link p-0 text-light" href="{{ path('app_admin_eveche_new') }}">{% trans %}Ajouter un évêché{% endtrans %}</a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a class="nav-link p-0 text-light" href="{{ path('app_logout') }}">Se déconnecter</a>
+                    <a class="nav-link p-0 text-light" href="{{ path('app_logout') }}">{% trans %}Se déconnecter{% endtrans %}</a>
                 </li>
                 
                 {% if is_granted('ROLE_SUPERADMIN') %}
-                <li><a href="{{ path('app_register') }}">Enregistrer un nouvel utilisateur</a></li>
+                <li><a href="{{ path('app_register') }}">{% trans %}Enregistrer un nouvel utilisateur{% endtrans %}</a></li>
                 {% endif %}
             </ul>
         </div>
         {% endif %}
 
         <div class="col my-3">
-            <h4 class="p-0">Informations légales</h4>
+            <h4 class="p-0">{% trans %}Informations légales{% endtrans %}</h4>
             <ul class="nav flex-column">
                 <li class="nav-item mb-2">
-                    <a class="nav-link p-0" href="#">Mentions légales</a>
+                    <a class="nav-link p-0" href="#">{% trans %}Mentions légales{% endtrans %}</a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a class="nav-link p-0" href="#">Politique de confidentialité</a>
+                    <a class="nav-link p-0" href="#">{% trans %}Politique de confidentialité{% endtrans %}</a>
                 </li>
             </ul>
         </div>
