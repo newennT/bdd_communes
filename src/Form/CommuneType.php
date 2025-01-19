@@ -19,24 +19,27 @@ class CommuneType extends AbstractType
         $builder
             ->add('id', NumberType::class,[
                 'label' => 'ID (INSEE)',
-                'attr' => [
-                    'class' => 'form-control',
-                ]
             ])
-            ->add('code', NumberType::class)
+            ->add('code', NumberType::class,[
+                'label' => 'Code postal',
+            ])
             ->add('nom_francais', TextType::class)
             ->add('nom_breton', TextType::class)
             ->add('nom_gallo', TextType::class)
-            ->add('habitants', NumberType::class)
+            ->add('habitants', NumberType::class,[
+                'label' => 'Nombre d\'habitants',
+            ])
             ->add('latitude', NumberType::class)
             ->add('longitude', NumberType::class)
             ->add('id_eveche', EntityType::class, [
                 'class' => Eveche::class,
                 'choice_label' => 'nom_francais',
+                'label' => 'Evêché',
             ])
             ->add('id_pays', EntityType::class, [
                 'class' => Pays::class,
                 'choice_label' => 'nom_francais',
+                'label' => 'Pays',
             ])
         ;
     }
