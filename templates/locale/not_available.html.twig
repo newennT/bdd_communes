@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Traduction indisponible{% endblock %}
+
+{% block body %}
+    <div class="container text-center" style="height: 65vh;">
+        <h1 class="mt-5 mb-4">Traduction non disponible</h1>
+        <p>La traduction en gallo n'est pas encore disponible. <br>Veuillez continuer la navigation en
+         <a href="{{ path('app_home', {'_locale': 'br'}) }}">breton</a> 
+         ou en 
+         <a href="{{ path('app_home', {'_locale': 'fr'}) }}">français</a>.</p>
+    </div>
+{% endblock %}

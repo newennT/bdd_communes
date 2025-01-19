@@ -12,3 +12,8 @@ controllers:
 redirect:
     path: /
     controller: App\Controller\RedirectController::redirectToLocale
+
+# Redirection pour le gallo non disponible
+locale_not_available:
+    path: /locale-not-available
+    controller: App\Controller\LocaleController::localeNotAvailable

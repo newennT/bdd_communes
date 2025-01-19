@@ -25,6 +25,9 @@ services:
             $twig: '@twig'
         tags:
             - { name: 'kernel.event_subscriber' }
+    App\EventListener\LocaleListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, priority: 10 }
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
