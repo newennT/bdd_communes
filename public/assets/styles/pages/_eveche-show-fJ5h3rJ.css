@@ -4,13 +4,12 @@
 }
 
 .liste-eveche-show{
-    padding-left: 0;
-    padding-top: 0;
     column-count: 2;
 }
 
 @media screen and (max-width: 960px){
     .liste-eveche-show{
         column-count: 1;
+        padding-left: 0;
     }
 }

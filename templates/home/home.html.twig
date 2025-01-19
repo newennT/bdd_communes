@@ -145,13 +145,13 @@
                 <div class="col-12 col-md-6 sources">
                     <h2>Sources</h2>
                     <ul class="p-0 list-group list-group-flush">
+                        <a class="ps-0 list-group-item" href="https://www.geobreizh.bzh/">Cartes et fond de cartes (Geobreizh)</a>
+                        <a class="ps-0 list-group-item" href="http://boutique.kendalch.com/page/liste-des-fiches-heritaj">L'appartenance des communes aux pays (Kenleur et Heritaj)</a>
+                        <a class="ps-0 list-group-item" href="https://fr-academic.com/dic.nsf/frwiki/1309672">Les informations sur les différents pays (Wikipedia)</a>
                         <a class="ps-0 list-group-item" href="https://institutdugalo.bzh/fr/nom-de-lieux-en-langue-gallese/">Noms des villes en gallo (Institut du Galo)</a>
-                        <a class="ps-0 list-group-item" href="https://umap.openstreetmap.fr/fr/map/comunes-de-la-louere-de-bertegn_1103265#11/46.9339/-1.6363">Noms des communes du 44 en gallo/poitevin</a>
-                        <a class="ps-0 list-group-item" href="https://fr.wikipedia.org/wiki/Liste_des_communes_d%27Ille-et-Vilaine">Liste des communes d'Ille-et-Vilaine</a>
-                        <a class="ps-0 list-group-item" href="https://fr.wikipedia.org/wiki/Liste_des_communes_du_Finist%C3%A8re">Liste des communes du Finistère</a>
-                        <a class="ps-0 list-group-item" href="https://fr.wikipedia.org/wiki/Liste_des_communes_des_C%C3%B4tes-d%27Armor">Liste des communes des Côtes d'Armor</a>
-                        <a class="ps-0 list-group-item" href="https://fr.wikipedia.org/wiki/Liste_des_communes_du_Morbihan">Liste des communes du Morbihan</a>
-                        <a class="ps-0 list-group-item" href="https://fr.wikipedia.org/wiki/Liste_des_communes_de_la_Loire-Atlantique">Liste des communes de Loire-Atlantique</a>
+                        <a class="ps-0 list-group-item" href="https://umap.openstreetmap.fr/fr/map/comunes-de-la-louere-de-bertegn_1103265#11/46.9339/-1.6363">Noms des communes du 44 en gallo/poitevin (Vassili Moreau-Miossec via OpenStreetMap)</a>
+                        <a class="ps-0 list-group-item" href="https://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Commune_dans_la_r%C3%A9gion_Bretagne">Liste des communes de la Bretagne administrative (Wikipedia)</a>
+                        <a class="ps-0 list-group-item" href="https://fr.wikipedia.org/wiki/Liste_des_communes_de_la_Loire-Atlantique">Liste des communes de Loire-Atlantique (Wikipedia)</a>
                     </ul>
                 </div>
 
@@ -164,27 +164,6 @@
         </div>
     </div>
 
-
-
-
-
-    {# <h2>Listes des évéchés</h2>
-    <ul>
-        {% for eveche in eveches | sort((a, b) => a.getNomParLangue(app.request.locale) <=> b.getNomParLangue(app.request.locale)) %}
-            <a href="{{ path('app_eveche_show', {'id': eveche.id, '_locale': app.request.locale}) }}"><li>{{ eveche.getNomParLangue(app.request.locale) }} </li></a>
-        {% else %}
-            Aucun évéché enregistré
-        {% endfor %}
-    </ul>
-
-    <h2>Listes des pays</h2>
-    <ul>
-        {% for pay in pays | sort((a, b) => a.getNomParLangue(app.request.locale) <=> b.getNomParLangue(app.request.locale)) %}
-            <a href="{{ path('app_pays_show', {'id': pay.id, '_locale': app.request.locale}) }}"><li>{{ pay.getNomParLangue(app.request.locale) }} </li></a>
-        {% else %}
-            Aucun pays enregistré
-        {% endfor %}
-    </ul> #}
 
 {% endblock %}
 
@@ -243,7 +222,7 @@
                         fillOpacity: 0.5
                     })
             .addTo(map)
-            .bindPopup('<strong>{{ commune.nomFrancais|escape("html") }}</strong>') 
+            .bindPopup('<strong><a href="{{ path('app_commune_show', {'id': commune.id, '_locale': app.request.locale}) }}">{{ commune.getNomParLangue(app.request.locale)|escape("html") }}</a></strong>') 
             .on('click', function () {
                 circle.openPopup();  
             });

@@ -27,17 +27,18 @@
 
                 {% if app.request.locale == 'br' %}
                     <div>
-                        <p>E galleg : {{ commune.nomFrancais }}</p>
+                        <p><span class="fw-bold">E galleg</span> : {{ commune.nomFrancais }}
                         {% if commune.nomGallo %}
-                            <p>E gallaoueg : {{ commune.nomGallo }}</p>
+                            <br><span class="fw-bold">E gallaoueg</span> : {{ commune.nomGallo }}
                         {% endif %}
+                        </p>
                     </div>
                 {% endif %}
 
                 {% if app.request.locale == 'go' %}
                     <div>
-                        <p>En français : {{ commune.nomFrancais }}</p>
-                        <p>En berton : {{ commune.nomBreton }}</p>
+                        <p><span class="fw-bold">En français</span> : {{ commune.nomFrancais }}
+                        <br><span class="fw-bold">En berton</span> : {{ commune.nomBreton }}</p>
                     </div>
                 {% endif %}
 

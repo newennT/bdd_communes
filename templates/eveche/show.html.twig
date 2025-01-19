@@ -18,7 +18,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row mb-5">
             <div class="col-12 col-md-6">
                 <div class="eveche-infos">
                     {% if app.request.locale == 'fr' %}
@@ -33,25 +33,34 @@
 
                 {% if app.request.locale == 'br' %}
                     <div>
-                        <p>E galleg : {{ eveche.nomFrancais }}</p>
+                        <p><span class="fw-bold">E galleg</span> : {{ eveche.nomFrancais }}
                         {% if eveche.nomGallo %}
-                            <p>E gallaoueg : {{ eveche.nomGallo }}</p>
+                           <br><span class="fw-bold">E gallaoueg</span> : {{ eveche.nomGallo }}
                         {% endif %}
+                        </p>
                     </div>
                 {% endif %}
 
                 {% if app.request.locale == 'go' %}
                     <div>
-                        <p>En français : {{ eveche.nomFrancais }}</p>
-                        <p>En berton : {{ eveche.nomBreton }}</p>
+                        <p><span class="fw-bold">En français</span> : {{ eveche.nomFrancais }}
+                        <br><span class="fw-bold">En berton</span> : {{ eveche.nomBreton }}</p>
                     </div>
                 {% endif %}
 
                 {{ eveche.description }} 
+
+                {% if is_granted('IS_AUTHENTICATED') %}
+                    <a class="btn btn-warning" href="{{ path('app_admin_eveche_edit', {'id': eveche.id}) }}">Modifier</a>
+                {% endif %}
+
+                    <div class="back-list py-5">
+                        <a class="btn" href="{{ path('app_eveche_index') }}">Revenir à la liste des évêchés</a>
+                    </div>
                 </div>
             </div>
             <div class="col-12 col-md-6">
-                <p>Communes</p>
+                <p class="fs-4">Communes</p>
                 <div class="pb-3 pt-2">
                     <div class="list-group">
                         <ul class="liste-eveche-show">
@@ -69,16 +78,6 @@
         </div>
     </div>
 
-
-
-
-    <ul>
-        {% for commune in communes %}
-        <a href="{{ path('app_commune_show', {'id': commune.id}) }}"><li>{{ commune.getNomParLangue(app.request.locale) }} ( {{ commune.code }} )</li></a>
-        {% else %}
-        L'évêché ne contient aucune commune
-        {% endfor %}
-    </ul>
 
     <a href="{{ path('app_eveche_index') }}">back to list</a>
 
@@ -142,7 +141,7 @@
                         fillOpacity: 0.5
                     })
             .addTo(map)
-            .bindPopup('<strong>{{ commune.getNomParLangue(app.request.locale)|escape("html") }}</strong>') 
+            .bindPopup('<strong><a href="{{ path('app_commune_show', {'id': commune.id, '_locale': app.request.locale}) }}">{{ commune.getNomParLangue(app.request.locale)|escape("html") }}</a></strong>') 
             .on('click', function () {
                 circle.openPopup();  
             });
