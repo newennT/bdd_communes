@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar navbar-expand-md navbar-dark container">
         <div class="container-fluid text-light">
-            <a class="navbar-brand" href="{{ path('app_home') }}">Accueil</a>
+            <a class="navbar-brand" href="{{ path('app_home') }}">{% trans %}Accueil{% endtrans %}</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -12,39 +12,39 @@
 
                     <li class="nav-item dropdown mx-2">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Langues
+                            {% trans %}Langues{% endtrans %}
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                            <li><a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'fr'})) }}">Français</a></li>
-                            <li><a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'br'})) }}">Breton</a></li>
-                            <li><a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'go'})) }}">Gallo</a></li>
+                            <li><a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'fr'})) }}">{% trans %}Français{% endtrans %}</a></li>
+                            <li><a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'br'})) }}">{% trans %}Breton{% endtrans %}</a></li>
+                            <li><a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'go'})) }}">{% trans %}Gallo{% endtrans %}</a></li>
                         </ul>
                     </li>
 
                     <li class="nav-item dropdown mx-2">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Voir par catégorie
+                            {% trans %}Voir par catégorie{% endtrans %}
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{{ path('app_commune_index') }}">Liste des communes</a></li>
-                            <li><a class="dropdown-item" href="{{ path('app_pays_index') }}">Liste des pays</a></li>
-                            <li><a class="dropdown-item" href="{{ path('app_eveche_index') }}">Liste des évêchés</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_commune_index') }}">{% trans %}Liste des communes{% endtrans %}</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_pays_index') }}">{% trans %}Liste des pays{% endtrans %}</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_eveche_index') }}">{% trans %}Liste des évêchés{% endtrans %}</a></li>
                         </ul>
                     </li>
 
                     {% if is_granted('IS_AUTHENTICATED') %}
                     <li class="nav-item dropdown mx-2">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Outils admin
+                            {% trans %}Outils admin{% endtrans %}
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{{ path('app_admin_commune_new') }}">Ajouter une commune</a></li>
-                            <li><a class="dropdown-item" href="{{ path('app_admin_pays_new') }}">Ajouter un pays</a></li>
-                            <li><a class="dropdown-item" href="{{ path('app_admin_eveche_new') }}">Ajouter un évêché</a></li>
-                            <li><a class="dropdown-item" href="{{ path('app_logout') }}">Se déconnecter</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_admin_commune_new') }}">{% trans %}Ajouter une commune{% endtrans %}</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_admin_pays_new') }}">{% trans %}Ajouter un pays{% endtrans %}</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_admin_eveche_new') }}">{% trans %}Ajouter un évêché{% endtrans %}</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_logout') }}">{% trans %}Se déconnecter{% endtrans %}</a></li>
                             
                             {% if is_granted('ROLE_SUPERADMIN') %}
-                            <li><a class="dropdown-item" href="{{ path('app_register') }}">Enregistrer un nouvel utilisateur</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_register') }}">{% trans %}Enregistrer un nouvel utilisateur{% endtrans %}</a></li>
                             {% endif %}
                         </ul>
                     </li>

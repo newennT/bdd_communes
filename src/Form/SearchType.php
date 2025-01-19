@@ -19,7 +19,7 @@ class SearchType extends AbstractType
             ->add('query', TextType::class, [
                 'label' => false,
                 'attr' => [
-                    'placeholder' => 'Rechercher...',
+                    'placeholder' => 'search.placeholder',
                     'class' => 'form-control',
                 ],
             ])
@@ -30,6 +30,7 @@ class SearchType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => null,
+            'translation_domain' => 'messages',
         ]);
     }
 }

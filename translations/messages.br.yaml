@@ -1,8 +1,18 @@
-# Page Home
+# Header
+Langues: Yezhoù
+Français: Galleg
+Breton: Brezhoneg
+Gallo: Gallaoueg
+Voir par catégorie: Gwelout dre rummad
+Liste des communes: Listenn ar c'humunioù
+Liste des pays: Listenn ar broioù
+Liste des évêchés: Listenn an eskoptioù
+search:
+  placeholder: Klask...
 
+# Page Home
 Carte des communes de Bretagne: Kartenn kumunioù Breizh
 Accueil: Degemer
-Liste des communes: Listenn ar c'humunioù
 Choisir un pays: Dibab ur vro
 Choisir un évêché: Dibab un eskopti
 Filtrer: Silañ
