@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Liste des évêchés{% endblock %}
+{% block title %}{% trans %}Liste des évêchés{% endtrans %}{% endblock %}
 
 {% block body %}
     <div class="mt-4">
-        <h1>Liste des évêchés</h1>
+        <h1>{% trans %}Liste des évêchés{% endtrans %}</h1>
     </div>
 
     <div class="container mt-4 d-flex justify-content-center">
@@ -38,14 +38,14 @@
 
     <div class="index-communes-section03">
         <div class="container py-5 text-center">
-        <h2 class="pb-5">Naviguer dans le site</h2>
+        <h2 class="pb-5">{% trans %}Naviguer dans le site{% endtrans %}</h2>
             <div class="row">
                 <div class="col-12 col-md-6 mb-3">
-                    <a class="btn btn-lg" href="{{ path('app_commune_index') }}">Aller à la page des communes</a>
+                    <a class="btn btn-lg" href="{{ path('app_commune_index') }}">{% trans %}Aller à la page des communes{% endtrans %}</a>
                 </div>
 
                 <div class="col col-md-6">
-                    <a class="btn btn-lg" href="{{ path('app_eveche_index') }}">Aller à la page des pays</a>
+                    <a class="btn btn-lg" href="{{ path('app_eveche_index') }}">{% trans %}Aller à la page des pays{% endtrans %}</a>
                 </div>
             </div>
         </div>

@@ -53,12 +53,12 @@
                 {% endif %}
 
                     <div class="back-list py-5">
-                        <a class="btn" href="{{ path('app_pays_index') }}">Revenir à la liste des pays</a>
+                        <a class="btn" href="{{ path('app_pays_index') }}">{% trans %}Revenir à la liste des pays{% endtrans %}</a>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-6">
-                <p class="fs-4">Communes</p>
+                <p class="fs-4">{% trans %}Communes{% endtrans %}</p>
                 <div class="pb-3 pt-2">
                     <div class="list-group">
                         <ul class="liste-eveche-show">
@@ -67,7 +67,7 @@
                                     <small class="text-secondary">{{ commune.code }}</small>
                                 </a>
                             {% else %}
-                                Aucune commune à afficher
+                                {% trans %}Aucune commune à afficher{% endtrans %}
                             {% endfor %}
                         </ul>
                     </div>
