@@ -5,9 +5,15 @@
 {% block title %}{{ action }} d'une commune{% endblock %}
 
 {% block body %}
-    <h1>{{ action }} d'une commune</h1>
+    <div class="container formulaire-ajout">
+        <div class="py-5">
+            <h1>{{ action }} d'une commune</h1>
+        </div>
 
-    {{ include('admin/commune/_form.html.twig') }}
-
-    <a href="{{ path('app_commune_index') }}">back to list</a>
+        {{ include('admin/commune/_form.html.twig') }}
+        
+        <div class="py-5">
+            <a class="btn btn-warning" href="{{ path('app_commune_index') }}">Annuler</a>
+        </div>
+    </div>
 {% endblock %}

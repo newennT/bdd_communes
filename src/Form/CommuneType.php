@@ -17,7 +17,12 @@ class CommuneType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('id', NumberType::class)
+            ->add('id', NumberType::class,[
+                'label' => 'ID (INSEE)',
+                'attr' => [
+                    'class' => 'form-control',
+                ]
+            ])
             ->add('code', NumberType::class)
             ->add('nom_francais', TextType::class)
             ->add('nom_breton', TextType::class)
@@ -27,11 +32,11 @@ class CommuneType extends AbstractType
             ->add('longitude', NumberType::class)
             ->add('id_eveche', EntityType::class, [
                 'class' => Eveche::class,
-                'choice_label' => 'id',
+                'choice_label' => 'nom_francais',
             ])
             ->add('id_pays', EntityType::class, [
                 'class' => Pays::class,
-                'choice_label' => 'id',
+                'choice_label' => 'nom_francais',
             ])
         ;
     }
