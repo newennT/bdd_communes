@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil{% endblock %}
+{% block title %}{% trans %}Carte des communes de Bretagne{% endtrans %} - {% trans %}Accueil{% endtrans %}{% endblock %}
 
 {% block body %}
     <div class="home-section01 pt-5">
-        <h1>Carte des communes de Bretagne</h1>
+        <h1>{% trans %}Carte des communes de Bretagne{% endtrans %}</h1>
     </div>
 
     <div id="map-home" class="section02 container img-fluid"></div>
@@ -14,55 +14,60 @@
             
             <div class="col-12 col-md-4">
                 <select class="form-control" name="pays" id="pays">
-                    <option value="">-- Choisir un pays --</option>
+                    <option value="">-- {% trans %}Choisir un pays{% endtrans %} --</option>
                     {% for item in pays %}
-                        <option value="{{ item.id }}" {% if currentFilters.pays == item.id %}selected{% endif %}>{{ item.nomFrancais }}</option>
+                        <option value="{{ item.id }}" {% if currentFilters.pays == item.id %}selected{% endif %}>{{ item.getNomParLangue(app.request.locale) }}</option>
                     {% endfor %}
                 </select>
             </div>
             
             <div class="col-12 col-md-4">
                 <select class="form-control" name="eveche" id="eveche">
-                    <option value="">-- Choisir un évêché --</option>
+                    <option value="">-- {% trans %}Choisir un évêché{% endtrans %} --</option>
                     {% for eveche in eveches %}
-                        <option value="{{ eveche.id }}" {% if currentFilters.eveche == eveche.id %}selected{% endif %}>{{ eveche.nomFrancais }}</option>
+                        <option value="{{ eveche.id }}" {% if currentFilters.eveche == eveche.id %}selected{% endif %}>{{ eveche.getNomParLangue(app.request.locale) }}</option>
                     {% endfor %}
                 </select>
             </div>
 
             <div class="col-6 col-md-2">
-                <button class="btn btn-secondary w-100" type="submit">Filtrer</button>
+                <button class="btn btn-secondary w-100" type="submit">
+                    {% trans %}Filtrer{% endtrans %}
+                </button>
             </div>
             
             <div class="col-6 col-md-2">
-                <button type="button" class="btn btn-outline-light w-100"><a class="nav-link text-light" href="{{ path('app_home') }}">Réinitialiser</a></button>
+                <button type="button" class="btn btn-outline-light w-100">
+                    <a class="nav-link text-light" href="{{ path('app_home') }}">
+                        {% trans %}Réinitialiser{% endtrans %}
+                    </a>
+                </button>
             </div>
             
         </form>
     </div>
     
 
-
 {# Section de la liste des communes #}
     <div class="home-section03 container py-5">
 
     {# Titre #}
         <div class="py-3 d-flex justify-content-center">
-            <h2>Liste des communes</h2>
+            <h2>{% trans %}Liste des communes{% endtrans %}</h2>
         </div>
 
-        
 
     {# Liste #}
         <div class="pb-3 pt-2">
             <div class="list-group">
                 <ul class="liste-communes">
                     {% for commune in communesPagination %}
-                        <a class="d-flex justify-content-between align-items-center list-group-item list-group-item-action" href="{{ path('app_commune_show', {'id': commune.id, '_locale': app.request.locale}) }}">{{ commune.getNomParLangue(app.request.locale) }} 
+                        <a class="d-flex justify-content-between align-items-center list-group-item list-group-item-action" href="{{ path('app_commune_show', {'id': commune.id, '_locale': app.request.locale}) }}">
+                            {{ commune.getNomParLangue(app.request.locale) }} 
                             <small class="text-secondary">{{ commune.code }}</small>
                         </a>
                     {% else %}
-                        Aucune commune à afficher
+                        {% trans %}Aucune commune à afficher{% endtrans %}
                     {% endfor %}
                 </ul>
             {# Navigation #}
@@ -72,8 +77,8 @@
     {# Bouton vers la page dédiée #}
             <div class="d-flex justify-content-center align-items-center pt-4">
                 <p class="d-flex justify-content-between align-items-center">
-                    <span class="pe-2 fs-5">ou </span> 
-                    <a class="btn" href="{{ path('app_commune_index')}}">Aller à la page des communes</a></p>
+                    <span class="pe-2 fs-5">{% trans %}ou{% endtrans %} </span> 
+                    <a class="btn" href="{{ path('app_commune_index')}}">{% trans %}Aller à la page des communes{% endtrans %}</a></p>
             </div>
         </div>
     </div>
@@ -85,7 +90,7 @@
         <div class="container py-5">
             <div class="row pb-5">
                 <div class="py-3 d-flex justify-content-center">
-                    <h2>Les évêchés et les pays traditionnels de Bretagne</h2>
+                    <h2>{% trans %}Les évêchés et les pays traditionnels de Bretagne{% endtrans %}</h2>
                 </div>
             {# Evêchés #}
             {# Colonne de la première carte #}
@@ -100,10 +105,10 @@
 
                             <div>
                                 <div class="card-body">
-                                    <h3 class="card-title">Les évêchés</h3>
+                                    <h3 class="card-title">{% trans %}Les évêchés{% endtrans %}</h3>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 
-                                    <a class="btn" href="{{ path('app_eveche_index')}}">Page des évêchés</a>
+                                    <a class="btn" href="{{ path('app_eveche_index')}}">{% trans %}Page des évêchés{% endtrans %}</a>
                                 </div>
                             </div>
                         </div>
@@ -123,10 +128,10 @@
 
                             <div>
                                 <div class="card-body">
-                                    <h3 class="card-title">Les pays</h3>
+                                    <h3 class="card-title">{% trans %}Les pays{% endtrans %}</h3>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 
-                                    <a class="btn" href="{{ path('app_pays_index')}}">Page des pays</a>
+                                    <a class="btn" href="{{ path('app_pays_index')}}">{% trans %}Page des pays{% endtrans %}</a>
                                 </div>
                             </div>
                         </div>
@@ -143,20 +148,20 @@
         <div class="container py-5">
             <div class="row">
                 <div class="col-12 col-md-6 sources">
-                    <h2>Sources</h2>
+                    <h2>{% trans %}Sources{% endtrans %}</h2>
                     <ul class="p-0 list-group list-group-flush">
-                        <a class="ps-0 list-group-item" href="https://www.geobreizh.bzh/">Cartes et fond de cartes (Geobreizh)</a>
-                        <a class="ps-0 list-group-item" href="http://boutique.kendalch.com/page/liste-des-fiches-heritaj">L'appartenance des communes aux pays (Kenleur et Heritaj)</a>
-                        <a class="ps-0 list-group-item" href="https://fr-academic.com/dic.nsf/frwiki/1309672">Les informations sur les différents pays (Wikipedia)</a>
-                        <a class="ps-0 list-group-item" href="https://institutdugalo.bzh/fr/nom-de-lieux-en-langue-gallese/">Noms des villes en gallo (Institut du Galo)</a>
-                        <a class="ps-0 list-group-item" href="https://umap.openstreetmap.fr/fr/map/comunes-de-la-louere-de-bertegn_1103265#11/46.9339/-1.6363">Noms des communes du 44 en gallo/poitevin (Vassili Moreau-Miossec via OpenStreetMap)</a>
-                        <a class="ps-0 list-group-item" href="https://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Commune_dans_la_r%C3%A9gion_Bretagne">Liste des communes de la Bretagne administrative (Wikipedia)</a>
-                        <a class="ps-0 list-group-item" href="https://fr.wikipedia.org/wiki/Liste_des_communes_de_la_Loire-Atlantique">Liste des communes de Loire-Atlantique (Wikipedia)</a>
+                        <a class="ps-0 list-group-item" href="https://www.geobreizh.bzh/">{% trans %}Cartes et fond de cartes{% endtrans %} (Geobreizh)</a>
+                        <a class="ps-0 list-group-item" href="http://boutique.kendalch.com/page/liste-des-fiches-heritaj">{% trans %}Les communes et leurs pays{% endtrans %} (Kenleur et Heritaj)</a>
+                        <a class="ps-0 list-group-item" href="https://fr-academic.com/dic.nsf/frwiki/1309672">{% trans %}Les informations sur les différents pays{% endtrans %} (Wikipedia)</a>
+                        <a class="ps-0 list-group-item" href="https://institutdugalo.bzh/fr/nom-de-lieux-en-langue-gallese/">{% trans %}Noms des villes en gallo{% endtrans %} (Institut du Galo)</a>
+                        <a class="ps-0 list-group-item" href="https://umap.openstreetmap.fr/fr/map/comunes-de-la-louere-de-bertegn_1103265#11/46.9339/-1.6363">{% trans %}Noms des communes du 44 en gallo et poitevin{% endtrans %} (Vassili Moreau-Miossec via OpenStreetMap)</a>
+                        <a class="ps-0 list-group-item" href="https://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Commune_dans_la_r%C3%A9gion_Bretagne">{% trans %}Liste des communes de la Bretagne administrative{% endtrans %} (Wikipedia)</a>
+                        <a class="ps-0 list-group-item" href="https://fr.wikipedia.org/wiki/Liste_des_communes_de_la_Loire-Atlantique">{% trans %}Liste des communes de Loire-Atlantique{% endtrans %} (Wikipedia)</a>
                     </ul>
                 </div>
 
                 <div class="col-12 col-md-6 contact">
-                    <h2>Contact</h2>
+                    <h2>{% trans %}Contact{% endtrans %}</h2>
                     <p>Une remarque, des corrections à apporter, des suggestions de contenu, une plainte sur la non-inclusion de la Mayenne ? Vous pouvez contacter le créateur via son site perso.</p>
                     <a href="https://newennturbiau-graphisme.com" class="btn">Voir le site</a>
                 </div>
