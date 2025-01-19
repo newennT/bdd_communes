@@ -13,23 +13,27 @@
 
     <div class="container my-5">
         {% if is_granted('IS_AUTHENTICATED') %}
-            <a class="btn btn-warning" href="{{ path('app_admin_pays_new') }}">Create new</a>
+        <div class="mb-3">
+            <a class="btn btn-warning" href="{{ path('app_admin_pays_new') }}">{% trans %}Ajouter un pays{% endtrans %}</a>
+        </div>
         {% endif %}
 
         <div class="pb-3 pt-2">
             <div class="list-group">
                 <ul class="liste-pays-index ps-0">
                     {% for pay in pays | sort((a, b) => a.getNomParLangue(app.request.locale) <=> b.getNomParLangue(app.request.locale)) %}
-                        <a class="d-flex justify-content-between align-items-center list-group-item list-group-item-action" href="{{ path('app_pays_show', {'id': pay.id, '_locale': app.request.locale}) }}">
+                    <div class="d-flex justify-content-between align-items-center list-group-item list-group-item-action" >
+                        <a class="text-decoration-none text-black" href="{{ path('app_pays_show', {'id': pay.id, '_locale': app.request.locale}) }}">
                         {{ pay.getNomParLangue(app.request.locale) }} 
                         </a>
                         
                         {% if is_granted('IS_AUTHENTICATED') %}
-                        <a class="btn btn-warning" href="{{ path('app_admin_pays_edit', {'id': pay.id}) }}">Modifier</a>
+                        <a class="btn btn-warning" href="{{ path('app_admin_pays_edit', {'id': pay.id}) }}">{% trans %}Modifier{% endtrans %}</a>
                         {% endif %}
+                    </div>
 
                     {% else %}
-                        Aucun pays à afficher
+                        {% trans %}Aucun pays à afficher{% endtrans %}
                     {% endfor %}
                 </ul>
             </div>

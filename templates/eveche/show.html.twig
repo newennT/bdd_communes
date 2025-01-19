@@ -51,10 +51,12 @@
                 {{ eveche.description }} 
 
                 {% if is_granted('IS_AUTHENTICATED') %}
+                <div class="pt-3">
                     <a class="btn btn-warning" href="{{ path('app_admin_eveche_edit', {'id': eveche.id}) }}">{% trans %}Modifier{% endtrans %}</a>
+                </div>
                 {% endif %}
 
-                    <div class="back-list py-5">
+                    <div class="back-list py-3">
                         <a class="btn" href="{{ path('app_eveche_index') }}">{% trans %}Revenir à la liste des évêchés{% endtrans %}</a>
                     </div>
                 </div>

@@ -1,0 +1,8 @@
+.login .btn{
+    background-color: $couleur-dark;
+    color: $blanc;
+    &:hover{
+        background-color: $blanc;
+        color: $couleur-dark;
+    }
+}

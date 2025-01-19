@@ -56,6 +56,12 @@ Naviguer dans le site: Merdeiñ el lec'hienn
 Aller à la page des évêchés: Mont da bajenn an eskoptioù
 Aller à la page des pays: Mont da bajenn ar broioù
 
+#Index des pays
+Aucun pays à afficher: Bro ebet da ziskouez
+
+#Index des évêchés
+Aucun évêché à afficher: Eskpti ebet da ziskouez
+
 #Commune-show
 Modifier: Kemmañ
 Revenir à la liste des communes: Distreiñ da listenn ar c'humunioù
@@ -71,3 +77,8 @@ Revenir à la liste des évêchés: Distreiñ da listenn an eskoptioù
 Recherche: Klask
 Résultats de recherche pour: Disoc'h an enklask evit
 Aucun résultat pour: Disoc'h ebet evit
+
+#Formulaire de connexion
+Connexion: Kevreañ
+Email: Postel
+Mot de passe: Ger tremen

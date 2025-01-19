@@ -49,10 +49,12 @@
                 {{ pay.description }} 
 
                 {% if is_granted('IS_AUTHENTICATED') %}
-                    <a class="btn btn-warning" href="{{ path('app_admin_pays_edit', {'id': pay.id}) }}">Modifier</a>
+                <div class="pt-3">
+                    <a class="btn btn-warning" href="{{ path('app_admin_pays_edit', {'id': pay.id}) }}">{% trans %}Modifier{% endtrans %}</a>
+                </div>
                 {% endif %}
 
-                    <div class="back-list py-5">
+                    <div class="back-list py-3">
                         <a class="btn" href="{{ path('app_pays_index') }}">{% trans %}Revenir à la liste des pays{% endtrans %}</a>
                     </div>
                 </div>
