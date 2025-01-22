@@ -24,9 +24,9 @@ DROP TABLE IF EXISTS `commune`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `commune` (
   `id` int NOT NULL,
-  `nom_francais` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nom_breton` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nom_gallo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nom_francais` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nom_breton` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nom_gallo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `habitants` int NOT NULL,
   `latitude` double NOT NULL,
   `longitude` double NOT NULL,
@@ -59,7 +59,7 @@ DROP TABLE IF EXISTS `doctrine_migration_versions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `doctrine_migration_versions` (
-  `version` varchar(191) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `version` varchar(191) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `executed_at` datetime DEFAULT NULL,
   `execution_time` int DEFAULT NULL,
   PRIMARY KEY (`version`)
@@ -85,11 +85,11 @@ DROP TABLE IF EXISTS `eveche`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `eveche` (
   `id` int NOT NULL,
-  `nom_francais` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nom_breton` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nom_gallo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` longtext COLLATE utf8mb4_unicode_ci,
-  `image_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nom_francais` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nom_breton` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nom_gallo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `image_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -100,7 +100,7 @@ CREATE TABLE `eveche` (
 
 LOCK TABLES `eveche` WRITE;
 /*!40000 ALTER TABLE `eveche` DISABLE KEYS */;
-INSERT INTO `eveche` VALUES (1,'Cornouaille','Bro-Gernev','Kerne',NULL,'678659b3559a3.png'),(2,'Léon','Bro-Leon','Leon',NULL,NULL),(3,'Nantais','Bro-Naoned','Payiz de Naunte',NULL,NULL),(4,'Pays de Dol','Bro-Zol','Payiz de Dou',NULL,NULL),(5,'Pays de Saint-Brieuc','Bro-Sant-Brieg','Payiz de Saint-Berieu',NULL,NULL),(6,'Pays de Saint-Malo','Bro-Sant-Maloù','Payiz de Saint-Mâlo',NULL,NULL),(7,'Rennais','Bro-Roazhon','Payiz de Rene',NULL,NULL),(8,'Trégor','Bro-Dreger','Tregor',NULL,NULL),(9,'Vannetais','Bro-Gwened','Vanntéez',NULL,NULL);
+INSERT INTO `eveche` VALUES (1,'Cornouaille','Bro-Gernev','Kerne',NULL,'67914f1490393.jpg'),(2,'Léon','Bro-Leon','Leon',NULL,'67914f3566fcd.jpg'),(3,'Nantais','Bro-Naoned','Payiz de Naunte',NULL,'67914f4cbc71d.jpg'),(4,'Pays de Dol','Bro-Zol','Payiz de Dou',NULL,'67914fb8d4676.jpg'),(5,'Pays de Saint-Brieuc','Bro-Sant-Brieg','Payiz de Saint-Berieu',NULL,'67914f8348f53.jpg'),(6,'Pays de Saint-Malo','Bro-Sant-Maloù','Payiz de Saint-Mâlo',NULL,'67914f9c1b6a7.jpg'),(7,'Rennais','Bro-Roazhon','Payiz de Rene',NULL,'67914f684027e.jpg'),(8,'Trégor','Bro-Dreger','Tregor',NULL,'67914efa6a5eb.jpg'),(9,'Vannetais','Bro-Gwened','Vanntéez',NULL,'67914f210ef8a.jpg');
 /*!40000 ALTER TABLE `eveche` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,11 +113,11 @@ DROP TABLE IF EXISTS `pays`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `pays` (
   `id` int NOT NULL,
-  `nom_francais` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nom_breton` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nom_gallo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` longtext COLLATE utf8mb4_unicode_ci,
-  `image_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nom_francais` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nom_breton` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nom_gallo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `image_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -141,9 +141,9 @@ DROP TABLE IF EXISTS `user`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `email` varchar(180) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(180) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `roles` json NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UNIQ_IDENTIFIER_EMAIL` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -168,4 +168,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-01-15 18:27:44
+-- Dump completed on 2025-01-22 20:14:31
