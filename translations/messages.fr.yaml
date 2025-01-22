@@ -1,2 +1,9 @@
 search:
   placeholder: Rechercher...
+
+action.add: Ajout
+action.edit: Edition
+
+button.save: Enregistrer
+
+Password: Mot de passe

@@ -1,16 +1,24 @@
 {% extends 'base.html.twig' %}
 
-{% set action = app.current_route == 'app_admin_eveche_new' ? 'Ajout' : 'Edition' %}
+{% set action = app.current_route == 'app_admin_eveche_new' ? 'action.add' : 'action.edit' %}
 
-{% block title %}{{ action }} d'un évêché{% endblock %}
+{% block title %}{{ action|trans }} {% trans %}d'un évêché{% endtrans %}{% endblock %}
 
 {% block body %}
-    <h1>{{ action }} d'un évêché</h1>
+<div class="container formulaire-ajout">
+    <div class="py-5">
+        <h1>{{ action|trans }} {% trans %}d'un évêché{% endtrans %}</h1>
+    </div>
 
     {{ include('admin/eveche/_form.html.twig') }}
 
-    <a href="{{ path('app_eveche_index') }}">back to list</a>
+    <div class="py-5">
+        <a class="btn btn-warning" href="{{ path('app_eveche_index') }}">{% trans %}Annuler{% endtrans %}</a>
+    </div>
+</div>
 {% endblock %}
+
+
 
 {% block javascripts %}
     {{ parent() }}

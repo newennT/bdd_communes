@@ -17,7 +17,9 @@ class PaysType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nom_francais', TextType::class)
+            ->add('nom_francais', TextType::class, [
+                'label' => 'Nom français',
+            ])
             ->add('nom_breton', TextType::class)
             ->add('nom_gallo', TextType::class, [
                 'required' => false,
@@ -25,6 +27,7 @@ class PaysType extends AbstractType
             ->add('imageUrl', FileType::class, [
                 'required' => false,
                 'mapped' => false,
+                'label' => 'Image',
                 'attr' => [
                     'accept' => 'image/png, image/jpeg',
                 ],

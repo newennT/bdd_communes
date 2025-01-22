@@ -1,16 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% set action = app.current_route == 'app_admin_pays_new' ? 'Ajout' : 'Edition' %}
+{% set action = app.current_route == 'app_admin_pays_new' ? 'action.add' : 'action.edit' %}
 
-{% block title %}{{ action }} d'un pays{% endblock %}
+{% block title %}{{ action|trans }} {% trans %}d'un pays{% endtrans %}{% endblock %}
 
 {% block body %}
-    <h1>{{ action }} d'un pays</h1>
+<div class="container formulaire-ajout">
+    <div class="py-5">
+        <h1>{{ action|trans }} {% trans %}d'un pays{% endtrans %}</h1>
+    </div>
 
     {{ include('admin/pays/_form.html.twig') }}
 
-    <a href="{{ path('app_pays_index') }}">back to list</a>
+    <div class="py-5">
+        <a class="btn btn-warning" href="{{ path('app_pays_index') }}">{% trans %}Annuler{% endtrans %}</a>
+    </div>
+
+</div>
+
 {% endblock %}
+
+
 
 {% block javascripts %}
     {{ parent() }}

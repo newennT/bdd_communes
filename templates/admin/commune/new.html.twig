@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% set action = app.current_route == 'app_admin_commune_new' ? 'Ajout' : 'Edition' %}
+{% set action = app.current_route == 'app_admin_commune_new' ? 'action.add' : 'action.edit' %}
 
-{% block title %}{{ action }} d'une commune{% endblock %}
+{% block title %}{{ action|trans }} {% trans %}d'une commune{% endtrans %}{% endblock %}
 
 {% block body %}
     <div class="container formulaire-ajout">
         <div class="py-5">
-            <h1>{{ action }} d'une commune</h1>
+            <h1>{{ action|trans }} {% trans %}d'une commune{% endtrans %}</h1>
         </div>
 
         {{ include('admin/commune/_form.html.twig') }}

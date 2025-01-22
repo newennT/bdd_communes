@@ -1,9 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Enregistrer un nouvel utilisateur{% endblock %}
+{% block title %}{% trans %}Enregistrer un nouvel utilisateur{% endtrans %}{% endblock %}
 
 {% block body %}
-    <h1>Enregistrer un nouvel utilisateur</h1>
+<div class="container formulaire-ajout">
+    <div class="py-5">
+        <h1>{% trans %}Enregistrer un nouvel utilisateur{% endtrans %}</h1>
+    </div>
 
     {{ form_errors(registrationForm) }}
 
@@ -13,6 +16,11 @@
             label: 'Password'
         }) }}
 
-        <button type="submit" class="btn">Register</button>
+        <button type="submit" class="btn">{% trans %}Enregistrer{% endtrans %}</button>
     {{ form_end(registrationForm) }}
+
+    <div class="py-5">
+        <a class="btn btn-warning" href="{{ path('app_home') }}">{% trans %}Annuler{% endtrans %}</a>
+    </div>
+</div>
 {% endblock %}
