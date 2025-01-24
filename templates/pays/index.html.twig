@@ -20,24 +20,36 @@
         </div>
         {% endif %}
 
-        <div class="pb-3 pt-2">
-            <div class="list-group">
-                <ul class="liste-pays-index ps-0">
-                    {% for pay in pays | sort((a, b) => a.getNomParLangue(app.request.locale) <=> b.getNomParLangue(app.request.locale)) %}
-                    <div class="d-flex justify-content-between align-items-center list-group-item list-group-item-action" >
-                        <a class="text-decoration-none text-black" href="{{ path('app_pays_show', {'id': pay.id, '_locale': app.request.locale}) }}">
-                        {{ pay.getNomParLangue(app.request.locale) }} 
-                        </a>
-                        
-                        {% if is_granted('IS_AUTHENTICATED') %}
-                        <a class="btn btn-warning" href="{{ path('app_admin_pays_edit', {'id': pay.id}) }}">{% trans %}Modifier{% endtrans %}</a>
-                        {% endif %}
-                    </div>
+        <div class="row gx-5">
+            <div class="pb-3 pt-2 col-12 col-lg-6">
+                <div class="list-group">
+                    <ul class="liste-pays-index ps-0">
+                        {% for pay in pays | sort((a, b) => a.getNomParLangue(app.request.locale) <=> b.getNomParLangue(app.request.locale)) %}
+                        <div class="d-flex justify-content-between align-items-center list-group-item list-group-item-action" >
+                            <a class="text-decoration-none text-black" href="{{ path('app_pays_show', {'id': pay.id, '_locale': app.request.locale}) }}">
+                            {{ pay.getNomParLangue(app.request.locale) }} 
+                            </a>
+                            
+                            {% if is_granted('IS_AUTHENTICATED') %}
+                            <a class="btn btn-warning" href="{{ path('app_admin_pays_edit', {'id': pay.id}) }}">{% trans %}Modifier{% endtrans %}</a>
+                            {% endif %}
+                        </div>
 
-                    {% else %}
-                        {% trans %}Aucun pays à afficher{% endtrans %}
-                    {% endfor %}
-                </ul>
+                        {% else %}
+                            {% trans %}Aucun pays à afficher{% endtrans %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pb-3 pt-2 col-12 col-lg-6">
+                <p>{% trans %}Les pays traditionnels sont nombreux et il serait inutile de chercher à en dresser une liste exhaustive. Leur nombre et leurs limites peuvent varier en fonction des époques et de la distinction ou non que l’on fait entre le terroir et le pays. Le but, de cette carte comme de celles de ce site, est plutôt de donner un aperçu de la diversité des territoires bretons.{% endtrans %}</p>
+                <p>{% trans %}Certains de ces pays ont une origine qui remonte à l’Antiquité, d’autres remontent aux débuts de l’ère bretonne. La division la plus ancienne est le “paou” qui est l’échelon inférieur à la “bro”.  On retrouve ce mot dans les noms qui commencent par po- et pou- (Poher, de paou et kêr, citadelle, celle-ci étant Carhaix), Porhoët (paou/tro/koed, le pays à travers les bois){% endtrans %}</p>
+                <p>{% trans %}Des noms beaucoup plus récents font référence à des modes vestimentaires. C’est fréquent en Cornouaille, comme Glazik (petit bleu, en référence aux costumes). D’autres peuvent faire référence à des productions, comme Penn Sardin, tête de sardine, à Douarnenez. D’habitudes lexicales, comme le pays Chtou, à partir du juron Mallozh Doue! (malédiction de Dieu), prononcé localement « mallochtou! ». Certains tirent leurs particularités de circonstances géographiques particulières, comme le Mené, « la Montagne » ou la Brière. D’autres enfin peuvent être le fruit de l’influence d’un centre urbain, c’est le cas de Redon, qui, depuis des millénaires, s’est toujours retrouvé en bordure de divisions.{% endtrans %}</p>
+                {% trans %}Source{% endtrans %} : <a href="https://www.geobreizh.bzh/pays-traditionnels/">Pays traditionnels (Geobreizh)</a>
+
+            
+            
             </div>
         </div>
     </div>
