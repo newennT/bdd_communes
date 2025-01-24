@@ -51,7 +51,7 @@
         </form>
     </div>
     
-
+ 
 {# Section de la liste des communes #}
     <div class="home-section03 container py-5">
 
@@ -105,13 +105,13 @@
                     <div class="card h-100 d-flex flex-column">
                         <div class="row g-0 h-100">
                             <div>
-                                <img src="{{ asset('img/eveches-bretagne.webp')}}" class="img-fluid rounded-top h-100" style="object-fit: cover;">
+                                <img src="{{ asset('img/eveches-bretagne.webp')}}" class="img-fluid rounded-top h-100" style="object-fit: cover;" alt="{% trans %}Carte des évêchés de Bretagne{% endtrans %}">
                             </div>
 
                             <div>
                                 <div class="card-body">
                                     <h3 class="card-title">{% trans %}Les évêchés{% endtrans %}</h3>
-                                    <p class="card-text">Les évêchés (bro pl. broioù en breton), sont appelés ainsi du fait de leur rôle ecclésiastique (aussi appelés provinces). Ils sont au nombre de neuf. Avant la révolution, ils servaient, en plus de leur rôle religieux, de circonscriptions civiles et militaires.</p>
+                                    <p class="card-text">Les évêchés sont appelés ainsi du fait de leur rôle ecclésiastique. Ils sont aussi appelés "provinces". Ils sont au nombre de neuf. Avant la révolution, ils servaient, en plus de leur rôle religieux, de circonscriptions civiles et militaires.</p>
 
                                     <a class="btn" href="{{ path('app_eveche_index')}}">{% trans %}Page des évêchés{% endtrans %}</a>
                                 </div>
@@ -128,13 +128,13 @@
                     <div class="card h-100 d-flex flex-column">
                         <div class="g-0 h-100">
                             <div>
-                                <img src="{{ asset('img/pays-bretagne.webp')}}" class="img-fluid rounded-top h-100" style="object-fit: cover;">
+                                <img src="{{ asset('img/pays-bretagne.webp')}}" class="img-fluid rounded-top h-100" style="object-fit: cover;" alt="{% trans %}Carte des pays traditionnels de Bretagne{% endtrans %}">
                             </div>
 
                             <div>
                                 <div class="card-body">
                                     <h3 class="card-title">{% trans %}Les pays{% endtrans %}</h3>
-                                    <p class="card-text">Les pays (paou pl. 'peier ou broig pl. broioùigoù en breton), n'ont pas de limites fixes. Ces pays dits de tradition ou de mode peuvent avoir eu au cours de l'histoire des vocations très diverses. Certains d'entre eux ont eu un rôle administratif tandis que d'autres sont essentiellement des territoires identitaires.</p>
+                                    <p class="card-text">Les pays n'ont pas de limites fixes. Ces pays dits de tradition ou de mode peuvent avoir eu au cours de l'histoire des vocations très diverses. Certains d'entre eux ont eu un rôle administratif tandis que d'autres sont essentiellement des territoires identitaires.</p>
 
                                     <a class="btn" href="{{ path('app_pays_index')}}">{% trans %}Page des pays{% endtrans %}</a>
                                 </div>

@@ -16,7 +16,7 @@
                 <div id="map-eveche-show" class="container img-fluid rounded"></div>
             </div>
             <div class="col-12 col-lg-6 mb-5">
-                <img class="img-fluid rounded" src="{{ asset('uploads/' ~ pay.imageUrl) }}" alt="">
+                <img class="img-fluid rounded" src="{{ asset('uploads/' ~ pay.imageUrl) }}" alt="{% trans %} Carte de {% endtrans %} {{ pay.getNomParLangue(app.request.locale) }}">
             </div>
         </div>
 
