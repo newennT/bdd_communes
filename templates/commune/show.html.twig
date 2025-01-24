@@ -2,9 +2,12 @@
 
 {% block title %}{{ commune.getNomParLangue(app.request.locale)}} - {{ commune.code }}{% endblock %}
 
+{% block metadescription %}Comment s'appelle {{ commune.nomFrancais}} en breton et en gallo ? A quel pays traditionnel appartient cette commune ?{% endblock %}
+{% block keywords %}{{ commune.nomFrancais}}, {{ commune.getIdPays.nomFrancais}}, {{ commune.getIdEveche.nomFrancais}}, communes Bretagne, pays traditionnels, breton, gallo, brezhoneg{% endblock %}
+
 {% block body %}
     
-    <div class="container">
+    <div class="container mb-5">
         <div class="mt-5">
             <h1>{{ commune.getNomParLangue(app.request.locale) }} - {{ commune.code }} </h1>
         </div>

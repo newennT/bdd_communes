@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}{{ eveche.getNomParLangue(app.request.locale) }}{% endblock %}
+{% block metadescription %}A quel territoire correspond l'évêché {{ eveche.nomFrancais}} ? Quel est son nom en breton et en gallo ? {% endblock %}
+{% block keywords %}{{ eveche.nomFrancais}}, évêchés Bretagne, provinces bretagne, pays traditionnels, breton, gallo, brezhoneg{% endblock %}
+
 
 {% block body %}
 

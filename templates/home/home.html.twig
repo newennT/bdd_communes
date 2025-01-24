@@ -2,6 +2,10 @@
 
 {% block title %}{% trans %}Carte des communes de Bretagne{% endtrans %} - {% trans %}Accueil{% endtrans %}{% endblock %}
 
+{% block metadescription %}{% trans %}Où sont situés les différents pays traditionnels de Bretagne et quelles communes actuelles en font partie ? Explorez les différentes cartes !{% endtrans %}{% endblock %}
+
+{% block keywords %}pays traditionnels bretagne, bretagne, breton, évêché, commune, communes bretonnes, carte interactive bretagne, breizh, brezhoneg, gallo{% endblock %}
+ 
 {% block body %}
     <div class="home-section01 pt-5">
         <h1>{% trans %}Carte des communes de Bretagne{% endtrans %}</h1>
@@ -89,8 +93,9 @@
     <div class="home-section04">
         <div class="container py-5">
             <div class="row pb-5">
-                <div class="py-3 d-flex justify-content-center">
-                    <h2>{% trans %}Les évêchés et les pays traditionnels de Bretagne{% endtrans %}</h2>
+                <div class="pt-3 row">
+                    <h2 class="col-12">{% trans %}Les évêchés et les pays traditionnels de Bretagne{% endtrans %}</h2>
+                    <p class="col-12 mt-2">La structure territoriale de la Bretagne est complexe, les territoires la composant ayant évolué au cours de l'Histoire. On distingue communément deux niveaux de pays :</p>
                 </div>
             {# Evêchés #}
             {# Colonne de la première carte #}
@@ -106,7 +111,7 @@
                             <div>
                                 <div class="card-body">
                                     <h3 class="card-title">{% trans %}Les évêchés{% endtrans %}</h3>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text">Les évêchés (bro pl. broioù en breton), sont appelés ainsi du fait de leur rôle ecclésiastique (aussi appelés provinces). Ils sont au nombre de neuf. Avant la révolution, ils servaient, en plus de leur rôle religieux, de circonscriptions civiles et militaires.</p>
 
                                     <a class="btn" href="{{ path('app_eveche_index')}}">{% trans %}Page des évêchés{% endtrans %}</a>
                                 </div>
@@ -129,7 +134,7 @@
                             <div>
                                 <div class="card-body">
                                     <h3 class="card-title">{% trans %}Les pays{% endtrans %}</h3>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text">Les pays (paou pl. 'peier ou broig pl. broioùigoù en breton), n'ont pas de limites fixes. Ces pays dits de tradition ou de mode peuvent avoir eu au cours de l'histoire des vocations très diverses. Certains d'entre eux ont eu un rôle administratif tandis que d'autres sont essentiellement des territoires identitaires.</p>
 
                                     <a class="btn" href="{{ path('app_pays_index')}}">{% trans %}Page des pays{% endtrans %}</a>
                                 </div>
