@@ -5,8 +5,8 @@ Breton: Brezhoneg
 Gallo: Gallaoueg
 Voir par catégorie: Gwelout dre rummad
 Liste des communes: Listenn ar c'humunioù
-Liste des pays: Listenn ar broioù
-Liste des évêchés: Listenn an eskoptioù
+Liste des pays: Listenn ar broioùigoù
+Liste des provinces: Listenn an broioù
 search:
   placeholder: Klask...
 
@@ -19,25 +19,25 @@ Mentions légales: Menegoù lezenn
 Politique de confidentialité: Politikerezh prevezded
 Outils admin: Ostilhoù ar merer
 Ajouter une commune: Ouzhpennañ ur gumun
-Ajouter un pays: Ouzhpennañ ur vro
-Ajouter un évêché: Ouzhpennañ un eskopti
+Ajouter un pays: Ouzhpennañ ur vroig
+Ajouter une province: Ouzhpennañ ur vro
 Enregistrer un nouvel utilisateur: Enrollañ un implijer nevez
 
 # Page Home
 Carte des communes de Bretagne: Kartenn kumunioù Breizh
 Accueil: Degemer
-Choisir un pays: Dibab ur vro
-Choisir un évêché: Dibab un eskopti
+Choisir un pays: Dibab ur vroig
+Choisir une province: Dibab ur vro
 Filtrer: Silañ
 Réinitialiser: Adkorañ
 Aucune commune à afficher: Kumun ebet da ziskouez
 ou: pe
 Aller à la page des communes: Mont da bajenn ar c'humunioù
-Les évêchés et les pays traditionnels de Bretagne: Eskoptioù ha broioù hengounel Breizh
-Les évêchés: An eskoptioù
-Les pays: Ar broioù
-Page des évêchés: Pajenn an eskoptioù
-Page des pays: Pajenn ar broioù
+Les provinces et les pays traditionnels de Bretagne: broioù ha broioùigoù hengounel Breizh
+Les provinces: An broioù
+Les pays: Ar broioùigoù
+Page des provinces: Pajenn an broioù
+Page des pays: Pajenn ar broioùigoù
 Sources: Mammennoù
 Cartes et fond de cartes: Kartennoù ha foñs ar c'hartennoù
 Les communes et leurs pays: Ar c'humunioù gant o broioù
@@ -47,22 +47,26 @@ Noms des communes du 44 en gallo et poitevin: Anvioù kumunioù Liger-Atlantel e
 Liste des communes de la Bretagne administrative: Listenn kumunioù Breizh melestradurel
 Liste des communes de Loire-Atlantique: Listenn kumunioù Liger-Atlantel
 Contact: Mont e darempred
-Les évêchés sont appelés ainsi du fait de leur rôle ecclésiastique. Ils sont aussi appelés "provinces". Ils sont au nombre de neuf. Avant la révolution, ils servaient, en plus de leur rôle religieux, de circonscriptions civiles et militaires.: An eskoptioù, a vez graet evel-se abalamour d'o roll relijiel. Nav anezho a zo. A-raok an dispac'h e servijent, ouzhpenn o roll relijiel, evel strolladoù sivil ha milourel.
-Les pays n'ont pas de limites fixes. Ces pays dits de tradition ou de mode peuvent avoir eu au cours de l'histoire des vocations très diverses. Certains d'entre eux ont eu un rôle administratif tandis que d'autres sont essentiellement des territoires identitaires.: Ar broioù n’eo ket termenet mat o harzoù. Palioù liesseurt o deus bet ar broioù a-hed an amzer. Ur roll melestradurel a oa gant ul lodenn, tra ma'z eo ar re all tiriadoù identelezh dreist-holl.
+Les provinces sont appelés ainsi du fait de leur rôle ecclésiastique. Ils sont aussi appelés "provinces". Ils sont au nombre de neuf. Avant la révolution, ils servaient, en plus de leur rôle religieux, de circonscriptions civiles et militaires.: An broioù, a vez graet evel-se abalamour d'o roll relijiel. Nav anezho a zo. A-raok an dispac'h e servijent, ouzhpenn o roll relijiel, evel strolladoù sivil ha milourel.
+Les pays n'ont pas de limites fixes. Ces pays dits de tradition ou de mode peuvent avoir eu au cours de l'histoire des vocations très diverses. Certains d'entre eux ont eu un rôle administratif tandis que d'autres sont essentiellement des territoires identitaires.: Ar broioùigoù n’eo ket termenet mat o harzoù. Palioù liesseurt o deus bet ar broioù a-hed an amzer. Ur roll melestradurel a oa gant ul lodenn, tra ma'z eo ar re all tiriadoù identelezh dreist-holl.
 
 #Index des communes
 Nom: Anv
-Evêché: Eskopti
-Pays: Bro
+Evêché: bro
+Pays: Broig
 Naviguer dans le site: Merdeiñ el lec'hienn
-Aller à la page des évêchés: Mont da bajenn an eskoptioù
-Aller à la page des pays: Mont da bajenn ar broioù
+Aller à la page des provinces: Mont da bajenn an broioù
+Aller à la page des pays: Mont da bajenn ar broioùigoù
 
 #Index des pays
-Aucun pays à afficher: Bro ebet da ziskouez
+Aucun pays à afficher: Broig ebet da ziskouez
 
-#Index des évêchés
-Aucun évêché à afficher: Eskpti ebet da ziskouez
+#Index des provinces
+Aucune province à afficher: Bro ebet da ziskouez
+Source: Mammenn
+La principale division territoriale traditionnelle de la Bretagne sont les “bro” (pays ou provinces). Ils sont au nombre de neuf, symbolisés sur le drapeau breton Gwenn-ha-Du par les neuf bandes alternées noires et blanches. Même si ces pays ont perdu toute réalité officielle depuis 1790 et la création des départements, ils existent toujours dans le vécu.: Rannadur tiriadel hengounel Breizh pennañ eo ar vro. Nav anezho a zo. Aroueziet e vez war banniel Breizh Gwenn-ha-Du gant an nav bandenn wenn ha du a bep eil. Anavezet e vezont c’hoazh er vuhez gwirion, ha pa vefe bet kollet pep gwirvoud ofisiel gant ar broioù-se abaoe 1790 ha krouidigezh an departamantoù.
+Ces échelons ont été mis en place officiellement par les Bretons pour prendre la relève de l’administration romaine à la chute de l’Empire romain, mais semblent recouvrir une réalité humaine et historique qui remonte à plus loin. Les limites coïncident en effet avec des éléments géographiques remarquables (grands cours d’eau, lignes de crête) ou avec des éléments humains remontant à une haute antiquité, comme des mégalithes ou des toponymes pré-bretons.: Savet e oa bet ar broioù-se en un doare ofisiel gant ar Vretoned evit adkemer penn ar velestradurezh roman da vare diskar an Impalaeriezh roman, met war a seblant eo o gwirvoud istorel ha denel kalz donoc’h. Klotañ a ra an harzoù-se gant elfennoù douaroniel heverk (stêrioù bras, linennoù kribennoù) pe gant elfennoù denel o tont eus an amzerioù koshañ, evel megalitoù pe lec’hanvadurioù rakbreizhek.
+Ces divisions coïncident également dans les grandes lignes avec les territoires des anciens peuples celtes. Au territoire des Osismes correspondent la Cornouaille, le Léon et le Trégor, au territoire des Vénètes correspond le Pays vannetais,  au territoire des anciens Coriosolitesaux les pays de Saint-Brieuc, Saint-Malo et Dol, au territoire des Namnètes le Nantais et au territoire des Riedones le Rennais.: Klotañ a ra an harzoù-se ​​ivez gant tiriadoù ar pobloù keltiek kozh, dre vras. Ouzh tiriad an Osismes e klot Bro-Gerne, Bro-Leon ha Bro-Dreger, ouzh tiriad ar Venetez e klot Bro-Wened, ouzh tiriad ar C'horiolited kozh e klot douaroù Bro-Sant-Brieg, Bro-Sant-Maloù ha Bro-Zol, ouzh tiriad an Namnetes Bro-Naoned hag ouzh tiriad ar Riedones Bro-Roazhon.
 
 #Commune-show
 Modifier: Kemmañ
@@ -70,13 +74,13 @@ Revenir à la liste des communes: Distreiñ da listenn ar c'humunioù
 
 #Pays-show
 Communes: Kumunioù
-Revenir à la liste des pays: Distreiñ da listenn ar broioù
+Revenir à la liste des pays: Distreiñ da listenn ar broioùigoù
 Carte de: Kartenn
-Carte des pays traditionnels de Bretagne: Kartenn broioù Breizh
+Carte des pays traditionnels de Bretagne: Kartenn broioùigoù Breizh
 
 #Evêché-show
-Revenir à la liste des évêchés: Distreiñ da listenn an eskoptioù
-Carte des évêchés de Bretagne: Kartenn eskoptioù Breizh
+Revenir à la liste des provinces: Distreiñ da listenn an broioù
+Carte des provinces de Bretagne: Kartenn broioù Breizh
 
 #Résultats recherche
 Recherche: Klask
@@ -102,8 +106,8 @@ action.edit: Kemmañ
 action.add: Ouzhpennañ
 button.save: Saveteiñ
 Supprimer: Dilemel
-d'un pays: ur vro
-d'un évêché: un eskopti
+d'un pays: ur vroig
+d'une province: ur vro
 Image: Skeudenn
 Description: Diskrivadur
 Password: Ger tremen
@@ -111,7 +115,7 @@ Enregistrer: Saveteiñ
 Rôle(s): Roll(où)
 
 #Métadescriptions
-Où sont situés les différents pays traditionnels de Bretagne et quelles communes actuelles en font partie ? Explorez les différentes cartes !: Pelec’h lec'hiañ broioù hengounel Breizh ha peseurt kumunioù a-vremañ a zo enno ? Sellit ouzh kartennoù al lec'hienn !
-Les évêchés de Bretagne sont au nombre de neuf. Avant la révolution, ils servaient, en plus de leur rôle religieux, de circonscriptions civiles et militaires.: Nav eskopti zo e Breizh. A-raok an dispac'h e servijent, ouzhpenn o ferzh relijiel, evel strolladoù sivil ha milourel.
-Les pays traditionnels de Bretagne n’ont pas de limites fixes. Au cours du temps, ils ont eu des vocations très diverses.: Biskoazh n’o deus bet broioù hengounel Breizh harzoù termenet. Rolloù liesseurt o deus bet a-hed an amzer.
+Où sont situés les différents pays traditionnels de Bretagne et quelles communes actuelles en font partie ? Explorez les différentes cartes !: Pelec’h lec'hiañ broioùigoù hengounel Breizh ha peseurt kumunioù a-vremañ a zo enno ? Sellit ouzh kartennoù al lec'hienn !
+Les provinces de Bretagne sont au nombre de neuf. Avant la révolution, ils servaient, en plus de leur rôle religieux, de circonscriptions civiles et militaires.: Nav bro zo e Breizh. A-raok an dispac'h e servijent, ouzhpenn o ferzh relijiel, evel strolladoù sivil ha milourel.
+Les pays traditionnels de Bretagne n’ont pas de limites fixes. Au cours du temps, ils ont eu des vocations très diverses.: Biskoazh n’o deus bet broioùigoù hengounel Breizh harzoù termenet. Rolloù liesseurt o deus bet a-hed an amzer.
 En 2025, la Bretagne historique compte 1415 communes. Explorez-les sur cette carte et retrouvez leurs pays traditionnels.: 1415 kumun a zo e Breizh istorel e 2025. Sellit outo war ar gartenn hag adkavit o broioù hengounel.

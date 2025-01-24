@@ -4,7 +4,7 @@
 
 {% block metadescription %}{% trans %}Où sont situés les différents pays traditionnels de Bretagne et quelles communes actuelles en font partie ? Explorez les différentes cartes !{% endtrans %}{% endblock %}
 
-{% block keywords %}pays traditionnels bretagne, bretagne, breton, évêché, commune, communes bretonnes, carte interactive bretagne, breizh, brezhoneg, gallo{% endblock %}
+{% block keywords %}pays traditionnels bretagne, bretagne, breton, province, commune, communes bretonnes, carte interactive bretagne, breizh, brezhoneg, gallo{% endblock %}
  
 {% block body %}
     <div class="home-section01 pt-5">
@@ -27,7 +27,7 @@
             
             <div class="col-12 col-md-4">
                 <select class="form-control" name="eveche" id="eveche">
-                    <option value="">-- {% trans %}Choisir un évêché{% endtrans %} --</option>
+                    <option value="">-- {% trans %}Choisir une province{% endtrans %} --</option>
                     {% for eveche in eveches %}
                         <option value="{{ eveche.id }}" {% if currentFilters.eveche == eveche.id %}selected{% endif %}>{{ eveche.getNomParLangue(app.request.locale) }}</option>
                     {% endfor %}
@@ -89,12 +89,12 @@
     
 
 
-{# Section des évêchés et des pays #}
+{# Section des provinces et des pays #}
     <div class="home-section04">
         <div class="container py-5">
             <div class="row pb-5">
                 <div class="pt-3 row">
-                    <h2 class="col-12">{% trans %}Les évêchés et les pays traditionnels de Bretagne{% endtrans %}</h2>
+                    <h2 class="col-12">{% trans %}Les provinces et les pays traditionnels de Bretagne{% endtrans %}</h2>
                     <p class="col-12 mt-2">La structure territoriale de la Bretagne est complexe, les territoires la composant ayant évolué au cours de l'Histoire. On distingue communément deux niveaux de pays :</p>
                 </div>
             {# Evêchés #}
@@ -105,15 +105,15 @@
                     <div class="card h-100 d-flex flex-column">
                         <div class="row g-0 h-100">
                             <div>
-                                <img src="{{ asset('img/eveches-bretagne.webp')}}" class="img-fluid rounded-top h-100" style="object-fit: cover;" alt="{% trans %}Carte des évêchés de Bretagne{% endtrans %}">
+                                <img src="{{ asset('img/eveches-bretagne.webp')}}" class="img-fluid rounded-top h-100" style="object-fit: cover;" alt="{% trans %}Carte des provinces de Bretagne{% endtrans %}">
                             </div>
 
                             <div>
                                 <div class="card-body">
-                                    <h3 class="card-title">{% trans %}Les évêchés{% endtrans %}</h3>
-                                    <p class="card-text">Les évêchés sont appelés ainsi du fait de leur rôle ecclésiastique. Ils sont aussi appelés "provinces". Ils sont au nombre de neuf. Avant la révolution, ils servaient, en plus de leur rôle religieux, de circonscriptions civiles et militaires.</p>
+                                    <h3 class="card-title">{% trans %}Les provinces{% endtrans %}</h3>
+                                    <p class="card-text">Les provinces sont appelés ainsi du fait de leur rôle ecclésiastique. Ils sont aussi appelés "provinces". Ils sont au nombre de neuf. Avant la révolution, ils servaient, en plus de leur rôle religieux, de circonscriptions civiles et militaires.</p>
 
-                                    <a class="btn" href="{{ path('app_eveche_index')}}">{% trans %}Page des évêchés{% endtrans %}</a>
+                                    <a class="btn" href="{{ path('app_eveche_index')}}">{% trans %}Page des provinces{% endtrans %}</a>
                                 </div>
                             </div>
                         </div>

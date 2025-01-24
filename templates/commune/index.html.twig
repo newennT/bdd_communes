@@ -26,7 +26,7 @@
             
             <div class="col-12 col-md-4">
                 <select class="form-control" name="eveche" id="eveche">
-                    <option value="">-- {% trans %}Choisir un évêché{% endtrans %} --</option>
+                    <option value="">-- {% trans %}Choisir une province{% endtrans %} --</option>
                     {% for eveche in eveches %}
                         <option value="{{ eveche.id }}" {% if currentFilters.eveche == eveche.id %}selected{% endif %}>{{ eveche.nomFrancais }}</option>
                     {% endfor %}
@@ -110,7 +110,7 @@
         <h2 class="pb-5">{% trans %}Naviguer dans le site{% endtrans %}</h2>
             <div class="row">
                 <div class="col-12 col-md-6 mb-3">
-                    <a class="btn btn-lg" href="{{ path('app_eveche_index') }}">{% trans %}Aller à la page des évêchés{% endtrans %}</a>
+                    <a class="btn btn-lg" href="{{ path('app_eveche_index') }}">{% trans %}Aller à la page des provinces{% endtrans %}</a>
                 </div>
 
                 <div class="col col-md-6 mb-3">

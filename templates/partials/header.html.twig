@@ -41,7 +41,7 @@
                                 {% trans %}Liste des pays{% endtrans %}
                             </a></li>
                             <li><a class="dropdown-item" href="{{ path('app_eveche_index') }}">
-                                {% trans %}Liste des évêchés{% endtrans %}
+                                {% trans %}Liste des provinces{% endtrans %}
                             </a></li>
                         </ul>
                     </li>
@@ -54,7 +54,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{ path('app_admin_commune_new') }}">{% trans %}Ajouter une commune{% endtrans %}</a></li>
                             <li><a class="dropdown-item" href="{{ path('app_admin_pays_new') }}">{% trans %}Ajouter un pays{% endtrans %}</a></li>
-                            <li><a class="dropdown-item" href="{{ path('app_admin_eveche_new') }}">{% trans %}Ajouter un évêché{% endtrans %}</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_admin_eveche_new') }}">{% trans %}Ajouter une province{% endtrans %}</a></li>
                             <li><a class="dropdown-item" href="{{ path('app_logout') }}">{% trans %}Se déconnecter{% endtrans %}</a></li>
                             
                             {% if is_granted('ROLE_SUPERADMIN') %}

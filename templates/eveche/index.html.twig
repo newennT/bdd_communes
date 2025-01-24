@@ -1,45 +1,58 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% trans %}Liste des évêchés{% endtrans %}{% endblock %}
-{% block metadescription %}{% trans %}Les évêchés de Bretagne sont au nombre de neuf. Avant la révolution, ils servaient, en plus de leur rôle religieux, de circonscriptions civiles et militaires.{% endtrans %}{% endblock %}
-{% block keywords %}évêchés bretagne, provinces bretagne, bretagne, breizh, bretagne traditionnelle, carte interactive{% endblock %}
+{% block title %}{% trans %}Liste des provinces{% endtrans %}{% endblock %}
+{% block metadescription %}{% trans %}Les provinces de Bretagne sont au nombre de neuf. Avant la révolution, ils servaient, en plus de leur rôle religieux, de circonscriptions civiles et militaires.{% endtrans %}{% endblock %}
+{% block keywords %}provinces bretagne, provinces bretagne, bretagne, breizh, bretagne traditionnelle, carte interactive{% endblock %}
 
 {% block body %}
     <div class="mt-4">
-        <h1>{% trans %}Liste des évêchés{% endtrans %}</h1>
+        <h1>{% trans %}Liste des provinces{% endtrans %}</h1>
     </div>
 
     <div class="container mt-4 d-flex justify-content-center">
-        <img class="img-fluid rounded" src="{{ asset('img/eveches-bretagne.webp') }}" alt="{% trans %}Carte des évêchés de Bretagne{% endtrans %}">
+        <img class="img-fluid rounded" src="{{ asset('img/eveches-bretagne.webp') }}" alt="{% trans %}Carte des provinces de Bretagne{% endtrans %}">
     </div>
 
     <div class="container my-5">
         {% if is_granted('IS_AUTHENTICATED') %}
         <div class="mb-3">
-            <a class="btn btn-warning" href="{{ path('app_admin_eveche_new') }}">{% trans %}Ajouter un évêché{% endtrans %}</a>
+            <a class="btn btn-warning" href="{{ path('app_admin_eveche_new') }}">{% trans %}Ajouter une province{% endtrans %}</a>
         </div>
         {% endif %}
 
-        <div class="pb-3 pt-2">
-            <div class="list-group">
-                <ul class="liste-eveche-index ps-0">
-                    {% for eveche in eveches | sort((a, b) => a.getNomParLangue(app.request.locale) <=> b.getNomParLangue(app.request.locale)) %}
-                        <div class="d-flex justify-content-between align-items-center list-group-item list-group-item-action" >
-                            <a class="text-decoration-none text-black" href="{{ path('app_eveche_show', {'id': eveche.id, '_locale': app.request.locale}) }}">
-                                {{ eveche.getNomParLangue(app.request.locale) }}
-                            </a>
+        <div class="row gx-5">
+            <div class="pb-3 pt-2 col-12 col-lg-6">
+                <div class="list-group">
+                    <ul class="liste-eveche-index ps-0">
+                        {% for eveche in eveches | sort((a, b) => a.getNomParLangue(app.request.locale) <=> b.getNomParLangue(app.request.locale)) %}
+                            <div class="d-flex justify-content-between align-items-center list-group-item list-group-item-action" >
+                                <a class="text-decoration-none text-black" href="{{ path('app_eveche_show', {'id': eveche.id, '_locale': app.request.locale}) }}">
+                                    {{ eveche.getNomParLangue(app.request.locale) }}
+                                </a>
 
-                            {% if is_granted('IS_AUTHENTICATED') %}
-                            <a class="btn btn-warning" href="{{ path('app_admin_eveche_edit', {'id': eveche.id}) }}">{% trans %}Modifier{% endtrans %}</a>
-                            {% endif %}
+                                {% if is_granted('IS_AUTHENTICATED') %}
+                                <a class="btn btn-warning" href="{{ path('app_admin_eveche_edit', {'id': eveche.id}) }}">{% trans %}Modifier{% endtrans %}</a>
+                                {% endif %}
+                                
+                            </div>
                             
-                        </div>
-                        
 
-                    {% else %}
-                        {% trans %}Aucun évêché à afficher{% endtrans %}
-                    {% endfor %}
-                </ul>
+                        {% else %}
+                            {% trans %}Aucune province à afficher{% endtrans %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        
+
+            <div class="pb-3 pt-2 col-12 col-lg-6">
+                <p>{% trans %}La principale division territoriale traditionnelle de la Bretagne sont les “bro” (pays ou provinces). Ils sont au nombre de neuf, symbolisés sur le drapeau breton Gwenn-ha-Du par les neuf bandes alternées noires et blanches. Même si ces pays ont perdu toute réalité officielle depuis 1790 et la création des départements, ils existent toujours dans le vécu.{% endtrans %} </p>
+                <p>{% trans %}Ces échelons ont été mis en place officiellement par les Bretons pour prendre la relève de l’administration romaine à la chute de l’Empire romain, mais semblent recouvrir une réalité humaine et historique qui remonte à plus loin. Les limites coïncident en effet avec des éléments géographiques remarquables (grands cours d’eau, lignes de crête) ou avec des éléments humains remontant à une haute antiquité, comme des mégalithes ou des toponymes pré-bretons.{% endtrans %}</p> 
+                <p>{% trans %}Ces divisions coïncident également dans les grandes lignes avec les territoires des anciens peuples celtes. Au territoire des Osismes correspondent la Cornouaille, le Léon et le Trégor, au territoire des Vénètes correspond le Pays vannetais,  au territoire des anciens Coriosolitesaux les pays de Saint-Brieuc, Saint-Malo et Dol, au territoire des Namnètes le Nantais et au territoire des Riedones le Rennais.{% endtrans %}</p>
+                {% trans %}Source{% endtrans %} : <a href="https://www.geobreizh.bzh/provinces-historiques/">https://www.geobreizh.bzh/provinces-historiques/</a>
+
+
+            
             </div>
         </div>
     </div>

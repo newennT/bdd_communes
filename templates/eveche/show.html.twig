@@ -1,8 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}{{ eveche.getNomParLangue(app.request.locale) }}{% endblock %}
-{% block metadescription %}A quel territoire correspond l'évêché {{ eveche.nomFrancais}} ? Quel est son nom en breton et en gallo ? {% endblock %}
-{% block keywords %}{{ eveche.nomFrancais}}, évêchés Bretagne, provinces bretagne, pays traditionnels, breton, gallo, brezhoneg{% endblock %}
+{% block metadescription %}A quel territoire correspond le {{ eveche.nomFrancais}} ? Quel est son nom en breton et en gallo ? {% endblock %}
+{% block keywords %}{{ eveche.nomFrancais}}, provinces Bretagne, provinces bretagne, pays traditionnels, breton, gallo, brezhoneg{% endblock %}
 
 
 {% block body %}
@@ -17,7 +17,7 @@
                 <div id="map-eveche-show" class="container img-fluid rounded"></div>
             </div>
             <div class="col-12 col-lg-6 mb-5">
-                <img class="img-fluid rounded" src="{{ asset('uploads/' ~ eveche.imageUrl) }}" alt="{% trans %}Carte de{% endtrans %}">
+                <img class="img-fluid rounded" src="{{ asset('uploads/' ~ eveche.imageUrl) }}" alt="{% trans %}Carte de{% endtrans %} {{ eveche.getNomParLangue(app.request.locale) }}">
             </div>
         </div>
 
@@ -60,7 +60,7 @@
                 {% endif %}
 
                     <div class="back-list py-3">
-                        <a class="btn" href="{{ path('app_eveche_index') }}">{% trans %}Revenir à la liste des évêchés{% endtrans %}</a>
+                        <a class="btn" href="{{ path('app_eveche_index') }}">{% trans %}Revenir à la liste des provinces{% endtrans %}</a>
                     </div>
                 </div>
             </div>

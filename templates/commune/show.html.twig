@@ -34,7 +34,7 @@
                         </p>
                         <p>
                         Elle se situe dans le <a href="{{ path('app_pays_show', {'id': commune.getIdPays.id}) }}">{{ commune.getIdPays.getNomParLangue(app.request.locale) }}</a>
-                        et appartient à l'évêché <a href="{{ path('app_eveche_show', {'id': commune.getIdEveche.id}) }}">{{ commune.getIdEveche.getNomParLangue(app.request.locale) }}</a>.
+                        et appartient à la province <a href="{{ path('app_eveche_show', {'id': commune.getIdEveche.id}) }}">{{ commune.getIdEveche.getNomParLangue(app.request.locale) }}</a>.
                         </p>
                     </div>
                 {% endif %}
@@ -49,7 +49,7 @@
 
                         <p>
                         E <a href="{{ path('app_pays_show', {'id': commune.getIdPays.id}) }}">{{ commune.getIdPays.getNomParLangue(app.request.locale) }}</a>
-                        hag en eskopti <a href="{{ path('app_eveche_show', {'id': commune.getIdEveche.id}) }}">{{ commune.getIdEveche.getNomParLangue(app.request.locale) }}</a>
+                        hag e <a href="{{ path('app_eveche_show', {'id': commune.getIdEveche.id}) }}">{{ commune.getIdEveche.getNomParLangue(app.request.locale) }}</a>
                         emañ lec'hiet.
                         
                         </p>
