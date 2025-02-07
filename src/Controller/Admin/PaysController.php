@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 #[IsGranted('IS_AUTHENTICATED')]
 #[Route('/admin/pays')]
@@ -59,7 +60,8 @@ final class PaysController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_admin_pays_delete', methods: ['POST'])]
+    #[IsGranted('ROLE_SUPERADMIN')]
+    #[Route('/delete/{id}', name: 'app_admin_pays_delete', methods: ['GET', 'POST'])]
     public function delete(Request $request, Pays $pay, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$pay->getId(), $request->getPayload()->getString('_token'))) {

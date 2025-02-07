@@ -25,7 +25,9 @@ class CommuneType extends AbstractType
             ])
             ->add('nom_francais', TextType::class)
             ->add('nom_breton', TextType::class)
-            ->add('nom_gallo', TextType::class)
+            ->add('nom_gallo', TextType::class, [
+                'required' => false
+            ])
             ->add('habitants', NumberType::class,[
                 'label' => 'Nombre d\'habitants',
             ])

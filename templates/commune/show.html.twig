@@ -77,6 +77,10 @@
                 </div>
                 {% endif %}
 
+                {% if is_granted('ROLE_SUPERADMIN') %}
+                    <a class="btn btn-danger" href="{{ path('app_admin_commune_delete', {'id': commune.id}) }}">Supprimer</a>
+                {% endif %}
+
                 <div class="back-list py-3">
                     <a class="btn" href="{{ path('app_commune_index') }}">{% trans %}Revenir à la liste des communes{% endtrans %}</a>
                 </div>

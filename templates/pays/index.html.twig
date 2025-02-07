@@ -33,6 +33,7 @@
                             {% if is_granted('IS_AUTHENTICATED') %}
                             <a class="btn btn-warning" href="{{ path('app_admin_pays_edit', {'id': pay.id}) }}">{% trans %}Modifier{% endtrans %}</a>
                             {% endif %}
+                            
                         </div>
 
                         {% else %}

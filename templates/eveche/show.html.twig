@@ -59,6 +59,10 @@
                 </div>
                 {% endif %}
 
+                {% if is_granted('ROLE_SUPERADMIN') %}
+                    <a class="btn btn-danger" href="{{ path('app_admin_eveche_delete', {'id': eveche.id}) }}">Supprimer</a>
+                {% endif %}
+
                     <div class="back-list py-3">
                         <a class="btn" href="{{ path('app_eveche_index') }}">{% trans %}Revenir à la liste des provinces{% endtrans %}</a>
                     </div>

@@ -38,8 +38,8 @@ final class CommuneController extends AbstractController
         ]);
     }
 
-
-    #[Route('/{id}', name: 'app_admin_commune_delete', methods: ['POST'])]
+    #[IsGranted('ROLE_SUPERADMIN')]
+    #[Route('/delete/{id}', name: 'app_admin_commune_delete', methods: ['GET', 'POST'])]
     public function delete(Request $request, Commune $commune, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$commune->getId(), $request->getPayload()->getString('_token'))) {
