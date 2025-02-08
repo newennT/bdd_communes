@@ -6,7 +6,7 @@ Gallo: Gallaoueg
 Voir par catégorie: Gwelout dre rummad
 Liste des communes: Listenn ar c'humunioù
 Liste des pays: Listenn ar broioùigoù
-Liste des provinces: Listenn an broioù
+Liste des provinces: Listenn ar broioù
 search:
   placeholder: Klask...
 
@@ -33,10 +33,10 @@ Réinitialiser: Adkorañ
 Aucune commune à afficher: Kumun ebet da ziskouez
 ou: pe
 Aller à la page des communes: Mont da bajenn ar c'humunioù
-Les provinces et les pays traditionnels de Bretagne: broioù ha broioùigoù hengounel Breizh
-Les provinces: An broioù
+Les provinces et les pays traditionnels de Bretagne: Broioù ha broioùigoù hengounel Breizh
+Les provinces: Ar broioù
 Les pays: Ar broioùigoù
-Page des provinces: Pajenn an broioù
+Page des provinces: Pajenn ar broioù
 Page des pays: Pajenn ar broioùigoù
 Sources: Mammennoù
 Cartes et fond de cartes: Kartennoù ha foñs ar c'hartennoù
@@ -47,15 +47,18 @@ Noms des communes du 44 en gallo et poitevin: Anvioù kumunioù Liger-Atlantel e
 Liste des communes de la Bretagne administrative: Listenn kumunioù Breizh melestradurel
 Liste des communes de Loire-Atlantique: Listenn kumunioù Liger-Atlantel
 Contact: Mont e darempred
-Les provinces sont appelés ainsi du fait de leur rôle ecclésiastique. Ils sont aussi appelés "provinces". Ils sont au nombre de neuf. Avant la révolution, ils servaient, en plus de leur rôle religieux, de circonscriptions civiles et militaires.: An broioù, a vez graet evel-se abalamour d'o roll relijiel. Nav anezho a zo. A-raok an dispac'h e servijent, ouzhpenn o roll relijiel, evel strolladoù sivil ha milourel.
+La structure territoriale de la Bretagne est complexe, les territoires la composant ayant évolué au cours de l'Histoire. On distingue communément deux niveaux de pays.: Kemplezh eo framm tiriadel Breizh. Emdroet o deus an tiriadoù a ya d’ober anezhi a-hed an istor. Daou live bro a vez diforc'het.
+Les provinces, aussi appelées parfois "évêchés", sont au nombre de neuf. Avant la révolution, elles servaient, en plus de leur rôle religieux, de circonscriptions civiles et militaires.: Ar broioù zo nav anezho.Graet e vez ivez “eskoptioù” anezho a-wechoù. A-raok an dispac'h e servijent, ouzhpenn o roll relijiel, evel strolladoù sivil ha milourel.
 Les pays n'ont pas de limites fixes. Ces pays dits de tradition ou de mode peuvent avoir eu au cours de l'histoire des vocations très diverses. Certains d'entre eux ont eu un rôle administratif tandis que d'autres sont essentiellement des territoires identitaires.: Ar broioùigoù n’eo ket termenet mat o harzoù. Palioù liesseurt o deus bet ar broioù a-hed an amzer. Ur roll melestradurel a oa gant ul lodenn, tra ma'z eo ar re all tiriadoù identelezh dreist-holl.
+Des remarques, des corrections à apporter, des suggestions ? Vous pouvez me contacter via mon site.: Evezhiadennoù, reizhadennoù, alioù ? Gallout a rit mont e darempred ganin dre ma lec'hienn.
+Voir le site: Mont d'al lec'hienn
 
 #Index des communes
 Nom: Anv
 Evêché: bro
 Pays: Broig
 Naviguer dans le site: Merdeiñ el lec'hienn
-Aller à la page des provinces: Mont da bajenn an broioù
+Aller à la page des provinces: Mont da bajenn ar broioù
 Aller à la page des pays: Mont da bajenn ar broioùigoù
 
 #Index des pays

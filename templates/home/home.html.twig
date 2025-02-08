@@ -95,7 +95,7 @@
             <div class="row pb-5">
                 <div class="pt-3 row">
                     <h2 class="col-12">{% trans %}Les provinces et les pays traditionnels de Bretagne{% endtrans %}</h2>
-                    <p class="col-12 mt-2">La structure territoriale de la Bretagne est complexe, les territoires la composant ayant évolué au cours de l'Histoire. On distingue communément deux niveaux de pays :</p>
+                    <p class="col-12 mt-2 text-center">{% trans %}La structure territoriale de la Bretagne est complexe, les territoires la composant ayant évolué au cours de l'Histoire. On distingue communément deux niveaux de pays.{% endtrans %}</p>
                 </div>
             {# Evêchés #}
             {# Colonne de la première carte #}
@@ -111,7 +111,7 @@
                             <div>
                                 <div class="card-body">
                                     <h3 class="card-title">{% trans %}Les provinces{% endtrans %}</h3>
-                                    <p class="card-text">Les provinces, aussi appelées parfois "évêchés", sont au nombre de neuf. Avant la révolution, elles servaient, en plus de leur rôle religieux, de circonscriptions civiles et militaires.</p>
+                                    <p class="card-text">{% trans %}Les provinces, aussi appelées parfois "évêchés", sont au nombre de neuf. Avant la révolution, elles servaient, en plus de leur rôle religieux, de circonscriptions civiles et militaires.{% endtrans %}</p>
 
                                     <a class="btn" href="{{ path('app_eveche_index')}}">{% trans %}Page des provinces{% endtrans %}</a>
                                 </div>
@@ -134,7 +134,7 @@
                             <div>
                                 <div class="card-body">
                                     <h3 class="card-title">{% trans %}Les pays{% endtrans %}</h3>
-                                    <p class="card-text">Les pays n'ont pas de limites fixes. Ces pays dits de tradition ou de mode peuvent avoir eu au cours de l'histoire des vocations très diverses. Certains d'entre eux ont eu un rôle administratif tandis que d'autres sont essentiellement des territoires identitaires.</p>
+                                    <p class="card-text">{% trans %}Les pays n'ont pas de limites fixes. Ces pays dits de tradition ou de mode peuvent avoir eu au cours de l'histoire des vocations très diverses. Certains d'entre eux ont eu un rôle administratif tandis que d'autres sont essentiellement des territoires identitaires.{% endtrans %}</p>
 
                                     <a class="btn" href="{{ path('app_pays_index')}}">{% trans %}Page des pays{% endtrans %}</a>
                                 </div>
@@ -162,13 +162,16 @@
                         <a class="ps-0 list-group-item" href="https://umap.openstreetmap.fr/fr/map/comunes-de-la-louere-de-bertegn_1103265#11/46.9339/-1.6363">{% trans %}Noms des communes du 44 en gallo et poitevin{% endtrans %} (Vassili Moreau-Miossec via OpenStreetMap)</a>
                         <a class="ps-0 list-group-item" href="https://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Commune_dans_la_r%C3%A9gion_Bretagne">{% trans %}Liste des communes de la Bretagne administrative{% endtrans %} (Wikipedia)</a>
                         <a class="ps-0 list-group-item" href="https://fr.wikipedia.org/wiki/Liste_des_communes_de_la_Loire-Atlantique">{% trans %}Liste des communes de Loire-Atlantique{% endtrans %} (Wikipedia)</a>
+                        <a class="ps-0 list-group-item" href="http://www.heritaj.bzh/page/le-patrimoine-danse-par-terroir-la-carte">Heritaj</a>
+                        <a class="ps-0 list-group-item" href="http://www.heritaj.bzh/page/terroirs-de-bretagne">Heritaj</a>
+                        
                     </ul>
                 </div>
 
                 <div class="col-12 col-md-6 contact">
                     <h2>{% trans %}Contact{% endtrans %}</h2>
-                    <p>Une remarque, des corrections à apporter, des suggestions de contenu ? Vous pouvez me contacter via mon site perso.</p>
-                    <a href="https://newennturbiau-graphisme.com" class="btn">Voir le site</a>
+                    <p>{% trans %}Des remarques, des corrections à apporter, des suggestions ? Vous pouvez me contacter via mon site.{% endtrans %}</p>
+                    <a href="https://newennturbiau-graphisme.com" class="btn">{% trans %}Voir le site{% endtrans %}</a>
                 </div>
             </div>
         </div>
