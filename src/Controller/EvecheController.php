@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Attribute\Route;
 use Pagerfanta\Doctrine\ORM\QueryAdapter;
 use Pagerfanta\Pagerfanta;
 
-#[Route('/eveche')]
+#[Route('/province')]
 final class EvecheController extends AbstractController
 {
     #[Route(name: 'app_eveche_index', methods: ['GET'])]

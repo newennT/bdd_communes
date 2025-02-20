@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 
 #[IsGranted('IS_AUTHENTICATED')]
-#[Route('admin/eveche')]
+#[Route('admin/province')]
 final class EvecheController extends AbstractController
 {
     #[Route('/new', name: 'app_admin_eveche_new', methods: ['GET', 'POST'])]
