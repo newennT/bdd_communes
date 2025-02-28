@@ -1,1 +1,127 @@
-Accueil: La bône arive
+# Header
+Langues: Parlements
+Français: Françaez
+Breton: Berton
+Gallo: Galo
+Voir par catégorie: Vaer par cllâsse
+Liste des communes: Rolée des qemunes
+Liste des pays: Rolée des payiz
+Liste des provinces: Rolée des pervinces
+search:
+  placeholder: Ghetter...
+
+#Footer
+Plan du site: Pllan de l'empllâ
+Se connecter: S'abouter
+Se déconnecter: Se debouter
+Informations légales: Ghiments selon la louai
+Mentions légales: Mencions selon la louai
+Outils admin: Afutiaos fezandiérs
+Ajouter une commune: Ajouter eune qemune
+Ajouter un pays: Ajouter un payiz
+Ajouter une province: Ajouter eune pervince
+Enregistrer un nouvel utilisateur: Enlister un nouviao empllayou
+Traduction en gallo: Terlaterie en galo
+
+# Page Home
+Carte des communes de Bretagne: Carte des qemunes de Bertègn
+Accueil: Erceperie
+Choisir un pays: Chouézi un payiz
+Choisir une province: Chouézi eune pervince
+Filtrer: Elouter
+Réinitialiser: Renabller
+Aucune commune à afficher: Pouint aoqhune qemune a amontrer
+ou: ou ben
+Aller à la page des communes: Y’aler a la paije des qemunes
+Les provinces et les pays traditionnels de Bretagne: Les pervinces e les payiz coutumiérs de Bertègn
+Les provinces: Les pervinces
+Les pays: Les payiz
+Page des provinces: Paije des pervinces
+Page des pays: Paije des payiz
+Sources: Orines
+Cartes et fond de cartes: Cartes e fond de cartes
+Les communes et leurs pays: Les qemunes e lous payiz
+Les informations sur les différents pays: Les ghiments raport és payiz
+Noms des villes en gallo: Noms des viles en galo
+Noms des communes du 44 en gallo et poitevin: Noms des qemunes du 44 en galo e pouetevin
+Liste des communes de la Bretagne administrative: Rolée des qemunes de la Rejion Bertègn
+Liste des communes de Loire-Atlantique: Rolée des qemunes de la Louere-de-Bertègn
+Contact: Me toucher
+La structure territoriale de la Bretagne est complexe, les territoires la composant ayant évolué au cours de l'Histoire. On distingue communément deux niveaux de pays.: La Bertègn ét charpentée d’eune meniere nijante, long l'isoutere i n-a y-û eune entournerie den les payiz qi la font. N-i a deûz meniere de payiz.
+Les provinces, aussi appelées parfois "évêchés", sont au nombre de neuf. Avant la révolution, elles servaient, en plus de leur rôle religieux, de circonscriptions civiles et militaires.: N-i a neu pervinces, q'ont etout nom "evéchës". Avant la Revoûsserie, en pus qe de lous rôle pour la relijion, i furent des arétas civiles e mirlitéres.
+Les pays n'ont pas de limites fixes. Ces pays dits de tradition ou de mode peuvent avoir eu au cours de l'histoire des vocations très diverses. Certains d'entre eux ont eu un rôle administratif tandis que d'autres sont essentiellement des territoires identitaires.: Les payiz n'ont pouint d'arétas abutës. Les payiz-la dits coutumiérs ou de ghize pouvaent avair long l'istouere des rôles pouint parai. D'aoqhuns en-méle yeûs ont y-û un rôle de fezanderie aloure qe d'aotrs sont ren qe dés aires de filomie.
+Des remarques, des corrections à apporter, des suggestions ? Vous pouvez me contacter via mon site.: Des aviz, des corijeries a fére, des idées ? Vous pouvéz me toucher par mon empllâ.
+Voir le site: Vaer l’empllâ
+
+#Index des communes
+Nom: Nom
+Province: Pervince
+Pays: Payiz
+Naviguer dans le site: Navier den l’empllâ
+Aller à la page des provinces: Y’aler a la paije des pervinces
+Aller à la page des pays: Y’aler a la paije des payiz
+
+#Index des pays
+Aucun pays à afficher: Pouint aoqhun payiz a amontrer
+Les pays traditionnels sont nombreux et il serait inutile de chercher à en dresser une liste exhaustive. Leur nombre et leurs limites peuvent varier en fonction des époques et de la distinction ou non que l’on fait entre le terroir et le pays. Le but, de cette carte comme de celles de ce site, est plutôt de donner un aperçu de la diversité des territoires bretons.: N-i a berchôze de payiz coutumiérs, i seraet inserviabl qe d’assayer de n-en fére eune rolée parfinie. Lous nombr e lous separts chanjent selon la berouée pis de l’apartézon qe n-en done entr terrouere e payiz. Le but de la carte-la come des aotrs su l’empllâ-la ét pus fort de montrer eune aperçue de la gârerie des terroueres bertons.
+Certains de ces pays ont une origine qui remonte à l’Antiquité, d’autres remontent aux débuts de l’ère bretonne. La division la plus ancienne est le “paou” qui est l’échelon inférieur à la “bro”.  On retrouve ce mot dans les noms qui commencent par po- et pou- (Poher, de paou et kêr, citadelle, celle-ci étant Carhaix), Porhoët (paou/tro/koed, le pays à travers les bois): Qheuqes payiz en-méle de yeûs s’orinent de l’Antiqhitë ou de l’arivée des bertons pour d’aotrs. Le “paou” ét le separt q’ét le pus vieu, c’ét le pus petit rolon qe la “bro”. Nen vait le mot-la den les noms en po- e pou- (Poher, de paou e kêr, citadelle, la siene de Carhaix), Porhoët (paou/tro/koed, le payiz ao través les bouéz).
+Des noms beaucoup plus récents font référence à des modes vestimentaires. C’est fréquent en Cornouaille, comme Glazik (petit bleu, en référence aux costumes). D’autres peuvent faire référence à des productions, comme Penn Sardin, tête de sardine, à Douarnenez. D’habitudes lexicales, comme le pays Chtou, à partir du juron Mallozh Doue! (malédiction de Dieu), prononcé localement « mallochtou! ». Certains tirent leurs particularités de circonstances géographiques particulières, comme le Mené, « la Montagne » ou la Brière. D’autres enfin peuvent être le fruit de l’influence d’un centre urbain, c’est le cas de Redon, qui, depuis des millénaires, s’est toujours retrouvé en bordure de divisions.: Des nom pus frés s’orinent des modes de hardes. Come en Cornouâille o le Glazik (petit blleu, du nom de l’abis coutumier). D’aotrs s’orinent de la fézerie du payiz, come Penn-Sardin (téte de sardrine a Douarnenez); des menieres de dire, come le payiz Chtou ‘you qi parfétent Mallozh Doue (maocion de dieu) “Mallochtou”. Ça qi peut etout s’oriner de la jeyografie, come le Menë (Montagne en berton) ou La Beriere (bruyère en françaez). A la parfin, i n-a des payiz q’ont nom d’aprés la grand-vile, come Redon qi depés des miles d’anées a terjous të és racouins des separts.
+
+#Index des provinces
+Aucune province à afficher: Pouint aoqhune pervince a montrer
+Source: Orine
+La principale division territoriale traditionnelle de la Bretagne sont les “bro” (pays ou provinces). Ils sont au nombre de neuf, symbolisés sur le drapeau breton Gwenn-ha-Du par les neuf bandes alternées noires et blanches. Même si ces pays ont perdu toute réalité officielle depuis 1790 et la création des départements, ils existent toujours dans le vécu.: Les permiers separts coutumiérs de la Bertègn sont les “bro” (payiz ou pervinces). I n-n a neuf, come montrë su le Gâre-Nair (Gwenn-ha-Du) par neu bandes naires e bllanches. Biao qe les payiz-la n’ont asteure pus aoqhun role oficiao depés 1790 cant qe les departements furent levës, le monde s’aqenéssent tenant den yeûs pâs-meins.
+Ces échelons ont été mis en place officiellement par les Bretons pour prendre la relève de l’administration romaine à la chute de l’Empire romain, mais semblent recouvrir une réalité humaine et historique qui remonte à plus loin. Les limites coïncident en effet avec des éléments géographiques remarquables (grands cours d’eau, lignes de crête) ou avec des éléments humains remontant à une haute antiquité, comme des mégalithes ou des toponymes pré-bretons.: Les rolons-la furent minz su bout d’ofice par les bertons pour prendr la sieute de la fezanderie romaine cant qe lous empire chayit. Meins sembele q’il ont tout come eune veritë oumaine e istoriqe remontant de pus lein. A-don, les separts vont ben o la jeyografie (rivieres, crétes de butes) ou ben o des merqes oumaines de l’Antiqhitë come ça seraet des roches piqhées o des noms d’endrets gaolouéz.
+Ces divisions coïncident également dans les grandes lignes avec les territoires des anciens peuples celtes. Au territoire des Osismes correspondent la Cornouaille, le Léon et le Trégor, au territoire des Vénètes correspond le Pays vannetais,  au territoire des anciens Coriosolitesaux les pays de Saint-Brieuc, Saint-Malo et Dol, au territoire des Namnètes le Nantais et au territoire des Riedones le Rennais.: Etout, les separts-la vont manierement o les terroueres és gaolouéz d’aotrfai. La terre és Osisms advient ben o la Cornouâille-Leyon-Tregor; le payiz de Vane retire den le terrouere des Venetes; les Coriosolites restaent den les payiz de Saint-Berieu, de Dou pis du Cllôz-Poulet; Les Namnetes e les Riedones donirent lous nom és viles de Naonte e Rene.
+
+#Commune-show
+Modifier:  Chanjer
+Revenir à la liste des communes: S’en reveni a la rolée des qemunes
+
+#Pays-show
+Communes: Qemunes
+Revenir à la liste des pays: S’en reveni a la rolée des payiz
+Carte de: Carte de
+Carte des pays traditionnels de Bretagne: Carte des payiz coutumiérs de Bertègn
+
+#Evêché-show
+Revenir à la liste des provinces: S’en reveni a la rolée des pervinces
+Carte des provinces de Bretagne: Carte des pervinces de Bertègn
+
+#Résultats recherche
+Recherche: Ghetter
+Résultats de recherche pour: Resultes de l’encerche pour
+Aucun résultat pour: Ren de terouë pour
+
+#Formulaire de connexion
+Connexion: S’abouter
+Email: Libouéte
+Mot de passe: Mot de pâsse
+
+#Formulaires admin
+Annuler: Toli
+Code postal: Code de poste
+Nom français: Nom françaez
+Nom breton: Nom berton
+Nom gallo: Nom galo
+Nombre d'habitants: Nombr de demeurants
+Latitude: Latitude
+Longitude: Lonjitude
+d'une commune: d’eune qemune
+action.edit: Chanjer
+action.add: Ajouter
+button.save: Saover
+Supprimer: Toli
+d'un pays: d'un payiz
+d'une province: d'eune pervince
+Image: Imaije
+Description: Depingllée
+Password: Mot de pâsse
+Enregistrer: Saover
+Rôle(s): Rôle(s)
+
+#Métadescriptions
+Où sont situés les différents pays traditionnels de Bretagne et quelles communes actuelles en font partie ? Explorez les différentes cartes !: Eyou don qe sont les payiz coutumiérs de Bertègn, pis den qheu payiz qe sont les qemunes d’asteure ? Fourgotéz don den les cartes ! 
+Les provinces de Bretagne sont au nombre de neuf. Avant la révolution, ils servaient, en plus de leur rôle religieux, de circonscriptions civiles et militaires.: N-i a neu pervinces en Bertègn. Avant la Revoûsserie, en pus qe de lous rôle pour la relijion, a taent des arétas civiles e mirlitéres.
+Les pays traditionnels de Bretagne n’ont pas de limites fixes. Au cours du temps, ils ont eu des vocations très diverses.: Les payiz coutumiérs de Bertègn n'ont pouint d'arétas abutës. Long l'istouere, il ûrent des rôles pouint parai.
+En 2025, la Bretagne historique compte 1415 communes. Explorez-les sur cette carte et retrouvez leurs pays traditionnels.: En 2025, la Bertègn istoriqe conte un 1415 de qemunes. Fourgotéz-les den la carte-la pis terouéz d’ertour lous payiz coutumiérs.
