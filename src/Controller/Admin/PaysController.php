@@ -61,7 +61,7 @@ final class PaysController extends AbstractController
     }
 
     #[IsGranted('ROLE_SUPERADMIN')]
-    #[Route('/delete/{id}', name: 'app_admin_pays_delete', methods: ['GET', 'POST'])]
+    #[Route('/{id}', name: 'app_admin_pays_delete', methods: ['POST'])]
     public function delete(Request $request, Pays $pay, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$pay->getId(), $request->getPayload()->getString('_token'))) {
